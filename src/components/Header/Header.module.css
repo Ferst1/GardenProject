@@ -1,9 +1,10 @@
 
 .header{
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1440px;
     padding:30px 40px ;
     display: flex;
     margin: 0 auto;
     cursor: pointer;
+    border-bottom: 1px solid var(--grey-divider);
 }
