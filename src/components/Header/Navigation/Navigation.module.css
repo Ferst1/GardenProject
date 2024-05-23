@@ -1,7 +1,6 @@
 
 .mainNavLink{
     display: flex;
-    align-items: center;
     justify-content: center;
 font-family: var(--font-family);
 font-weight: 500;
@@ -13,4 +12,13 @@ gap:32px;
 .mainNavLink a{
     color: var(--black);
     
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
 }
