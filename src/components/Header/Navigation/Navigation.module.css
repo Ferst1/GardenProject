@@ -1,0 +1,16 @@
+
+.mainNavLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+line-height: 1.3;
+gap:32px;
+}
+
+.mainNavLink a{
+    color: var(--black);
+    
+}

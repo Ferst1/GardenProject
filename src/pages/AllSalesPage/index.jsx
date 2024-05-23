@@ -1,12 +1,9 @@
 import React from 'react'
 
-const AllSalesPage
- = () => {
+const index = () => {
   return (
-    <div>AllSalesPage
-        
-    </div>
+    <div>All Sales</div>
   )
 }
 
-export default AllSalesPage
+export default index
