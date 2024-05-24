@@ -4,7 +4,7 @@ import instagram from '../../media/icons/instagram-dark-icon.svg';
 import whatsap from '../../media/icons/whatsapp-dark-icon.svg';
 const Footer = () => {
   return (
-    <div className={s.footer}>
+    <div className={`${s.footer} container`}>
       <h1>Contact</h1>
       <div className={s.footer_wrapper}>
         <div className={s.footer_phone}>
