@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Footer.module.css';
-
+import instagram from '../../media/icons/instagram-dark-icon.svg';
+import whatsap from '../../media/icons/whatsapp-dark-icon.svg';
 const Footer = () => {
   return (
     <div className={s.footer}>
@@ -12,9 +13,14 @@ const Footer = () => {
         </div>
         <div className={s.footer_socials}>
           <p>Socials</p>
+          <div className={s.social_wrapper}>
           <span>
-            <img src="#" alt="#" />
+            <img src= {instagram}alt="instagram icon" />
           </span>
+          <span>
+            <img src= {whatsap}alt="instagram icon" />
+          </span>
+          </div>
         </div>
         <div className={s.address}>
           <p>Address</p>

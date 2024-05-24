@@ -22,3 +22,18 @@
     margin-bottom: 20px;
     
 }
+.social_wrapper{
+    display: flex;
+    gap: 3px;     
+    
+}
+
+p{
+   padding-bottom: 16px;
+
+}
+
+.map{
+    width: 100%;
+  
+}
