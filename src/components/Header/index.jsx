@@ -11,7 +11,8 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false); 
 
   return (
-    <div className={s.header}>
+    <div className={`${s.header} container`}>
+      
       <div className={s.logoAndSwitcher}>
         <Logo />
         <Switcher isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>

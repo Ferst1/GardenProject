@@ -52,3 +52,28 @@ button {
   cursor: pointer;
 }
 
+.container {
+
+	margin: 0 auto;
+	max-width: 1440px; 
+	box-sizing: border-box; }
+  
+ 
+  @media (min-width: 1440px) {
+	.container {
+	  padding: 40px 80px;
+	}
+  }
+  
+  @media (max-width: 1000px) {
+	.container {
+	  padding: 20px 60px;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.container {
+	  padding: 20px 56px;
+	}
+  }
+  
