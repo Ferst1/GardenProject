@@ -3,8 +3,25 @@
     justify-content: space-between;
     max-width: 1440px;
     padding:30px 40px ;
+    height: 128px;
     display: flex;
     margin: 0 auto;
     cursor: pointer;
     border-bottom: 1px solid var(--grey-divider);
+}
+.logoAndSwitcher {
+    display: flex;
+    align-items: center;
+}
+.logoAndSwitcher > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+.favoriteAndBasket{
+    display: flex;
+    align-items: center;
+}
+
+.favoriteAndBasket > *:not(:last-child) {
+    margin-right: 20px;
 }
