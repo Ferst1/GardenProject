@@ -3,6 +3,11 @@
     padding: 32px;
 }
 
+h1{
+    font-size: 64px;
+    padding-bottom: 40px;
+}
+
 .footer_wrapper{
 
     display:grid;
@@ -36,21 +41,28 @@
 {
     background-color:var(--light-grey);
     padding: 32px;
-    margin-bottom: 20px;
     
+    border-radius: 12px;
+    font-size: 20px;
 }
+
+
 .social_wrapper{
     display: flex;
-    gap: 3px;     
+    gap: 13px;     
     
 }
-
+h4{
+    font-size: 40px;    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
 p{
    padding-bottom: 16px;
-
 }
 
 .map{
     width: 100%;
-  
+    border-radius: 12px;
+    margin-top: 32px;
 }

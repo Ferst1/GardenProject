@@ -1,5 +1,5 @@
 import React from 'react'
-import burgerMenuSVG from '../../../media/icons/burger-menu.svg'
+import burgerMenuSVG from '../../../media/icons/burgermenu-dark.svg'
 import s from './BurgerMenu.module.css'
 const BurgerMenu
  = () => {
