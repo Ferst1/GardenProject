@@ -5,19 +5,32 @@ import ButtonDiscount from "../ButtonDiscount";
 const Navigation = () => {
   return (
     <div className={s.navigation}>
-      <ButtonDiscount />
-    <nav className={s.mainNavLink}>
+      <div className={s.buttonDiscount}>
+        <ButtonDiscount />
+      </div>
       
-      <NavLink to={"/main_page"}>Main Page</NavLink>
+      <nav className={s.mainNavLink}>
+        
+        <NavLink 
+          to={"/main_page"}
+          className={s.navLink}
+        >Main Page</NavLink>
 
-      <NavLink to={"/categories"}>Categories</NavLink>
+        <NavLink 
+          to={"/categories"} 
+          className={s.navLink}
+        >Categories</NavLink>
 
-      <NavLink to={"/all_products"}>All products</NavLink>
+        <NavLink 
+          to={"/all_products"} 
+          className={s.navLink}
+        >All products</NavLink>
 
-      <NavLink className={s.allSalesLink} to={"/all_sales"}>
-        All sales
-      </NavLink>
-    </nav>
+        <NavLink  
+          to={"/all_sales"} 
+          className={s.navLink}
+        >All sales</NavLink>
+      </nav>
     </div>
   );
 };
