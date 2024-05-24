@@ -10,3 +10,11 @@ max-width: 151px;
 background: var(--green);
 border: none;
 }
+
+
+
+@media (max-width: 480px) {
+    .buttonDiscount{
+        display: none;
+    }
+}

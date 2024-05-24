@@ -1,9 +1,11 @@
 import React from 'react'
-
+import burgerMenuSVG from '../../../media/icons/burger-menu.svg'
+import s from './BurgerMenu.module.css'
 const BurgerMenu
  = () => {
   return (
-    <div>BurgerMenu
+    <div className={s.burger_menu}>
+      <img src={burgerMenuSVG} alt="Burger Menu Icon" />
         
     </div>
   )

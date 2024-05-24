@@ -10,10 +10,8 @@ gap:32px;
 }
 
 .mainNavLink a{
-    color: var(--black);
-    
+    color: var(--black);    
 }
-
 
 .navigation {
     display: flex;
@@ -28,9 +26,29 @@ gap:32px;
 }
 
 .navLink {
-    color: #424436;
+    color:var(--black);
 }
   
 .navLink:hover {
-    color: #92a134; 
+    color:var(--green); 
+}
+
+@media (max-width: 1000px) {
+    .navLink {
+font-size: 16px;
+gap: 24px;
+
+    }
+}
+@media (max-width: 768px) {
+
+    .navLink {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navLink {
+        display: none;
+    }
 }

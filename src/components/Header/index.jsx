@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Switcher from "./Switcher";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
+import BurgerMenu from "./BurgerMenu";
 const Header = () => {
 
   const [isDarkMode, setIsDarkMode] = useState(false); 
@@ -19,6 +20,7 @@ const Header = () => {
       <div className={s.favoriteAndBasket}>
         <Favorite isDarkMode={isDarkMode}/>
         <Basket isDarkMode={isDarkMode}/>
+        <BurgerMenu/>
       </div>
     </div>
   );

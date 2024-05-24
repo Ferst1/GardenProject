@@ -10,7 +10,11 @@ const Logo = () => {
       {imageError ? (
         <span>Logo</span>
       ) : (
-        <img src={logoSVG} alt="Logo" onError={() => setImageError(true)} />
+        <img 
+        className={s.logo}
+        src={logoSVG} 
+        alt="Logo" 
+        onError={() => setImageError(true)} />
       )}
     </div>
   );
