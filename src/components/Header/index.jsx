@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import Navigation from "./Navigation";
 import s from "./Header.module.css";
@@ -6,23 +8,29 @@ import Switcher from "./Switcher";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
 import BurgerMenu from "./BurgerMenu";
-const Header = () => {
+import MobileMenu from "../MobileMenu";
 
-  const [isDarkMode, setIsDarkMode] = useState(false); 
+const Header = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className={`${s.header} container`}>
-      
       <div className={s.logoAndSwitcher}>
         <Logo />
-        <Switcher isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
+        <Switcher isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
       <Navigation />
       <div className={s.favoriteAndBasket}>
-        <Favorite isDarkMode={isDarkMode}/>
-        <Basket isDarkMode={isDarkMode}/>
-        <BurgerMenu/>
+        <Favorite isDarkMode={isDarkMode} />
+        <Basket isDarkMode={isDarkMode} />
+        <BurgerMenu onClick={handleToggleMenu} />
       </div>
+      <MobileMenu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
     </div>
   );
 };

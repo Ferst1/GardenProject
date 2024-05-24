@@ -2,14 +2,17 @@ import { NavLink } from "react-router-dom";
 import s from "../Navigation/Navigation.module.css";
 import ButtonDiscount from "../ButtonDiscount";
 
+
 const Navigation = () => {
   return (
     <div className={s.navigation}>
-      <div className={s.buttonDiscount}>
+        <div className={s.buttonDiscount}>
         <ButtonDiscount />
       </div>
       
       <nav className={s.mainNavLink}>
+        
+  
         
         <NavLink 
           to={"/main_page"}
@@ -30,6 +33,7 @@ const Navigation = () => {
           to={"/all_sales"} 
           className={s.navLink}
         >All sales</NavLink>
+       
       </nav>
     </div>
   );
