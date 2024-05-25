@@ -11,6 +11,7 @@ const BurgerMenu = ({ onClick }) => {
     onClick();
   };
 
+
   return (
     <div className={s.burger_menu} onClick={handleClick}>
       <img src={burgerMenuSVG} alt="Burger Menu Icon" />
