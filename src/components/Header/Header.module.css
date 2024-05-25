@@ -37,3 +37,15 @@
 @media (max-width: 480px) {
    
   }
+
+  @media (min-width: 481px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mobile-menu {
+      display: flex;
+    }
+  }
