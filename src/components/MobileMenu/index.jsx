@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import s from "./MobileMenu.module.css";
 import Close from "../../media/icons/close.svg";
 import ButtonDiscount from "../../components/Header/ButtonDiscount";
-const MobileMenu = ({ isMenuOpen, handleToggleMenu, className,showButtonDiscount }) => {
+const MobileMenu = ({ isMenuOpen, handleToggleMenu, className }) => {
   return (
     <div className={`${s.mobileMenu} ${className} ${isMenuOpen ? s.open : ""}`}>
       <img
@@ -26,7 +26,7 @@ const MobileMenu = ({ isMenuOpen, handleToggleMenu, className,showButtonDiscount
         All Sales
       </NavLink>
 
-      {showButtonDiscount && <ButtonDiscount />}
+       <ButtonDiscount />
     </div>
   );
 };

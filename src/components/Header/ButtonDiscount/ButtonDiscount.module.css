@@ -14,7 +14,5 @@ border: none;
 
 
 @media (max-width: 480px) {
-    .buttonDiscount{
-        display: none;
-    }
+    
 }

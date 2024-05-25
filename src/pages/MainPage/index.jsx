@@ -4,7 +4,7 @@ import DiscountForm from '../../components/DiscountForm'
 
 const index = () => {
   return (
-    <div>
+    <div className='container'>
       <Hero/>
       <DiscountForm/>
     </div>

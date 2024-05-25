@@ -1,8 +1,15 @@
 import React from 'react'
-
+import ErrorPage from '../ErrorPage'
 const index = () => {
   return (
-    <div>All Sales</div>
+    <div className='container'>
+      <section>
+      <ErrorPage/>
+      
+  
+      
+      </section>
+      </div>
   )
 }
 

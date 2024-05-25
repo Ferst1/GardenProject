@@ -54,7 +54,7 @@ button {
 }
 
 .container {
-
+	padding: 40px 80px;
 	margin: 0 auto;
 	max-width: 1440px; 
 	box-sizing: border-box; }
@@ -76,5 +76,8 @@ button {
 	.container {
 	  padding: 20px 56px;
 	}
-  }
+}
+
+  
+  
   

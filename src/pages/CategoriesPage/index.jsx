@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>Categories</div>
+    <div className='container'>Categories</div>
   )
 }
 
