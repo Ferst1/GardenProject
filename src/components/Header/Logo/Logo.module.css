@@ -3,6 +3,17 @@
     height: 70px;
 }
 
+
+
+
+.logo_text {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .logo {
+    cursor: pointer; }
+  
 @media (max-width: 768px) {
 
     .logo{

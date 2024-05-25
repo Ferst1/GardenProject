@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>All Products</div>
+    <div className='container'>All Products</div>
   )
 }
 
