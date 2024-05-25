@@ -1,0 +1,16 @@
+.sale_card_wrapper{
+position: relative;
+    border: 1px solid var(--grey-divider);
+border-radius: 12px;
+max-width: 316px;
+height: 422px;
+background: var(--txt-white);
+}
+.cards_button{
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+

@@ -1,9 +1,14 @@
 import React from 'react'
+import ButtonSection from '../../components/UA/Basket/ButtonSection'
 
-const index = () => {
+const CategoriesPage = () => {
   return (
-    <div className='container'>Categories</div>
+    <div className='container'>
+      <h2>Categories</h2>
+      <ButtonSection text="Main page" />
+      <ButtonSection text="Categories" />
+      </div>
   )
 }
 
-export default index
+export default CategoriesPage

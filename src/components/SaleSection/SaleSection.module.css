@@ -1,0 +1,139 @@
+
+
+   /* .title_wrapper {
+    display: flex;
+    align-items: center;
+    padding-bottom: 52px;
+    position: relative;
+   
+  }
+  
+  .title_wrapper h2 {
+    margin-right: auto;
+  }
+  
+  .button_with_line {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .button_with_line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    height: 1px;
+    background-color: var(--grey-divider);
+    transform: translateY(-50%);
+    max-width: 824px; 
+    width: 600%;
+  }
+  
+  @media (max-width: 1440px) {
+    .title_wrapper>h2{
+        gap: 32px;
+
+  }
+    .button_with_line::before {
+     max-width: 824px;
+      
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .button_with_line::before {
+      max-width: 566px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .button_with_line::before {
+      max-width: 250px;
+      
+    }
+    .title_wrapper>h2{
+        gap: 20px;
+
+  }
+  }
+  
+  @media (max-width: 480px) {
+    .button_with_line::before {
+      width: 24px;
+    }
+    .title_wrapper>h2{
+        gap: 16px;
+
+  }
+  }
+  
+  @media (max-width: 320px) {
+    .button_with_line::before {
+      display: none;
+    }
+  }
+  
+
+    */
+
+    .title_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Чтобы заголовок был слева, а кнопка справа */
+        padding-bottom: 52px;
+        position: relative;
+      }
+      
+      .title_wrapper h2 {
+        margin-right: auto; /* Помещаем заголовок в левый конец */
+      }
+      
+      .button_with_line {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      
+      .button_with_line::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        height: 0.1em;
+        background-color: var(--grey-divider);
+        transform: translateY(-50%);
+        max-width: 40em;
+        width: 40em;
+      }
+      
+      @media (max-width: 1440px) {
+        .title_wrapper h2 {
+          margin-right: 3.2em;
+        }
+      }
+      
+      @media (max-width: 1000px) {
+        .button_with_line::before {
+          max-width: 35.75em;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .button_with_line::before {
+          max-width: 10.67em;
+        }
+      }
+      
+       @media (max-width: 480px) {
+        .button_with_line::before {
+          width: 2em;
+        }
+      } 
+      
+      @media (max-width: 320px) {
+        .button_with_line::before {
+          display: none;
+        }
+      }
+      
