@@ -1,14 +1,16 @@
-import React from 'react'
-import ButtonSection from '../../components/UA/Basket/ButtonSection'
-
+import React from "react";
+import ButtonSection from "../../components/UA/Basket/ButtonSection";
+import s from "./CategoriesPage.module.css";
 const CategoriesPage = () => {
   return (
-    <div className='container'>
+    <div className="container">
       <h2>Categories</h2>
-      <ButtonSection text="Main page" />
-      <ButtonSection text="Categories" />
+      <div className={s.buttons_wrapper}>
+        <ButtonSection text="Main page" backgroundColor="transparent" />
+        <ButtonSection text="Categories" backgroundColor="transparent" />
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default CategoriesPage
+export default CategoriesPage;

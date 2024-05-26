@@ -1,0 +1,23 @@
+.buttons_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .buttons_wrapper button {
+    position: relative;
+  }
+  
+  .buttons_wrapper button:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -16px; 
+    width: 16px; 
+    height: 1px; 
+    background-color: var(--grey-divider); 
+    transform: translateY(-50%);
+  }
+  
+
+ 
