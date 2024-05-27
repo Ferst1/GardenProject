@@ -13,7 +13,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route path="main_page" element={<MainPage />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="all_products" element={<AllProductsPage />} />
             <Route path="all_sales" element={<AllSalesPage />} />

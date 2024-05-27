@@ -67,7 +67,8 @@ padding: 32px 0px ;
 	padding: 40px 80px;
 	margin: 0 auto;
 	max-width: 1440px; 
-	box-sizing: border-box; }
+	box-sizing: border-box;
+	overflow-x: hidden;  }
   
  
   @media (min-width: 1440px) {
@@ -101,18 +102,5 @@ h2{
 	.container {
 	  padding: 20px 56px;
 	}
-	h2{
-		font-size: 48px;
-	}
-}
 
-
-@media (max-width: 320px) {
-	h2{
-		font-size: 40px;
-	}
-
-}
-  
-  
   
