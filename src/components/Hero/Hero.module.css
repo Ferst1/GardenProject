@@ -26,7 +26,7 @@
     z-index: 1;
     padding: 16px 56px;
     font-size: 20px;
-    background-color: #92A134; 
+    background-color: var(--green); 
     color: white;
     border: none;
     border-radius: 6px;
@@ -37,7 +37,8 @@
 }
 
 .cta_button:hover {
-    background-color: #6a7524;
+    background-color:var(--light-grey);
+    color:var(--green)
 }
 
 
