@@ -4,8 +4,7 @@ const AllSalesPage = () => {
   return (
     <div className='container'>
       <section>
-      <ErrorPage/>
-      
+      <ErrorPage/>      
       </section>
       </div>
   )

@@ -54,6 +54,15 @@ button {
 }
 
 
+
+h1{
+	
+font-weight: 700;
+font-size: 96px;
+line-height: 1.1;
+color: var(--txt-white);
+}
+
 h2{
 	font-family: var(--font-family);
 font-weight: 700;
@@ -90,6 +99,11 @@ color: var(--black);
 	  padding: 20px 60px;
 	}
 
+	h1{
+		font-size: 90px;	
+		
+		}
+
   }
   
   @media (max-width:768px) {
@@ -97,10 +111,25 @@ color: var(--black);
 h2{
 	font-size: 56px;
 }
+
+h1{
+	font-size: 68px;	
+	
+	}
   }
   @media (max-width: 480px) {
 	.container {
 	  padding: 20px 56px;
 	}
 
-  
+	h1{
+		font-size: 60px;	
+	}
+}
+
+@media (max-width: 320px) {
+	h1{
+		font-size: 52px;	
+	}
+
+}

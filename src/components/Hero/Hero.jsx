@@ -7,7 +7,7 @@ export default function Hero() {
     
     <div className={s.hero_container}>
         <div className={s.hero_content}>
-        <p className={s.title}>Amazing Discounts on Garden Products!</p>
+        <h1 className={s.title}>Amazing Discounts on Garden Products!</h1>
         <button className={s.cta_button}>Check out</button>
         </div>
     </div>
