@@ -1,0 +1,45 @@
+
+
+       .title_wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      
+      .title_wrapper h2 {
+        margin-right: 10px;
+        white-space: nowrap;
+      }
+      
+      .button_with_line {
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-grow: 1;
+      }
+      
+      .button_with_line::before {
+        content: '';
+        flex-grow: 1;
+        height: 0.1em;
+        background-color: var(--grey-divider);
+        margin-left: 32px; 
+      }
+      
+      @media (max-width: 768px) {
+        .button_with_line::before {
+          margin-left: 20px; 
+        }
+      }
+      @media (max-width: 480px) {
+        .button_with_line::before {
+          margin-left: 16px; 
+        }
+      } 
+      
+      @media (max-width: 320px) {
+        .button_with_line,
+        .button_with_line::before {
+          display: none;
+        }
+      }

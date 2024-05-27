@@ -6,7 +6,7 @@ import s from "./Header.module.css";
 import Logo from "./Logo";
 import Switcher from "./Switcher";
 import Favorite from "./Favorite";
-import Basket from "./Basket";
+import Basket from "../UA/Basket";
 import BurgerMenu from "./BurgerMenu";
 import MobileMenu from "../MobileMenu";
 

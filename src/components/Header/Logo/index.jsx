@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logoSVG from '../../../media/images/logo.svg';
 import s from './Logo.module.css';
 
@@ -8,16 +11,21 @@ const Logo = () => {
   return (
     <div className={s.logo_container}>
       {imageError ? (
-        <span>Logo</span>
+        <Link to="/main_page" className={s.logo_text}>
+          <span>Logo</span>
+        </Link>
       ) : (
-        <img 
-        className={s.logo}
-        src={logoSVG} 
-        alt="Logo" 
-        onError={() => setImageError(true)} />
+        <Link to="/main_page">
+          <img 
+            className={s.logo}
+            src={logoSVG} 
+            alt="Logo" 
+            onError={() => setImageError(true)} 
+          />
+        </Link>
       )}
     </div>
   );
 }
 
-export default Logo
+export default Logo;

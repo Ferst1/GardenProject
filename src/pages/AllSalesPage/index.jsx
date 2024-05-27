@@ -1,9 +1,14 @@
 import React from 'react'
-
-const index = () => {
+import ErrorPage from '../ErrorPage'
+const AllSalesPage = () => {
   return (
-    <div>All Sales</div>
+    <div className='container'>
+      <section>
+      <ErrorPage/>
+      
+      </section>
+      </div>
   )
 }
 
-export default index
+export default AllSalesPage

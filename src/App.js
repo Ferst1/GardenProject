@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage';
 import CategoriesPage from './pages/CategoriesPage'; 
 import AllProductsPage from './pages/AllProductsPage'; 
 import AllSalesPage from './pages/AllSalesPage'; 
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="all_products" element={<AllProductsPage />} />
             <Route path="all_sales" element={<AllSalesPage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </div>

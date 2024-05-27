@@ -53,8 +53,18 @@ button {
   cursor: pointer;
 }
 
-.container {
 
+h2{
+	font-family: var(--font-family);
+font-weight: 700;
+font-size: 64px;
+line-height: 1.1;
+padding: 32px 0px ;
+
+}
+
+.container {
+	padding: 40px 80px;
 	margin: 0 auto;
 	max-width: 1440px; 
 	box-sizing: border-box;
@@ -65,17 +75,32 @@ button {
 	.container {
 	  padding: 40px 80px;
 	}
+	h2{
+		font-family: var(--font-family);
+font-weight: 700;
+font-size: 64px;
+line-height: 110%;
+color: var(--black);
+	}
+	
   }
   
   @media (max-width: 1000px) {
 	.container {
 	  padding: 20px 60px;
 	}
+
   }
   
+  @media (max-width:768px) {
+
+h2{
+	font-size: 56px;
+}
+  }
   @media (max-width: 480px) {
 	.container {
 	  padding: 20px 56px;
 	}
-}
+
   
