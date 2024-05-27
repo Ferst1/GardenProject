@@ -6,11 +6,14 @@ import CategoriesSection from '../../components/CategoriesSection'
 
 const index = () => {
   return (
-    <div className='container'>
+    
+    <div>
       <Hero/>
-      <CategoriesSection/>
-      <DiscountForm/>
-      <SaleSection/>
+      <div className='container'>   
+        <CategoriesSection/>
+        <DiscountForm/>
+        <SaleSection/>
+      </div>
     </div>
   )
 }
