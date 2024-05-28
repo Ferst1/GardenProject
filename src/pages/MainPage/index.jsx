@@ -9,8 +9,9 @@ const index = () => {
     
     <div>
       <Hero/>
+      
       <div className='container'>   
-        <CategoriesSection/>
+        
         <DiscountForm/>
         <SaleSection/>
       </div>

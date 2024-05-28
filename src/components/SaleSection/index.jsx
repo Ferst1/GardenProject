@@ -6,7 +6,7 @@ import s from "./SaleSection.module.css";
 
 const SaleSection = () => {
   return (
-    <div className="container">
+    <div>
       <section>
         <div className={s.title_wrapper}>
           <h2>Sale</h2>
