@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import s from './DiscountForm.module.css';
-import HandsImage from '../../media/images/hands-image.svg';
+import HandsImage from '../../media/images/image-order.png';
 import Button from '../UI/Button/index'; 
 import Input from '../UI/Input/index';
 import ErrorIcon from '../../media/icons/error-icon.svg'; 
