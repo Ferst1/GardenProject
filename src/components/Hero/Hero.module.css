@@ -9,9 +9,9 @@
     background-image: url('../../media/images/hero-img.jpg');
     background-size: cover;
     background-position: center;
-    padding: 0 30px;
     overflow: hidden;
     top: -1px;
+    padding: 60px 20px;
 }
 
 .title {

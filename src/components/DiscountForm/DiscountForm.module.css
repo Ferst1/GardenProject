@@ -1,4 +1,4 @@
-.form_container {
+/* .form_container {
     background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
     margin-top: 30px;
     width: 100%;
@@ -28,10 +28,11 @@ form {
 }
 
 .form_container img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    
+    width: 748px;
+    height: 360px;
 }
+
+
 
 .form_container input {
     padding: 10px;
@@ -78,4 +79,105 @@ form {
 .warning_text img {
     width: 4%;
     margin-right: 3px;
+} */
+.form_container {
+    background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1376px;
+    border-radius: 12px;
+    margin: 0 auto;
+    position: relative;
+    height: 486px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
+
+.form_container h1 {
+    color: #FFFFF1;
+    margin: 20px 0;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.content {
+    display: flex;
+}
+
+.form_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    position: absolute; 
+    bottom: 100px; 
+    right: 100px;
+}
+
+.form_container img {
+    width: 748px;
+    height: 360px;
+    object-fit: cover;
+}
+
+.form_container input {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #FFFFF1;
+    color: #FFFFF1;
+}
+
+
+.form_container button {
+    padding: 10px;
+    background-color: #FFFFF1;
+    color: #424436;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+}
+.form_container button:hover {
+    background-color: #f4f4ce;
+}
+
+.error_icon{
+    width: 20px;
+    height: 20px;
+}
+.warning_text {
+    display: inline-flex;
+    align-items: center; 
+    width: 100%;
+    color: #FFFFF1;
+    margin-top: 0px;
+
+}
+.warning_text img {
+    width: 4%;
+    margin-right: 3px;
+}
+
