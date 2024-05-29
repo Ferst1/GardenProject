@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonSection from "../../components/UA/Basket/ButtonSection";
+import ButtonSection from "../../components/UI/ButtonSection";
 import s from "./CategoriesPage.module.css";
 const CategoriesPage = () => {
   return (

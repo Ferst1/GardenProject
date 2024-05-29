@@ -11,7 +11,7 @@ const index = () => {
       <Hero/>
       
       <div className='container'>   
-        
+        <CategoriesSection/>
         <DiscountForm/>
         <SaleSection/>
       </div>
