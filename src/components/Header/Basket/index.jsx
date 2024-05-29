@@ -1,7 +1,7 @@
 import React from 'react';
 import BasDark from "../../../media/icons/basket-night-icon.svg";
 import BasLight from '../../../media/icons/basket-light-icon.svg'
-import s from '../Basket';
+import s from '.';
 
 const Basket = ({ isDarkMode }) => {
   return (

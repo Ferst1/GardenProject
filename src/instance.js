@@ -1,0 +1,1 @@
+const baseUrl ='https://github.com/tel-ran-de/telran_backend_garden_shop';

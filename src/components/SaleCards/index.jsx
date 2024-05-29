@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./SaleCards.module.css";
-import Basket from "../UA/Basket";
+import Basket from "../Header/Basket";
 import Favorite from "../Header/Favorite";
 
 const SaleCards = () => {

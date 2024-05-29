@@ -1,7 +1,7 @@
 
 import React from "react"; 
 import SaleCards from "../SaleCards";
- import ButtonSection from "../UA/Basket/ButtonSection";
+ import ButtonSection from "../UI/ButtonSection";
 import s from "./SaleSection.module.css";
 
 const SaleSection = () => {
