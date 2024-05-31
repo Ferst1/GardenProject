@@ -75,3 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Backend [https://github.com/tel-ran-de/telran_backend_garden_shop]
 
 Brackpoints[1440px,1000px,768px,480px,360px]
+
+Presentation Team[https://docs.google.com/presentation/d/1RQzjFMw1Mh0m218qwyNzyQ9WTIgmbZoA/edit#slide=id.p14]

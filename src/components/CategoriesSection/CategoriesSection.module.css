@@ -24,6 +24,9 @@
     background-color: var(--grey-divider);
     margin-left: 32px; 
   }
+
+
+
   
   @media (max-width: 768px) {
     .button_with_line::before {
