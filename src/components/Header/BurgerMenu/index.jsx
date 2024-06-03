@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import burgerMenuSVG from "../../../media/icons/burger-menu.svg";
 import s from "./BurgerMenu.module.css";

@@ -97,7 +97,8 @@
         width: auto;
     }
     .title {
-        font-size: 52px;
+        font-size: 50px;
+        width: 320px;
     }
     .cta_button {
         font-size: 16px;
