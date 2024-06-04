@@ -5,21 +5,21 @@ export const initialState = {
   };
   
   export const actionTypes = {
-    FETCH_PRODUCTS_REQUEST: 'FETCH_PRODUCTS_REQUEST',
-    FETCH_PRODUCTS_SUCCESS: 'FETCH_PRODUCTS_SUCCESS',
-    FETCH_PRODUCTS_FAILURE: 'FETCH_PRODUCTS_FAILURE',
+    FETCH_CATEGORIES_REQUEST: 'FETCH_CATEGORIES_REQUEST',
+    FETCH_CATEGORIES_SUCCESS: 'FETCH_CATEGORIES_SUCCESS',
+    FETCH_CATEGORIES_FAILURE: 'FETCH_CATEGORIES_FAILURE',
   };
   
-  export function productReducer(state = initialState, action) {
+  export function categoriesReducer(state = initialState, action) {
     switch (action.type) {
-      case actionTypes.FETCH_PRODUCTS_REQUEST:
+      case actionTypes.FETCH_CATEGORIES_REQUEST:
         return {
           ...state,
           loading: true,
           error: null,
         };
   
-      case actionTypes.FETCH_PRODUCTS_SUCCESS:
+      case actionTypes.FETCH_CATEGORIES_SUCCESS:
         return {
           ...state,
           loading: false,
@@ -38,5 +38,5 @@ export const initialState = {
     }
   }
   
-  export default productReducer;
+  export default categoriesReducer;
   

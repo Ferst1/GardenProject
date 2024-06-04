@@ -1,19 +1,20 @@
 
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import ButtonSection from '../UI/ButtonSection';
 import s from '../CategoriesSection/CategoriesSection.module.css';
 import categoryStyles from '../CategoriesCard/CategoriesCard.module.css';
-import { fetchProducts } from '../../redux/actions/productActions';
+import { fetchCategories } from '../../redux/actions/categoriesActions';
 import CategoriesCard from '../CategoriesCard';
 
 const CategoriesSection = () => {
   const dispatch = useDispatch();
-  const { categories, loading, error } = useSelector(state => state.products); 
+  const { categories, loading, error } = useSelector(state => state.categories); 
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchCategories());
   }, [dispatch]);
 
   if (loading) {

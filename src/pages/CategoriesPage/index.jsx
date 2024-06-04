@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import ButtonSection from "../../components/UI/ButtonSection";
 import s from "./CategoriesPage.module.css";
 import categoryStyles from '../CategoriesPage/CategoriesPage.module.css';
-import { fetchProducts } from '../../redux/actions/productActions';
+import { fetchCategories } from '../../redux/actions/categoriesActions';
 import CategoriesCard from '../../components/CategoriesCard';
 
 const CategoriesPage = () => {
   const dispatch = useDispatch();
-  const { categories, loading, error } = useSelector(state => state.products);
+  const { categories, loading, error } = useSelector(state => state.categories);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchCategories());
   }, [dispatch]);
 
   if (loading) {
