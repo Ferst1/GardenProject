@@ -2,7 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./MobileMenu.module.css";
-import Close from "../../media/icons/close.svg";
+import Close from "../../media/icons/x-burgermenu-dark.svg";
 import ButtonDiscount from "../../components/Header/ButtonDiscount";
 const MobileMenu = ({ isMenuOpen, handleToggleMenu, className }) => {
   return (
