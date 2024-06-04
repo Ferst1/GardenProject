@@ -1,6 +1,5 @@
 .form_container {
     background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
-    margin-top: 30px;
     width: 100%;
     max-width: 1376px;
     border-radius: 12px;
@@ -31,6 +30,8 @@
 }
 
 .form_section {
+    padding-top: 80px;
+    padding-bottom: 115px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +53,7 @@ form {
     width: 748px;
     height: 360px;
     object-fit: cover;
-    padding: 0 30px 0 30px;
+    padding: 0;
 }
 
 .form_container input {
@@ -104,6 +105,10 @@ form {
 }
 
 @media (max-width: 1000px) {
+
+    .form_container {
+        height: 454px;
+    }
     
     .form_container h3 {
         font-size: 64px;
@@ -117,9 +122,9 @@ form {
     }
     
     .form_container img {
-        width: 657px;
-        height: 336px;
-        margin-left: -200px;
+        width: 602px;
+        height: 308px;
+        margin-left: -150px;
     }
 
     .form_container input {
@@ -154,14 +159,14 @@ form {
     form {
         width: 334px;
         height: 304px;
-        bottom: 20px; 
+        bottom: 30px; 
         right: 20px;
     }
     
     .form_container img {
-        width: 657px;
-        height: 336px;
-        margin-left: -300px;
+        width: 602px;
+        height: 308px;
+        margin-left: -250px;
     }
 
     .form_container input {
