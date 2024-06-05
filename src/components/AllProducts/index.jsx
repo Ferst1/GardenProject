@@ -11,10 +11,10 @@ const AllProducts = ({ products }) => {
     <div>
       {products.map((product) => (
         <div key={product.id} className={styles.product_item}>
-          <div className={styles.category_content}>
+          <div className={styles.product_content}>
             {product.image && (
               <img
-                className={styles.category_img}
+                className={styles.product_img}
                 src={`${baseUrl}${product.image}`}
                 alt={product.title}
               />

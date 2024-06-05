@@ -11,7 +11,7 @@ const Navigation = () => {
       </div>
       <div className={s.nav_wrapper}>
         <nav className={s.mainNavLink}>
-          <NavLink to={"/main_page"} className={s.navLink}>
+          <NavLink to={"/"} className={s.navLink}>
             Main Page
           </NavLink>
           <NavLink to={"/categories"} className={s.navLink}>
