@@ -1,7 +1,8 @@
+
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchProductsByCategory } from '../../redux/actions/fetchProductsByCategory';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductsByCategory } from '../../redux/actions/productsActions';
 import styles from './CategoryProductsPage.module.css';
 import baseUrl from '../../instance';
 
@@ -14,8 +15,6 @@ const CategoryProductsPage = () => {
     dispatch(fetchProductsByCategory(categoryId));
   }, [dispatch, categoryId]);
 
-  console.log('Products state:', products);  
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -24,18 +23,13 @@ const CategoryProductsPage = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!products || products.length === 0) {
+  if (!Array.isArray(products) || products.length === 0) {
     return <div>No products available</div>;
   }
 
-if (!Array.isArray(products)) {
-  return <div>Products are not available</div>;
-}
-
-
-return (
-    <div>
-      {products && products.map(product => (
+  return (
+    <div className={styles.products_container}>
+      {products.map((product) => (
         <div key={product.id} className={styles.product_item}>
           <div className={styles.product_content}>
             {product.image && (
@@ -59,6 +53,6 @@ return (
       ))}
     </div>
   );
-};  
+};
 
 export default CategoryProductsPage;

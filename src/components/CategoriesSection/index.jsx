@@ -1,5 +1,4 @@
 
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -17,7 +16,7 @@ const CategoriesSection = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  if (loading) {
+  if (loading || !categories) {
     return <div>Loading...</div>;
   }
 

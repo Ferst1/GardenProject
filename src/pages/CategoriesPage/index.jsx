@@ -1,5 +1,4 @@
 
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ButtonSection from "../../components/UI/ButtonSection";
@@ -16,7 +15,12 @@ const CategoriesPage = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  if (loading) {
+  const handleCategoryClick = (categoryId) => {
+    
+    console.log(`Clicked category id: ${categoryId}`);
+  };
+
+  if (loading || !categories) {
     return <div>Loading...</div>;
   }
 
@@ -27,15 +31,13 @@ const CategoriesPage = () => {
   return (
     <div className={s.container}>
       <div className={s.title_wrapper}>
-        
-        
       </div>
       <div className={s.buttons_wrapper}>
         <ButtonSection text="Main Page" backgroundColor={"transparent"} />
         <ButtonSection text="Categories" backgroundColor={"transparent"} />
       </div>
       <h2>Categories</h2>
-      <CategoriesCard categories={categories} limit={5} styles={categoryStyles} />
+      <CategoriesCard categories={categories} limit={5} styles={categoryStyles} onClick={handleCategoryClick} />
     </div>
   );
 };
