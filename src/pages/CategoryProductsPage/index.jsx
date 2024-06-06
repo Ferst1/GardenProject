@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsByCategory } from '../../redux/actions/productsActions';
 import styles from './CategoryProductsPage.module.css';
 import baseUrl from '../../instance';
+import SorterSelect from '../../components/SorterSelect';
+import DiscountedCheckBox from '../../components/DiscountedCheckBox';
+import FilterPrice from '../../components/FilterPrice';
+import SortFilteredComponents from '../../components/SortFilteredComponents';
 
 const CategoryProductsPage = () => {
   const { categoryId } = useParams();
@@ -29,6 +33,12 @@ const CategoryProductsPage = () => {
 
   return (
     <div className={styles.products_container}>
+<h2>Tools and equipment</h2>
+
+<div className={styles.sorted_section}>
+  <SortFilteredComponents />
+      </div>
+      <div className={styles.products_wrapper}>
       {products.map((product) => (
         <div key={product.id} className={styles.product_item}>
           <div className={styles.product_content}>
@@ -51,6 +61,9 @@ const CategoryProductsPage = () => {
           </div>
         </div>
       ))}
+
+
+      </div>
     </div>
   );
 };
