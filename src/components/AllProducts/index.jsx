@@ -22,6 +22,7 @@ const AllProducts = ({ products }) => {
             {product.image && (
               <img
                 className={s.category_img}
+
                 src={`${baseUrl}${product.image}`}
                 alt={product.title}
               />
