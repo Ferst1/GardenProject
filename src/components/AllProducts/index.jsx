@@ -12,6 +12,7 @@ const AllProducts = ({ products }) => {
   return (
     <div className={s.products_grid}>
       {products.map((product) => (
+
         <div key={product.id} className={s.product_item}>
           
         
@@ -22,6 +23,7 @@ const AllProducts = ({ products }) => {
             {product.image && (
               <img
                 className={s.category_img}
+
                 src={`${baseUrl}${product.image}`}
                 alt={product.title}
               />
