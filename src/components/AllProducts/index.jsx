@@ -12,6 +12,7 @@ const AllProducts = ({ products }) => {
   return (
     <div className={s.products_grid}>
       {products.map((product) => (
+
         <div key={product.id} className={s.product_item}>
           
         
