@@ -26,13 +26,13 @@ const AllProducts = ({ products }) => {
                 />
               )}
               {product.discont && (
-                <div className={s.discount_tag}>{`-${product.discont}%`}</div>
+                <div className={s.discont_tag}>{`-${product.discont}%`}</div>
               )}
               <div className={s.product_title}>{product.title}</div>
               <div className={s.product_price}>
                 ${product.price}
                 {product.discont_price && (
-                  <span className={s.discount_price}>
+                  <span className={s.discont_price}>
                     ${product.discont_price}
                   </span>
                 )}
