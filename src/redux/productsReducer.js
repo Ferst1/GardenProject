@@ -3,6 +3,8 @@ export const initialState = {
   products: [],
   loading: false,
   error: null,
+  // saleProducts: [],
+
 };
 
 export const actionTypes = {
@@ -12,6 +14,8 @@ export const actionTypes = {
   FETCH_PRODUCTS_BY_CATEGORY_REQUEST: 'FETCH_PRODUCTS_BY_CATEGORY_REQUEST',
   FETCH_PRODUCTS_BY_CATEGORY_SUCCESS: 'FETCH_PRODUCTS_BY_CATEGORY_SUCCESS',
   FETCH_PRODUCTS_BY_CATEGORY_FAILURE: 'FETCH_PRODUCTS_BY_CATEGORY_FAILURE',
+
+
 };
 
 export function productsReducer(state = initialState, action) {

@@ -1,8 +1,25 @@
+
+
+
 .sorted_section{
     display: flex;
- 
-   
     
+}
+
+
+@media (max-width: 768px) {
+    .sorted_section{
+        display:grid;
+        gap: 16px;
+        
+    }
+
+}
+@media (max-width: 480px) {
+    .sorted_section{
+        display:grid;
+        
+    }
 }
 
 
@@ -10,4 +27,26 @@
     margin-right: 40px;
   }
   
+  .buttons_wrapper{
+    display: flex;
+	margin-top: 40px;
+    gap: 16px;
+}
+
+.buttons_wrapper button {
+    position: relative;
+  }
   
+  .buttons_wrapper  button:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    width: 16px;
+    height: 1px;
+    background-color: var(--grey-divider);
+    transform: translateY(-50%);
+  }
+
+
+

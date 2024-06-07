@@ -33,9 +33,6 @@
     gap: 10px;
 }
 
-
-
-
 .category_img {
     width: 316px;
     height: 283px;
@@ -65,22 +62,30 @@
     padding: 0 32px 32px 32px;
 
 }
-/* 
-.discont_price {
-    font-size: 14px;
-    color: #888;
-    text-decoration: line-through;
-    margin-left: 10px;
+
+
+@media (max-width: 1000px) {
+    
 }
-  
-.discount_tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #ff0000;
-    color: white;
-    padding: 5px;
-    border-radius: 4px;
-    font-size: 14px;
+
+@media (max-width:768px) {
+    .products_grid{
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+              gap: 20px;
+            }
 }
-   */
+
+@media (max-width: 480px) {
+
+    .products_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 360px) {
+    .products_grid{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+             
+            }
+}

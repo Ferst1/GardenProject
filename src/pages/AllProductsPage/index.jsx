@@ -8,6 +8,8 @@ import SorterSelect from '../../components/SorterSelect';
 
 import FilterPrice from '../../components/FilterPrice';
 import DiscountedCheckBox from '../../components/DiscountedCheckBox';
+import { Link } from 'react-router-dom';
+import ButtonSection from '../../components/UI/ButtonSection';
 
 const AllProductsPage = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,14 @@ const AllProductsPage = () => {
 
   return (
     <div className="container">
+       <div className={styles.buttons_wrapper}>
+          <Link to="/">
+            <ButtonSection text="Main Page" backgroundColor={"transparent"} />
+          </Link>
+          <Link to="/all_products">
+            <ButtonSection text="All products" backgroundColor={"transparent"} />
+          </Link>
+         </div>
       <h2>All products</h2>
       <div className={styles.sorted_section}>
       <FilterPrice />
