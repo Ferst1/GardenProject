@@ -1,16 +1,14 @@
 
-
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByCategory } from "../../redux/actions/productsActions";
 import styles from "./CategoryProductsPage.module.css";
-import s from "../../components/AllProducts/AllProducts.module.css";
-import baseUrl from "../../instance";
+import s from "../../components/ProductsCard/ProductsCard.module.css";
 import SortFilteredComponents from "../../components/SortFilteredComponents";
 import ButtonSection from "../../components/UI/ButtonSection";
-import Basket from "../../components/Header/Basket";
-import Favorite from "../../components/Header/Favorite";
+import ProductsCard from "../../components/ProductsCard";
+
 
 const CategoryProductsPage = () => {
   const { categoryId } = useParams();
@@ -56,43 +54,9 @@ const CategoryProductsPage = () => {
           <SortFilteredComponents />
         </div>
         <div className={s.products_grid}>
-          {products.map((product) => {
-          
-            let discont = null;
-            if (product.price && product.discont_price) {
-              discont = Math.round(((product.price - product.discont_price) / product.price) * 100);
-            }
-
-            return (
-              <div key={product.id} className={s.product_item}>
-                <div className={s.category_content}>
-                  <div className={s.cards_button}>
-                    <Basket />
-                    <Favorite />
-                    {product.image && (
-                      <img
-                        className={s.category_img}
-                        src={`${baseUrl}${product.image}`}
-                        alt={product.title}
-                      />
-                    )}
-                    {discont !== null && (
-                      <div className={s.discont_tag}>{`-${discont}%`}</div>
-                    )}
-                    <div className={s.product_title}>{product.title}</div>
-                    <div className={s.product_price}>
-                      ${product.price}
-                      {product.discont_price && (
-                        <span className={s.discont_price}>
-                          ${product.discont_price}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {products.map((product) => (
+            <ProductsCard key={product.id} product={product} />
+          ))}
         </div>
       </div>
     </div>
