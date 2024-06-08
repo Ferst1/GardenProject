@@ -1,0 +1,37 @@
+.logo{
+    width: 70px;
+    height: 70px;
+}
+
+
+
+
+.logo_text {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .logo {
+    cursor: pointer; }
+  
+@media (max-width: 768px) {
+
+    .logo{
+        width: 68px;
+        height: 68px;
+    }  
+}
+@media (max-width: 480px) {
+
+    .logo{
+        max-width: 44px;
+        max-height: 44px;
+    }  
+}
+@media (max-width: 320px) {
+
+    .logo{
+        max-width: 44px;
+        max-height: 44px;
+    }  
+}

@@ -1,0 +1,118 @@
+.products_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    justify-content: center;
+    padding: 40px;
+}
+  
+.product_item {
+    position: relative;
+    background: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    width: 316px;
+}
+  
+.product_item:hover {
+    transform: translateY(-5px);
+}
+
+.category_content {
+    text-align: center;
+}
+
+
+
+
+.cards_button{
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+}
+
+.category_img {
+    width: 316px;
+    height: 283px;
+    border-bottom: 1px solid #DDDDDD;
+}
+  
+.product_title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: left;
+    width: 252px;
+    height: 26px;
+    margin: 20px  32px 16px 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.product_price {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 40px;
+    color: #424436;
+    text-align: left;
+    padding: 0 32px 32px 32px;
+
+}
+
+
+.discont_price{
+
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+line-height: 1.3;
+text-decoration: line-through;
+color: var(--grey);
+  }
+
+
+  .discont_tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 6px;
+padding: 4px 8px;
+width: 67px;
+height: 34px;
+background: var(--sale);
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 1.3;
+letter-spacing: 0.03em;
+color: var(--txt-white);
+}
+@media (max-width: 1000px) {
+    
+}
+
+@media (max-width:768px) {
+    .products_grid{
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+              gap: 20px;
+            }
+}
+
+@media (max-width: 480px) {
+
+    .products_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 360px) {
+    .products_grid{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+             
+            }
+}
