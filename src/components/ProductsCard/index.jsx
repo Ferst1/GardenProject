@@ -1,10 +1,7 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
 import s from "./ProductsCard.module.css";
-import Basket from "../Header/Basket";
-import Favorite from "../Header/Favorite";
 import ButtonAddToCard from "../UI/ButtonAddToCard";
 
 const ProductsCard = ({ product, showAddToCartButton }) => {

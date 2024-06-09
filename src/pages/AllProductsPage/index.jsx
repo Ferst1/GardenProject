@@ -1,7 +1,5 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import AllProducts from '../../components/AllProducts';
 import { fetchProducts } from '../../redux/actions/productsActions';
 import SorterSelect from '../../components/SorterSelect';
@@ -13,6 +11,7 @@ import styles from './AllProductsPage.module.css';
 const AllProductsPage = () => {
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector(state => state.products);
+  const [showDiscounted, setShowDiscounted] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -21,6 +20,8 @@ const AllProductsPage = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  const filteredProducts = showDiscounted ? products.filter(product => product.discont_price) : products;
 
   return (
     <div className="container">
@@ -31,10 +32,10 @@ const AllProductsPage = () => {
       <h2>All products</h2>
       <div className={styles.sorted_section}>
         <FilterPrice />
-        <DiscountedCheckBox />
+        <DiscountedCheckBox setShowDiscounted={setShowDiscounted} showDiscounted={showDiscounted} />
         <SorterSelect />
       </div>
-      <AllProducts products={products}/>
+      <AllProducts products={filteredProducts}/>
     </div>
   );
 };
