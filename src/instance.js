@@ -5,7 +5,7 @@ const categoriesAll ='http://localhost:3333/categories/all'
 
 const productsAll ='http://localhost:3333/products/all'
 
-const product_img = 'baseUrl+/product_img/3.jpeg'
+
 
 
 

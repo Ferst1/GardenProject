@@ -11,11 +11,11 @@ const Logo = () => {
   return (
     <div className={s.logo_container}>
       {imageError ? (
-        <Link to="/main_page" className={s.logo_text}>
+        <Link to="/" className={s.logo_text}>
           <span>Logo</span>
         </Link>
       ) : (
-        <Link to="/main_page">
+        <Link to="/">
           <img 
             className={s.logo}
             src={logoSVG} 

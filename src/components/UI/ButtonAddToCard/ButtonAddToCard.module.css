@@ -1,0 +1,18 @@
+
+.buttonAdd{
+    border-radius: 6px;
+padding: 16px 32px;
+width: 284px;
+height: 58px;
+background: var(--green);
+color: var(--white);
+transition: background var(--transition);
+}
+
+
+.buttonAdd:hover,
+.buttonAdd:active
+{
+   background: var(--black);
+}
+

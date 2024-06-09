@@ -1,5 +1,4 @@
 
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import {
@@ -21,7 +20,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['products', 'categories'],
+  whitelist: ['products', 'categories'], 
 };
 
 const rootReducer = combineReducers({

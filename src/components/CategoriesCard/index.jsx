@@ -1,12 +1,9 @@
 
-
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { fetchProductsByCategory } from '../../redux/actions/productsActions';
-import defaultStyles from './CategoriesCard.module.css';
-import baseUrl from '../../instance';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchProductsByCategory } from "../../redux/actions/productsActions";
+import defaultStyles from "./CategoriesCard.module.css";
+import baseUrl from "../../instance";
 
 const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
   const navigate = useNavigate();
@@ -19,7 +16,7 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
         navigate(`/category/${categoryId}`);
       })
       .catch((error) => {
-        console.error('Failed to fetch products by category:', error);
+        console.error("Failed to fetch products by category:", error);
       });
   };
 
@@ -33,17 +30,13 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
             onClick={() => handleCategoryClick(category.id)}
           >
             {category.image && (
-              <div className={styles.category_content}
-              
-             
-              >
-                 
+              <div className={styles.category_content}>
                 <img
                   className={styles.category_img}
                   src={`${baseUrl}${category.image}`}
                   alt={category.title}
                 />
-              
+
                 <div className={styles.category_title}>{category.title}</div>
               </div>
             )}

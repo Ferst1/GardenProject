@@ -13,7 +13,7 @@ const MobileMenu = ({ isMenuOpen, handleToggleMenu, className }) => {
         alt="Close Icon"
         onClick={handleToggleMenu}
       />
-      <NavLink to="/main_page" className={s.link} onClick={handleToggleMenu}>
+      <NavLink to="/" className={s.link} onClick={handleToggleMenu}>
         Main Page
       </NavLink>
       <NavLink to="/categories" className={s.link} onClick={handleToggleMenu}>

@@ -11,9 +11,13 @@
     margin: 40px 0px;
   }
   
-  .buttons_wrapper button {
-    position: relative;
+
+  @media(max-width:480px){
+  .buttons_wrapper  {
+    
+    display: none;
   }
+}
   
   .buttons_wrapper button:not(:first-child)::before {
     content: '';

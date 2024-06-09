@@ -1,6 +1,7 @@
 
-
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import Navigation from "./Navigation";
 import s from "./Header.module.css";
 import Logo from "./Logo";
@@ -13,6 +14,7 @@ import MobileMenu from "../MobileMenu";
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const favorites = useSelector((state) => state.products.favorites || []);
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,7 +28,12 @@ const Header = () => {
       </div>
       <Navigation />
       <div className={s.favoriteAndBasket}>
-        <Favorite isDarkMode={isDarkMode} />
+        <Link to="/favorites" className={s.favoriteLink}>
+          <Favorite isDarkMode={isDarkMode} />
+          {favorites.length > 0 && (
+            <span className={s.favoriteCount}>{favorites.length}</span>
+          )}
+        </Link>
         <Basket isDarkMode={isDarkMode} />
         <BurgerMenu onClick={handleToggleMenu} />
       </div>
