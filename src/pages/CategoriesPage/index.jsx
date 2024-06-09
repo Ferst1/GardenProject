@@ -35,10 +35,10 @@ const CategoriesPage = () => {
       </div>
       <div className={s.buttons_wrapper}>
         <Link to="/">
-        <ButtonSection text="Main Page" backgroundColor={"transparent"} />
+        <ButtonSection text="Main Page" backgroundColor={"transparent"} withLine={true}/>
        </Link>
        <Link to="/categories">
-        <ButtonSection text="Categories" backgroundColor={"transparent"} />
+        <ButtonSection text="Categories" backgroundColor={"transparent"} withLine={false}/>
       </Link>
       </div>
       <h2>Categories</h2>
