@@ -1,18 +1,29 @@
-
-
 .button {
-    padding: 8px 16px;
-    border: 1px solid var(--grey-divider);
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.26;
-    text-align: center;
-    color: var(--grey);
-    transition: background-color var(--transition);
-  }
+  position: relative;
+  padding: 8px 16px;
+  border: 1px solid var(--grey-divider);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.26;
+  text-align: center;
+  color: var(--grey);
+  transition: background-color var(--transition);
   
-  .button:hover {
-    opacity: 0.8;
-  }
-  
+ 
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button + .button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 16px;
+  height: 1px;
+  background-color: var(--grey-divider);
+  transform: translateY(-50%);
+}

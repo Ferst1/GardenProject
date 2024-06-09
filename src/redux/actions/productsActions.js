@@ -32,6 +32,20 @@ const fetchProductsByCategoryFailure = (error) => ({
   payload: error,
 });
 
+const fetchProductRequest = () => ({
+  type: actionTypes.FETCH_PRODUCT_REQUEST,
+});
+
+const fetchProductSuccess = (product) => ({
+  type: actionTypes.FETCH_PRODUCT_SUCCESS,
+  payload: product,
+});
+
+const fetchProductFailure = (error) => ({
+  type: actionTypes.FETCH_PRODUCT_FAILURE,
+  payload: error,
+});
+
 export const fetchProducts = () => {
   return async (dispatch) => {
     dispatch(fetchProductsRequest());
@@ -49,7 +63,7 @@ export const fetchProductsByCategory = (categoryId) => {
     dispatch(fetchProductsByCategoryRequest());
     try {
       const response = await axios.get(`${baseUrl}/categories/${categoryId}`);
-      const products = response.data.data; 
+      const products = response.data.data;
       dispatch(fetchProductsByCategorySuccess(products));
     } catch (error) {
       dispatch(fetchProductsByCategoryFailure(error.message));
@@ -57,3 +71,27 @@ export const fetchProductsByCategory = (categoryId) => {
   };
 };
 
+
+export const fetchProduct = (productId) => {
+  return async (dispatch) => {
+    dispatch(fetchProductRequest());
+    try {
+      const response = await axios.get(`${baseUrl}/products/${productId}`);
+      console.log('API response:', response.data);
+      const product = Array.isArray(response.data) ? response.data[0] : response.data;
+      dispatch(fetchProductSuccess(product));
+    } catch (error) {
+      console.error('API error:', error);
+      dispatch(fetchProductFailure(error.message));
+    }
+  };
+};
+
+
+export const incrementProductCount = () => ({
+  type: actionTypes.INCREMENT_PRODUCT_COUNT,
+});
+
+export const decrementProductCount = () => ({
+  type: actionTypes.DECREMENT_PRODUCT_COUNT,
+});

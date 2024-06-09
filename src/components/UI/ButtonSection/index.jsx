@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import s from './ButtonSection.module.css';
 
-const ButtonSection = ({ text, color, backgroundColor }) => {
+const ButtonSection = ({ text, to, color, backgroundColor }) => {
   return (
-    <button className={s.button} style={{ backgroundColor }}>
+    <Link to={to} className={s.button} style={{ color, backgroundColor }}>
       {text}
-    </button>
+    </Link>
   );
 };
 
 ButtonSection.propTypes = {
   text: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   color: PropTypes.string,
   backgroundColor: PropTypes.string,
 };
 
 export default ButtonSection;
-

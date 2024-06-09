@@ -1,5 +1,4 @@
 
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import {
@@ -17,16 +16,18 @@ import storage from 'redux-persist/lib/storage';
 import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
 
+
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['products', 'categories'],
+  whitelist: ['products', 'categories'], 
 };
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
+  
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

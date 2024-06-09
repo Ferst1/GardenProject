@@ -1,6 +1,8 @@
 
+
+
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom"; 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByCategory } from "../../redux/actions/productsActions";
 import styles from "./CategoryProductsPage.module.css";
@@ -8,7 +10,6 @@ import s from "../../components/ProductsCard/ProductsCard.module.css";
 import SortFilteredComponents from "../../components/SortFilteredComponents";
 import ButtonSection from "../../components/UI/ButtonSection";
 import ProductsCard from "../../components/ProductsCard";
-
 
 const CategoryProductsPage = () => {
   const { categoryId } = useParams();
@@ -35,18 +36,9 @@ const CategoryProductsPage = () => {
     <div className="container">
       <div className={styles.products_container}>
         <div className={styles.buttons_wrapper}>
-          <Link to="/">
-            <ButtonSection text="Main Page" backgroundColor={"transparent"} />
-          </Link>
-          <Link to="/categories">
-            <ButtonSection text="Categories" backgroundColor={"transparent"} />
-          </Link>
-          <Link to={`/category/${categoryId}`}>
-            <ButtonSection
-              text="Tools and equipment"
-              backgroundColor={"transparent"}
-            />
-          </Link>
+          <ButtonSection text="Main Page" to="/" backgroundColor="transparent" />
+          <ButtonSection text="Categories" to="/categories" backgroundColor="transparent" />
+          <ButtonSection text="Tools and equipment" to={`/category/${categoryId}`} backgroundColor="transparent" />
         </div>
         <h2>Tools and equipment</h2>
 
@@ -55,7 +47,9 @@ const CategoryProductsPage = () => {
         </div>
         <div className={s.products_grid}>
           {products.map((product) => (
-            <ProductsCard key={product.id} product={product} />
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <ProductsCard product={product} showAddToCartButton />
+            </Link>
           ))}
         </div>
       </div>

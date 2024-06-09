@@ -34,12 +34,8 @@ const CategoriesPage = () => {
       <div className={s.title_wrapper}>
       </div>
       <div className={s.buttons_wrapper}>
-        <Link to="/">
-        <ButtonSection text="Main Page" backgroundColor={"transparent"} />
-       </Link>
-       <Link to="/categories">
-        <ButtonSection text="Categories" backgroundColor={"transparent"} />
-      </Link>
+        <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} />
+        <ButtonSection text="Categories" to="/categories" backgroundColor={"transparent"} />
       </div>
       <h2>Categories</h2>
       <CategoriesCard categories={categories} limit={5} styles={categoryStyles} onClick={handleCategoryClick} />
