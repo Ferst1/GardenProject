@@ -27,10 +27,10 @@ const AllProductsPage = () => {
     <div className="container">
        <div className={styles.buttons_wrapper}>
           <Link to="/">
-            <ButtonSection text="Main Page" backgroundColor={"transparent"} />
+            <ButtonSection text="Main Page" backgroundColor={"transparent"} withLine={true}/>
           </Link>
           <Link to="/all_products">
-            <ButtonSection text="All products" backgroundColor={"transparent"} />
+            <ButtonSection text="All products" backgroundColor={"transparent"} withLine={false} />
           </Link>
          </div>
       <h2>All products</h2>

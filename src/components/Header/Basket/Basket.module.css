@@ -1,9 +1,8 @@
 
 .basket {
-    width: 48px;
-    height: 48px;
-  }
-  
+  width: 48px;
+  height: 48px;
+}
   @media (max-width: 1000px) {
     .basket {
       width: 44px;
