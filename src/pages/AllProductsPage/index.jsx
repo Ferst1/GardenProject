@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AllProducts from '../../components/AllProducts';
 import { fetchProducts } from '../../redux/actions/productsActions';
+import AllProducts from '../../components/AllProducts';
 import SorterSelect from '../../components/SorterSelect';
 import FilterPrice from '../../components/FilterPrice';
 import DiscountedCheckBox from '../../components/DiscountedCheckBox';
@@ -12,6 +12,7 @@ const AllProductsPage = () => {
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector(state => state.products);
   const [showDiscounted, setShowDiscounted] = useState(false);
+  const [sortBy, setSortBy] = useState('default');
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -23,6 +24,26 @@ const AllProductsPage = () => {
 
   const filteredProducts = showDiscounted ? products.filter(product => product.discont_price) : products;
 
+  const handleSortChange = (selectedValue) => {
+    setSortBy(selectedValue);
+  };
+
+  const sortedProducts = [...filteredProducts]; 
+
+  switch (sortBy) {
+    case 'newest':
+      sortedProducts.sort((a, b) => b.id - a.id);
+      break;
+    case 'price-high-low':
+      sortedProducts.sort((a, b) => b.price - a.price);
+      break;
+    case 'price-low-high':
+      sortedProducts.sort((a, b) => a.price - b.price);
+      break;
+    default:
+      break;
+  }
+
   return (
     <div className="container">
       <div className={styles.buttons_wrapper}>
@@ -33,9 +54,9 @@ const AllProductsPage = () => {
       <div className={styles.sorted_section}>
         <FilterPrice />
         <DiscountedCheckBox setShowDiscounted={setShowDiscounted} showDiscounted={showDiscounted} />
-        <SorterSelect />
+        <SorterSelect onChange={handleSortChange} />
       </div>
-      <AllProducts products={filteredProducts}/>
+      <AllProducts products={sortedProducts}/>
     </div>
   );
 };
