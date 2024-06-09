@@ -6,7 +6,7 @@ import s from "./CategoriesPage.module.css";
 import categoryStyles from '../CategoriesPage/CategoriesPage.module.css';
 import { fetchCategories } from '../../redux/actions/categoriesActions';
 import CategoriesCard from '../../components/CategoriesCard';
-import { Link } from 'react-router-dom';
+
 
 const CategoriesPage = () => {
   const dispatch = useDispatch();
