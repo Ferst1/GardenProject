@@ -1,11 +1,9 @@
 
-
 import React from 'react';
 import ProductCard from '../../components/ProductsCard';
 import styles from './SaleCards.module.css';
 
 const SaleCards = ({ products }) => {
- 
   if (!products) {
     return <div>Loading...</div>;
   }
@@ -21,7 +19,9 @@ const SaleCards = ({ products }) => {
   return (
     <div className={styles.saleCardWrapperStyle}>
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <div key={product.id} className="card">
+          <ProductCard product={product} />
+        </div>
       ))}
     </div>
   );
