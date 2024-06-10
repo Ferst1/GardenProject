@@ -1,9 +1,12 @@
 .sorted_section{
     display: flex;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap:16px
 }
 
 
 .sorted_section > * {
     margin-right: 40px;
   }
+
