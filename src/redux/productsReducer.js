@@ -6,6 +6,10 @@ export const initialState = {
   favorites: [], 
   loading: false,
   error: null,
+  filters: {
+    minPrice: 0,
+    maxPrice: Infinity,
+  },
 };
 
 export const actionTypes = {
@@ -22,6 +26,8 @@ export const actionTypes = {
   DECREMENT_PRODUCT_COUNT: 'DECREMENT_PRODUCT_COUNT',
   ADD_TO_FAVORITES: 'ADD_TO_FAVORITES',
   REMOVE_FROM_FAVORITES: 'REMOVE_FROM_FAVORITES',
+  SET_MIN_PRICE_FILTER: 'SET_MIN_PRICE_FILTER', 
+  SET_MAX_PRICE_FILTER: 'SET_MAX_PRICE_FILTER',
 };
 
 export function productsReducer(state = initialState, action) {
@@ -100,6 +106,24 @@ export function productsReducer(state = initialState, action) {
         ...state,
         favorites: state.favorites.filter(fav => fav.id !== action.payload.id),
       };
+
+      case actionTypes.SET_MIN_PRICE_FILTER:
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            minPrice: action.payload,
+          },
+        };
+  
+      case actionTypes.SET_MAX_PRICE_FILTER:
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            maxPrice: action.payload,
+          },
+        };
 
     default:
       return state;
