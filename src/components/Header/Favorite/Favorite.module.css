@@ -7,6 +7,9 @@
   
   .favorite_white{
     background-color:var(--white);
+    fill: white;
+  width: 24px; 
+  height: 24px
   }
   
   @media (max-width: 1000px) {

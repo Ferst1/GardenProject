@@ -1,6 +1,6 @@
 import React from 'react';
 import FavDark from "../../../media/icons/favorite-night-icon.svg";
-import FavLight from '../../../media/icons/favorite-light-icon.svg';
+import FavLight from '../../../media/icons/favorite-light-icon1.svg';
 import FavGreen from '../../../media/icons/favorite-green-icon.svg';
 import s from './Favorite.module.css';
 
