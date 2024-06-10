@@ -43,7 +43,7 @@ const ProductDetail = () => {
       console.log('Removing from favorites:', product);
       dispatch(removeFromFavorites(product));
     }
-    setIsFavorite(!isFavorite); // Сразу обновляем состояние для UI
+    setIsFavorite(!isFavorite);
   };
 
   if (loading) {
@@ -99,9 +99,10 @@ const ProductDetail = () => {
             </div>
             <ButtonAddToCard text="Add to Cart" />
           </div>
-          <h5>Description</h5>
+          <div className={styles.description_wrapper}> <h5>Description</h5>
           <p>{product.description}</p>
-          <Link to={`/product/${product.id}`}>Read more</Link>
+          <Link to={`/product/${product.id}`}>Read more</Link></div>
+         
         </div>
       </div>
     </>

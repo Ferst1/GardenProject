@@ -1,19 +1,49 @@
 .sale_card_wrapper{
 position: relative;
-    border: 1px solid var(--grey-divider);
+border: 1px solid var(--grey-divider);
 border-radius: 12px;
 max-width: 316px;
 height: 422px;
-background: var(--txt-white);
+margin: 0 auto;
+
 }
 .cards_button{
 
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 10px;   right: 10px;
 
 }
 
 .title{
     margin-right: 10px;
+}
+
+.saleCardWrapperStyle {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.cards_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--txt-white);
+  border: 1px solid var(--grey-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .saleCardWrapperStyle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .saleCardWrapperStyle {
+    grid-template-columns: 1fr;
+  }
 }
