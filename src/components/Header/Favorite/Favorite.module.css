@@ -5,6 +5,9 @@
     height: 48px;
   }
   
+  .favorite_white{
+    background-color:var(--white);
+  }
   
   @media (max-width: 1000px) {
     .favorite {

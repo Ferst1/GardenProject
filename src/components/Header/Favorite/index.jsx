@@ -15,7 +15,7 @@ const Favorite = ({ isDarkMode, onClick, isFavorite }) => {
         />
       ) : isDarkMode ? (
         <img
-          className={s.favorite}
+          className={s.favorite_white}
           src={FavLight}
           alt="Favorite Icon"
         />

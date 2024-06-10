@@ -11,11 +11,13 @@ const AllProducts = ({ products }) => {
   }
 
   return (
+    <div className="container">
     <div className={s.products_grid}>
       {products.map((product) => (
         <ProductsCard key={product.id} product={product} />
       ))}
     </div>
+  </div>
   );
 };
 
