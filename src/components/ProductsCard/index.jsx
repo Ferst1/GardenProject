@@ -1,6 +1,4 @@
 
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
@@ -10,6 +8,10 @@ import Favorite from "../../components/Header/Favorite";
 import Basket from "../../components/Header/Basket";
 
 const ProductsCard = ({ product, showAddToCartButton }) => {
+  if (!product) {
+    return <div>Product data is missing</div>;
+  }
+
   let discount = null;
   if (product.price && product.discont_price) {
     discount = Math.round(
@@ -54,3 +56,4 @@ const ProductsCard = ({ product, showAddToCartButton }) => {
 };
 
 export default ProductsCard;
+

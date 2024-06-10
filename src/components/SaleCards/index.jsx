@@ -1,16 +1,28 @@
-import React from "react";
-import s from "./SaleCards.module.css";
 
-import ProductsCard from "../ProductsCard";
+import React from 'react';
+import ProductCard from '../../components/ProductsCard';
+import styles from './SaleCards.module.css';
 
-const SaleCards = () => {
+const SaleCards = ({ products }) => {
+  if (!products) {
+    return <div>Loading...</div>;
+  }
+
+  if (!Array.isArray(products)) {
+    return <div>Error: products is not an array</div>;
+  }
+
+  if (products.length === 0) {
+    return <div>No products on sale</div>;
+  }
+
   return (
-    <div className={s.sale_card_wrapper}>
-      <div className={s.saleCards}>
-        <div className={s.cards_button}>
-       <ProductsCard />
+    <div className={styles.saleCardWrapperStyle}>
+      {products.map((product) => (
+        <div key={product.id} className="card">
+          <ProductCard product={product} />
         </div>
-      </div>
+      ))}
     </div>
   );
 };

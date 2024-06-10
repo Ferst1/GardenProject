@@ -23,9 +23,7 @@ const Navigation = () => {
           <NavLink to={"/all_sales"} className={s.navLink}>
             All sales
           </NavLink>
-          <NavLink to={"/favorites"} className={s.navLink}>
-            Favorites
-          </NavLink>
+        
         </nav>
       </div>
     </div>
