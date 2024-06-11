@@ -15,9 +15,9 @@ const ProductDetailPage = ({ favorites, setFavorites }) => {
         <div className={s.button_wrapper}>
       <ButtonSection text="Main Page" to="/" />
       <ButtonSection text="Categories" to="/categories" />
-      <ButtonSection text="Tools and equipment" to="/products" />
-      {categoryId && <ButtonSection text="Category" to={`/category/${categoryId}`} />}
-      {product && <ButtonSection text={` ${product.title}`} to={`/product/${productId}`} />}
+      <ButtonSection text="Tools and equipment" to={`/category/${categoryId}`}/>
+      {categoryId && <ButtonSection text="Category" />}
+      {product && <ButtonSection text={` ${product.title}`}  />}
       </div>
       
       <ProductDetail favorites={favorites} setFavorites={setFavorites}/>

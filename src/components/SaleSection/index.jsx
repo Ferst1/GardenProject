@@ -32,7 +32,7 @@ const SaleSection = () => {
         <div className={s.title_wrapper}>
           <h2>Sale</h2>
           <div className={s.button_with_line}>
-            <ButtonSection text="All sales" />
+            <ButtonSection to='/all_sales' text="All sales" />
           </div>
         </div>
         <SaleCards products={saleProducts} />
