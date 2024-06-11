@@ -20,12 +20,14 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['products', 'categories'], 
+  whitelist: ['basket'], 
+  blacklist: ['_persist']
 };
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
+//  basket: baskeReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
