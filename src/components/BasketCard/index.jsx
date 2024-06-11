@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ProductsCard from '../ProductsCard';
 
-const BasketCard = () => {
+const BasketCard = ({ product }) => {
   return (
-    <div>BasketCard</div>
-  )
-}
+    <div>
+      <ProductsCard product={product} showAddToCartButton={false} />
+    </div>
+  );
+};
 
-export default BasketCard
+export default BasketCard;

@@ -1,17 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import s from './ButtonAddToCard.module.css'
-const ButtonAddToCard
- = ({ to, text, color, backgroundColor }) => {
+
+
+import React from 'react';
+import s from './ButtonAddToCard.module.css';
+
+const ButtonAddToCard = ({ text, onClick, color, backgroundColor }) => {
   return (
-    <div>
-        <Link to={to} className={s.buttonAdd} style={{ color, backgroundColor }}>
+    <button
+      className={s.buttonAdd}
+      style={{ color, backgroundColor }}
+      onClick={onClick}
+    >
       {text}
-    </Link>
+    </button>
+  );
+};
 
-    </div>
-  )
-}
-
-export default ButtonAddToCard
-
+export default ButtonAddToCard;

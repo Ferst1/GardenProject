@@ -2,9 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import SharedLayout from './SharedLayout';
 import ErrorPage from '../pages/ErrorPage';
-
 import ProductDetailPage from '../pages/ProductDetailPage';
-
+import BasketProductsPage from '../pages/BasketProductsPage';
 
 
 
@@ -14,6 +13,8 @@ const AllProductsPage = lazy(() => import('../pages/AllProductsPage'));
 const AllSalesPage = lazy(() => import('../pages/AllSalesPage'));
 const CategoryProductsPage = lazy(() => import('../pages/CategoryProductsPage'));
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
+const BasketPage = lazy(() => import('../pages/BasketProductsPage'));
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <FavoritesPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'basket',
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <BasketProductsPage />
           </Suspense>
         ),
       },
