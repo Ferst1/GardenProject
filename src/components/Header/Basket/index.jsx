@@ -1,15 +1,22 @@
-import React from 'react';
-import BasDark from "../../../media/icons/basket-night-icon.svg";
-import BasLight from '../../../media/icons/basket-light-icon.svg'
-import s from '.';
 
-const Basket = ({ isDarkMode }) => {
+import React from 'react';
+import { ReactComponent as BasDark } from '../../../media/icons/basket-night-icon.svg';
+import { ReactComponent as BasLight } from '../../../media/icons/basket-white.svg';
+import { ReactComponent as BasketGreen } from '../../../media/icons/basket-green.svg';
+
+import s from './Basket.module.css';
+
+const Basket = ({ isDarkMode, onClick, isInBasket }) => {
   return (
-    <div>
-      {isDarkMode ? (
-        <img className={s.basket} src={BasLight} alt="Favorite Icon" />
+    <div className={s.basketIcon} onClick={onClick}>
+      {isInBasket ? (
+        <BasketGreen className={s.basket} />
       ) : (
-        <img className={s.basket} src={BasDark} alt="Favorite Icon" />
+        isDarkMode ? (
+          <BasLight className={s.basket} />
+        ) : (
+          <BasDark className={s.basket} />
+        )
       )}
     </div>
   );

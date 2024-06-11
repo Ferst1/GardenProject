@@ -8,7 +8,13 @@ export const actionTypes = {
     FETCH_BASKET_REQUEST: 'FETCH_BASKET_REQUEST',
     FETCH_BASKET_SUCCESS: 'FETCH_BASKET_SUCCESS',
     FETCH_BASKET_FAILURE: 'FETCH_BASKET_FAILURE',
+    ADD_TO_BASKET: 'ADD_TO_BASKET', 
 };
+
+export const addToBasket = (product) => ({
+    type: actionTypes.ADD_TO_BASKET,
+    payload: product,
+});
 
 export function basketReducer(state = initialState, action) {
     switch (action.type) {
@@ -16,7 +22,6 @@ export function basketReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: true,
-                error: null,
             };
         case actionTypes.FETCH_BASKET_SUCCESS:
             return {
@@ -30,9 +35,12 @@ export function basketReducer(state = initialState, action) {
                 loading: false,
                 error: action.payload,
             };
+        case actionTypes.ADD_TO_BASKET:
+            return {
+                ...state,
+                basket: [...state.basket, action.payload], 
+            };
         default:
             return state;
     }
 }
-
-export default basketReducer

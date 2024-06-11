@@ -65,3 +65,30 @@
       display: flex;
     }
   }
+
+  .favoriteAndBasket {
+    display: flex;
+    align-items: center;
+  }
+  
+  .basketLink {
+    position: relative;
+  }
+  
+  .basketContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .basketCount {
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    background-color:var(--green);
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
