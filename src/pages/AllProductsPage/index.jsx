@@ -26,8 +26,7 @@ const AllProductsPage = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
-  const filteredProducts = products.filter(product => {
+    const filteredProducts = products.filter(product => {
     const meetsPriceCriteria = product.price >= filters.minPrice && product.price <= filters.maxPrice;
     const meetsDiscountCriteria = showDiscounted ? product.discont_price : true;
     return meetsPriceCriteria && meetsDiscountCriteria;
