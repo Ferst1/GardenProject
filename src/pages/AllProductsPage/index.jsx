@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/actions/productsActions';
@@ -26,31 +25,31 @@ const AllProductsPage = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-    const filteredProducts = products.filter(product => {
+
+  const filteredProducts = products.filter(product => {
     const meetsPriceCriteria = product.price >= filters.minPrice && product.price <= filters.maxPrice;
-    const meetsDiscountCriteria = showDiscounted ? product.discont_price : true;
+    const meetsDiscountCriteria = showDiscounted ? product.discount_price : true;
     return meetsPriceCriteria && meetsDiscountCriteria;
   });
 
-  const handleSortChange = (selectedValue) => {
-    setSortBy(selectedValue);
+  const sortProducts = (products, sortBy) => {
+    switch (sortBy) {
+      case 'newest':
+        return [...products].sort((a, b) => b.id - a.id);
+      case 'price-high-low':
+        return [...products].sort((a, b) => b.price - a.price);
+      case 'price-low-high':
+        return [...products].sort((a, b) => a.price - b.price);
+      default:
+        return products;
+    }
   };
 
-  const sortedProducts = [...filteredProducts]; 
+  const sortedProducts = sortProducts(filteredProducts, sortBy);
 
-  switch (sortBy) {
-    case 'newest':
-      sortedProducts.sort((a, b) => b.id - a.id);
-      break;
-    case 'price-high-low':
-      sortedProducts.sort((a, b) => b.price - a.price);
-      break;
-    case 'price-low-high':
-      sortedProducts.sort((a, b) => a.price - b.price);
-      break;
-    default:
-      break;
-  }
+  const handleSortChange = selectedValue => {
+    setSortBy(selectedValue);
+  };
 
   return (
     <div className="container">
@@ -70,3 +69,4 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
+

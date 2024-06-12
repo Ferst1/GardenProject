@@ -20,13 +20,11 @@ const AllProducts = () => {
   });
 
   return (
-    <div className="container">
       <div className={s.products_grid}>
         {filteredProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
       </div>
-    </div>
   );
 };
 
