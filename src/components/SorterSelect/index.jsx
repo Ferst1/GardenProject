@@ -2,9 +2,8 @@ import React from 'react';
 import defaultStyles from './SorterSelect.module.css';
 
 const SorterSelect = ({ styles = defaultStyles, onChange }) => {
-  const handleChange = (e) => {
-    const selectedValue = e.target.value;
-    onChange(selectedValue);
+  const handleChange = event => {
+    onChange(event.target.value);
   };
 
   return (
@@ -21,3 +20,4 @@ const SorterSelect = ({ styles = defaultStyles, onChange }) => {
 };
 
 export default SorterSelect;
+

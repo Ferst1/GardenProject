@@ -1,7 +1,7 @@
-
 .products_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
     justify-content: center;
     padding-top: 32px;
     gap: 25px;
@@ -9,6 +9,7 @@
 
 
 @media (max-width: 1000px) {
+
     .products_grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -22,12 +23,12 @@
     .products_grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
         gap: 20px;
     }
 }
 
 @media (max-width: 480px) {
-
     .products_grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -41,4 +42,7 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 24px;
     }
-}
+} 
+  
+  
+  
