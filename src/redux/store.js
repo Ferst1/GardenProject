@@ -22,7 +22,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['basket'], 
+  whitelist: ['basket','products'], 
   blacklist: ['_persist']
 };
 

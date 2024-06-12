@@ -23,9 +23,6 @@ const Navigation = () => {
           <NavLink to={"/all_sales"} className={s.navLink}>
             All sales
           </NavLink>
-          <NavLink to={"/basket"} className={s.navLink}>
-            Shop Cards
-          </NavLink>
         
         </nav>
       </div>

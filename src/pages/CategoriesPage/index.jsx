@@ -16,9 +16,8 @@ const CategoriesPage = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const handleCategoryClick = (categoryId) => {
+  const handleCategoryClick = (categoryId) => { 
     
-    console.log(`Clicked category id: ${categoryId}`);
   };
 
   if (loading || !categories) {
