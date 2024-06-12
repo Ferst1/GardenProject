@@ -8,6 +8,7 @@
   .favorite_white{
     background-color:var(--white);
     fill: white;
+    background-color: white;
   width: 24px; 
   height: 24px
   }

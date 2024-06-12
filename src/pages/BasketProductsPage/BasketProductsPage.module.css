@@ -1,0 +1,24 @@
+.basket_products_page {
+    padding: 20px;
+  }
+  
+  .basket_products_page h2 {
+    margin-bottom: 20px;
+  }
+  
+  .basket_products_page ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .basket_products_page li {
+    margin-bottom: 20px;
+  }
+  
+  .title_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  

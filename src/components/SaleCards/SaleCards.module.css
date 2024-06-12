@@ -62,7 +62,8 @@
 
 @media (max-width: 479px) and (min-width: 360px) {
   .saleCardWrapperStyle {
-    grid-template-columns: repeat(1, 320px);
+
+    
   }
 
   .saleCardWrapperStyle .card {

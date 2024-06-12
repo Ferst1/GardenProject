@@ -32,16 +32,31 @@
   align-items: center;
 }
 
-.favoriteCount {
+.commonCount {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background:var(--green);
+  top: 0px;
+  left: -5px;
+  background: var(--green);
   color: white;
   border-radius: 50%;
   padding: 5px 10px;
   font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
 }
+
+.favoriteCount {
+  composes: commonCount;
+}
+
+.basketCount {
+  composes: commonCount;
+}
+
+
+
+
 
 @media (max-width: 768px) {
     .header{
@@ -78,17 +93,5 @@
   .basketContainer {
     position: relative;
     display: inline-block;
-  }
-  
-  .basketCount {
-    position: absolute;
-    top: 0px; 
-    left: 0px; 
-    background-color:var(--green);
-    color: white;
-    border-radius: 50%;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: bold;
   }
   

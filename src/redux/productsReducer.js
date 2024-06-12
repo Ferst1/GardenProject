@@ -107,23 +107,23 @@ export function productsReducer(state = initialState, action) {
         favorites: state.favorites.filter(fav => fav.id !== action.payload.id),
       };
 
-      case actionTypes.SET_MIN_PRICE_FILTER:
-        return {
-          ...state,
-          filters: {
-            ...state.filters,
-            minPrice: action.payload,
-          },
-        };
-  
-      case actionTypes.SET_MAX_PRICE_FILTER:
-        return {
-          ...state,
-          filters: {
-            ...state.filters,
-            maxPrice: action.payload,
-          },
-        };
+    case actionTypes.SET_MIN_PRICE_FILTER:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          minPrice: action.payload,
+        },
+      };
+
+    case actionTypes.SET_MAX_PRICE_FILTER:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          maxPrice: action.payload,
+        },
+      };
 
     default:
       return state;

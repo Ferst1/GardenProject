@@ -12,6 +12,7 @@
   .sale_card_wrapper {
     flex-direction: column;
     align-items: center;
+    
   }
 }
 
@@ -19,5 +20,7 @@
   .sale_card_wrapper {
     flex-direction: column;
     align-items: center;
+    justify-content:center;
+    
   }
 }
