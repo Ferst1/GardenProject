@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'; 
+
+
+
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SaleCards from '../SaleCards';
 import ButtonSection from '../UI/ButtonSection';
@@ -21,10 +24,25 @@ const SaleSection = () => {
     return <div>Error: {error}</div>;
   }
 
+  if (!products) {
+    console.error('SaleSection: products is undefined');
+    return <div>Products are undefined</div>;
+  }
+
+  if (!Array.isArray(products)) {
+    console.error('SaleSection: products is not an array:', products);
+    return <div>Products is not an array</div>;
+  }
+
   const saleProducts = products
     .filter(product => product.discont_price)
     .sort((a, b) => a.discont_price - b.discont_price)
     .slice(0, 4);
+
+  if (saleProducts.length === 0) {
+    console.warn('SaleSection: no products on sale');
+    return <div>No products on sale</div>;
+  }
 
   return (
     <div>
