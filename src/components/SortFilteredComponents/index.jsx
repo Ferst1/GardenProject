@@ -7,16 +7,17 @@ import filterPriceStyles from '../FilterPrice/FilterPrice.module.css';
 import discountedCheckBoxStyles from '../DiscountedCheckBox/DiscountedCheckBox.module.css';
 import sorterSelectStyles from '../SorterSelect/SorterSelect.module.css';
 
-const SortFilteredComponents = () => {
+const SortFilteredComponents = ({ onMinPriceChange, onMaxPriceChange, onDiscountChange, onSortChange, isDiscounted }) => {
   return (
     <div className={styles.sorted_wrapper}>
       <div className={styles.sorted_section}>
-        <FilterPrice styles={filterPriceStyles} />
-        <DiscountedCheckBox styles={discountedCheckBoxStyles} />
-        <SorterSelect styles={sorterSelectStyles} />
+        <FilterPrice styles={filterPriceStyles} onMinPriceChange={onMinPriceChange} onMaxPriceChange={onMaxPriceChange} />
+        <DiscountedCheckBox styles={discountedCheckBoxStyles} setShowDiscounted={onDiscountChange} showDiscounted={isDiscounted} />
+        <SorterSelect styles={sorterSelectStyles} onChange={onSortChange} />
       </div>
     </div>
   );
 };
 
 export default SortFilteredComponents;
+
