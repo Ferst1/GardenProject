@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/actions/productsActions';
@@ -20,7 +21,22 @@ const AllSalesPage = () => {
     return <div>Error: {error}</div>;
   }
 
+  if (!products) {
+    console.error('AllSalesPage: products is undefined');
+    return <div>Products are undefined</div>;
+  }
+
+  if (!Array.isArray(products)) {
+    console.error('AllSalesPage: products is not an array:', products);
+    return <div>Products is not an array</div>;
+  }
+
   const saleProducts = products.filter(product => product.discont_price);
+
+  if (saleProducts.length === 0) {
+    console.warn('AllSalesPage: no products on sale');
+    return <div>No products on sale</div>;
+  }
 
   return (
     <div className="container">
