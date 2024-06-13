@@ -94,6 +94,7 @@ const Basket = ({ onClick, isInBasket }) => {
     }
   };
 
+  
   const getIcon = () => {
     if (isInBasket) {
       return BasketGreen; 
