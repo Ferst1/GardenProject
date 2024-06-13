@@ -68,11 +68,380 @@
 
 // export default Basket;
 
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = () => {
+//     if (isInBasket) {
+//       onClick(false);
+//     } else {
+//       onClick(true);
+//     }
+//   };
+
+  
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen; 
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = () => {
+//     onClick(isInBasket); // передаем текущее состояние корзины
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = () => {
+//     onClick(!isInBasket); // Передаем текущее состояние корзины в onClick
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = () => {
+//     if (typeof onClick === 'function') {
+//       onClick(!isInBasket); // Передаем текущее состояние корзины в onClick
+//     }
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = (e) => {
+//     e.preventDefault(); // предотвратить переход по ссылке
+//     onClick(e); // Передаем событие в onClick
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ onClick, isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const handleClick = (e) => {
+//     if (onClick) {
+//       e.preventDefault();
+//       onClick(e);
+//     }
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasketGreen;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onClick={handleClick} 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
+// import React, { useState } from 'react';
+// import BasDark from '../../../media/icons/basket-hover-dark.svg';
+// import BasLight from '../../../media/icons/basket-white.svg';
+// import BasketGreen from '../../../media/icons/basket-green.svg';
+// import s from './Basket.module.css';
+
+// const Basket = ({ isInBasket }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const handleMouseEnter = () => {
+//     setIsHovered(true);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setIsHovered(false);
+//   };
+
+//   const getIcon = () => {
+//     if (isInBasket) {
+//       return BasLight;
+//     } else if (isHovered) {
+//       return BasDark;
+//     } else {
+//       return BasLight;
+//     }
+//   };
+
+//   return (
+//     <div 
+//       onMouseEnter={handleMouseEnter} 
+//       onMouseLeave={handleMouseLeave} 
+//       className={s.basketContainer}
+//       role="button" 
+//       tabIndex={0}
+//     >
+//       <img
+//         className={s.basket}
+//         src={getIcon()}
+//         alt="Basket Icon"
+//       />
+//     </div>
+//   );
+// };
+
+// export default Basket;
+
+
 import React, { useState } from 'react';
 import BasDark from '../../../media/icons/basket-hover-dark.svg';
 import BasLight from '../../../media/icons/basket-white.svg';
 import BasketGreen from '../../../media/icons/basket-green.svg';
-
 import s from './Basket.module.css';
 
 const Basket = ({ onClick, isInBasket }) => {
@@ -87,17 +456,12 @@ const Basket = ({ onClick, isInBasket }) => {
   };
 
   const handleClick = () => {
-    if (isInBasket) {
-      onClick(false);
-    } else {
-      onClick(true);
-    }
+    onClick(!isInBasket); // Передаем текущее состояние корзины в onClick
   };
 
-  
   const getIcon = () => {
     if (isInBasket) {
-      return BasketGreen; 
+      return BasketGreen;
     } else if (isHovered) {
       return BasDark;
     } else {
@@ -124,4 +488,3 @@ const Basket = ({ onClick, isInBasket }) => {
 };
 
 export default Basket;
-

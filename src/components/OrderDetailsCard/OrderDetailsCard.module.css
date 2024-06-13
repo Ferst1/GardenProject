@@ -1,0 +1,16 @@
+.order_details_wrapper {
+    padding: 20px;
+    border: 1px solid var(--grey-divider);
+    border-radius: 6px;
+  }
+  
+  .detail_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    margin-bottom: 20px;
+  }
+  
