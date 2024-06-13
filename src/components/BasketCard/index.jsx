@@ -39,24 +39,27 @@ const BasketCard = ({ product }) => {
       />
       <div className={styles.product_details}>
         <h5>{product.title}</h5>
-        <div className={styles.controls_and_cart}>
-          <div className={styles.count_controls}>
-            <button onClick={handleDecrement}>-</button>
-            <span>{product.count ?? 0}</span>
-            <button onClick={handleIncrement}>+</button>
+        <div className={styles.count_wrapper}>
+          <div className={styles.controls_and_cart}>
+            <div className={styles.count_controls}>
+              <button onClick={handleDecrement}>-</button>
+              <span>{product.count ?? 0}</span>
+              <button onClick={handleIncrement}>+</button>
+            </div>
+            <div className={styles.price_container}>
+              <div className={styles.product_price}>
+                ${totalPrice.toFixed(2)}
+              </div>
+              {product.discont_price && (
+                <div className={styles.discont_price}>
+                  ${product.discont_price.toFixed(2)}
+                </div>
+              )}
+              {discount !== null && (
+                <div className={styles.discont_tag}>{`-${discount}%`}</div>
+              )}
+            </div>
           </div>
-        <div className={styles.product_price}>
-          ${totalPrice.toFixed(2)}
-          {product.discont_price && (
-            <span className={styles.discont_price}>
-              ${product.discont_price.toFixed(2)}
-            </span>
-          )}
-          {discount !== null && (
-            <div className={styles.discont_tag}>{`-${discount}%`}</div>
-          )}
-        </div>
-
         </div>
       </div>
     </div>
