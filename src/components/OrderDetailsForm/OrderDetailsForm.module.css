@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
   }
   
   .formGroup {
@@ -34,13 +35,12 @@
   .error {
     color: red;
     margin-top: 8px;
+    font-size: 14px;
   }
   
   .button {
     padding: 16px 32px;
-    background-color: var(--btn-background);
     color: var(--txt-white);
-    border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
@@ -49,10 +49,11 @@
     max-width: 484px;
     height: 58px;
     text-align: center;
-    line-height: 130%;
+    line-height: 1.3;
+    transition: all var(--transition);
   }
   
-  .button:hover {
-    background-color: var(--btn-background-hover);
+  .button:active{
+
+    background-color: var(--black);
   }
-  

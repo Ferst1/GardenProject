@@ -1,7 +1,9 @@
 .order_details_wrapper {
+  max-width: 780px;
     padding: 20px;
     border: 1px solid var(--grey-divider);
     border-radius: 6px;
+    background-color: var(--light-grey);
   }
   
   .detail_row {
@@ -12,5 +14,29 @@
   
   h3 {
     margin-bottom: 20px;
+  }
+  
+
+  .detail_row p{
+
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 32px;
+line-height: 130%;
+color: var(--grey);
+  }
+
+
+  .detail_row_total{
+    display: flex;
+    gap:8px
+  }
+
+  .total_price {
+    font-family: var(--font-family) ;
+    font-weight: 700 !important;
+    font-size: 48px !important;
+    line-height: 110% !important;
+    color: var(--black) !important;
   }
   

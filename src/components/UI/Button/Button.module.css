@@ -1,0 +1,22 @@
+.button_elem{
+border-radius: 6px;
+padding: 16px 32px;
+max-width: 484px;
+height: 58px;
+background: var(--green);
+border:var(--green);
+text-align: center;
+  color: var(--txt-white);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.button_elem:hover {
+    background: var(--black);
+    color: var(--green);
+  }
+
+  .button_elem:active {
+    background: var(--light-grey);
+  }
+  
