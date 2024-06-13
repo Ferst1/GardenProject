@@ -1,7 +1,7 @@
 
 .saleCardWrapperStyle {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
  
   
@@ -61,10 +61,6 @@
 }
 
 @media (max-width: 479px) and (min-width: 360px) {
-  .saleCardWrapperStyle {
-
-    
-  }
 
   .saleCardWrapperStyle .card {
     width: 320px;

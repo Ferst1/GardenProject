@@ -64,7 +64,7 @@ const ProductsCard = ({ product, showAddToCartButton }) => {
                   alt={product.title}
                 />
                 <div className={s.icons}>
-                  <Favorite isFavorite={isFavorite} onClick={handleAddToFavorites} />
+                  <Favorite onClick={handleAddToFavorites} isFavorite={isFavorite}/>
                   <Basket onClick={handleAddToBasket} isInBasket={isInBasket} />
                 </div>
                 {showAddToCartButton && (
