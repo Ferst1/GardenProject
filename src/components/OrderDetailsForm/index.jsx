@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import s from './OrderDetailsForm.module.css';
+import Button from '../UI/Button';
 
 const OrderDetailsForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -56,7 +57,7 @@ const OrderDetailsForm = () => {
         {errors.email && <p className={s.error}>{errors.email.message}</p>}
       </div>
       
-      <button type="submit" className={s.button}>Submit</button>
+      <Button type="submit" className={s.button} text="Order">Submit</Button>
     </form>
   );
 };
