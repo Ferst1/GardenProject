@@ -1,4 +1,3 @@
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import {
@@ -16,20 +15,20 @@ import storage from 'redux-persist/lib/storage';
 import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
 import { basketReducer } from './basketReducer';
-
+import modalReducer from './modalReducer';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['basket','products'], 
-  blacklist: ['_persist']
+  whitelist: ['basket', 'products'],
 };
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
-  basket: basketReducer
+  basket: basketReducer,
+  modal: modalReducer, 
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

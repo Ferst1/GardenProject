@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MuiModal from '@mui/material/Modal';
-import s from '../ModalWindow/ModalWindow.module.css';
+import s from './ModalWindow.module.css';
 import { ReactComponent as CloseIcon } from '../../media/icons/close.svg';
+import ProductsCard from '../../components/ProductsCard';
+import ButtonAddToCard from '../UI/ButtonAddToCard';
 
-const ModalWindow = ({ isOpen, handleClose, title, paragraph1, paragraph2, children }) => {
+const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setOpen(true);
+    } else {
+      const timer = setTimeout(() => setOpen(false), 700);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  if (!content || !content.product) {
+    return null;
+  }
+
   return (
     <MuiModal
       open={isOpen}
       onClose={handleClose}
       closeAfterTransition
-      slots={{ backdrop: ({ children }) => <div className={s.backdrop}>{children}</div> }}
-      slotProps={{
-        backdrop: {
-          timeout: 500,
-        },
+      BackdropProps={{
+        timeout: 800,
+        className: `${s.backdrop} ${isOpen ? s.backdropOpen : ''}`,
       }}
     >
-      <div className={s.modal}>
-      <CloseIcon
+      <div className={`${s.modal} ${isOpen ? s.modalOpen : ''}`}>
+        <CloseIcon
           className={s.close}
           onClick={handleClose}
         />
-        <h1 className={s.title}>{title}</h1>
-        <p className={s.paragraph}>{paragraph1}</p>
-        <p className={s.paragraph}>{paragraph2}</p>
-        {children}
+        <p className={s.discountHeader}>50% discount on product of the day!</p>
+        <div className={s.cardContainer}>
+          <ProductsCard product={content.product}/>
+          <ButtonAddToCard product={content.product} onAddToBasket={() => onAddToBasket(content.product)} />
+        </div>
       </div>
     </MuiModal>
   );

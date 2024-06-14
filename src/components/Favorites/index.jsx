@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ProductsCard from '../ProductsCard'; // Путь к вашему компоненту карточки продукта
+import ProductsCard from '../ProductsCard'; 
 import styles from './Favorites.module.css';
 
 const Favorites = () => {

@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
+import ModalWindowContainer from "../ModalWindowContainer";
 
 const SharedLayout = () => {
   return (
@@ -13,6 +14,7 @@ const SharedLayout = () => {
         </Suspense>
       </main>
       <Footer />
+      <ModalWindowContainer />
      
     </div>
   );
