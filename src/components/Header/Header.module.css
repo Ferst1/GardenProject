@@ -20,6 +20,7 @@
 .favoriteAndBasket{
     display: flex;
     align-items: center;
+    
 }
 
 .favoriteAndBasket > *:not(:last-child) {
