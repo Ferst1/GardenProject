@@ -1,13 +1,13 @@
 
-.button-discount{
+.button_discount{
 font-family: var(--font-family);
 line-height: 1.26;
 text-align: center;
 border-radius: 6px;
 padding: 6px 16px;
 max-width: 151px;
+border: none !important;
 background: var(--green);
-border: none;
 }
 
 

@@ -47,13 +47,13 @@
   display: flex;
 }
 
-.favoriteCount {
+/* .favoriteCount {
   composes: commonCount;
 }
 
 .basketCount {
   composes: commonCount;
-}
+} */
 
 
 
