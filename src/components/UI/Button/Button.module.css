@@ -9,7 +9,6 @@
 }
 
 .button_elem:hover {
-    background: var(--black);
-    color: var(--green);
-  }
+  color: #FFFFFF;
+}
 
