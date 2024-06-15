@@ -135,6 +135,7 @@
 // export default ProductDetail;
 
 
+
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -144,6 +145,7 @@ import ButtonAddToCard from '../UI/ButtonAddToCard';
 import { baseUrl } from '../../instance';
 import Favorite from '../Header/Favorite';
 import { addToBasket } from '../../redux/basketReducer';
+import ButtonCounter from '../UI/ButtonCounter'; // Импортируем новый компонент
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -239,11 +241,11 @@ const ProductDetail = () => {
           )}
         </div>
         <div className={styles.controls_and_cart}>
-          <div className={styles.count_controls}>
-            <button onClick={handleDecrement}>-</button>
-            <span>{productCount}</span>
-            <button onClick={handleIncrement}>+</button>
-          </div>
+          <ButtonCounter 
+            productCount={productCount}
+            handleIncrement={handleIncrement}
+            handleDecrement={handleDecrement}
+          />
           <ButtonAddToCard 
             product={product}
             onAddToBasket={handleAddToBasket}
