@@ -14,9 +14,21 @@ align-items: center;
 }
 
 
-.buttonAdd:hover,
+.buttonAdd.added {
+    color:var(--black);
+    background-color: var(--white);
+    border-color: var(--green);
+  }
+.buttonAdd:hover{
+    background: var(--black);
+    color: var(--white);
+
+}
+
+
 .buttonAdd:active
 {
-   background: var(--black);
+   background: var(--white);
+   color: var(--black);
 }
 

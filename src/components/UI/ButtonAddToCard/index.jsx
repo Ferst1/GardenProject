@@ -1,39 +1,27 @@
-// import React from 'react';
-// import s from './ButtonAddToCard.module.css';
-
-// const ButtonAddToCard = ({ text, onClick, color, backgroundColor, borderColor }) => {
-//   return (
-//     <button
-//       className={s.buttonAdd}
-//       style={{ color, backgroundColor, borderColor }}
-//       onClick={onClick}
-//     >
-//       {text}
-//     </button>
-//   );
-// };
-
-// export default ButtonAddToCard;
 
 
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import s from './ButtonAddToCard.module.css';
+import { addToBasket } from '../../../redux/basketReducer';
 
 const ButtonAddToCard = ({ product, onAddToBasket }) => {
+  const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket.basket);
   const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     if (product) {
-      const basket = JSON.parse(localStorage.getItem('basket')) || [];
       const isProductInBasket = basket.some(item => item.id === product.id);
       setIsAdded(isProductInBasket);
     }
-  }, [product]);
+  }, [basket, product]);
 
   const handleClick = () => {
     if (product) {
-      onAddToBasket();
+      dispatch(addToBasket(product));
       setIsAdded(true);
+      onAddToBasket && onAddToBasket();
     }
   };
 
@@ -43,12 +31,7 @@ const ButtonAddToCard = ({ product, onAddToBasket }) => {
 
   return (
     <button
-      className={s.buttonAdd}
-      style={{
-        color: isAdded ? 'black' : undefined,
-        backgroundColor: isAdded ? 'white' : undefined,
-        borderColor: isAdded ? 'var(--green)' : undefined
-      }}
+      className={`${s.buttonAdd} ${isAdded ? s.added : ''}`}
       onClick={handleClick}
     >
       {isAdded ? 'Added' : 'Add to Cart'}
