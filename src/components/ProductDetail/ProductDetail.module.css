@@ -75,25 +75,7 @@
   gap: 20px;
 }
 
-.count_controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.count_controls button {
-  border: 1px solid var(--grey-divider);
-  border-radius: 6px;
-  width: 58px;
-  height: 58px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.count_controls span {
-  font-size: 20px;
-  font-weight: bold;
-}
 
 .description_wrapper {
   grid-column: span 2;
