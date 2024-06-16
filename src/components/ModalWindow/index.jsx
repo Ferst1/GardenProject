@@ -5,18 +5,18 @@ import s from './ModalWindow.module.css';
 import { ReactComponent as CloseIcon } from '../../media/icons/close.svg';
 import ProductsCard from '../../components/ProductsCard';
 import ButtonAddToCard from '../UI/ButtonAddToCard';
+import { useSelector } from 'react-redux';
 
 const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
-  const [open, setOpen] = useState(false);
+  const basket = useSelector((state) => state.basket.basket);
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      setOpen(true);
-    } else {
-      const timer = setTimeout(() => setOpen(false), 700);
-      return () => clearTimeout(timer);
+    if (content && content.product) {
+      const isProductInBasket = basket.some(item => item.id === content.product.id);
+      setIsAdded(isProductInBasket);
     }
-  }, [isOpen]);
+  }, [basket, content]);
 
   if (!content || !content.product) {
     return null;
@@ -40,7 +40,13 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
         <p className={s.discountHeader}>50% discount on product of the day!</p>
         <div className={s.cardContainer}>
           <ProductsCard product={content.product} showBasketIcon={false} />
-          <ButtonAddToCard product={content.product} onAddToBasket={() => onAddToBasket(content.product)} />
+        </div>
+        <div className={s.buttonContainer}>
+          <ButtonAddToCard
+            product={content.product}
+            onAddToBasket={() => onAddToBasket(content.product)}
+            className={`${s.buttonAddModal} ${isAdded ? s.added : ''}`}
+          />
         </div>
       </div>
     </MuiModal>
