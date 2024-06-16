@@ -1,7 +1,7 @@
 .button_elem{
 border-radius: 6px;
 padding: 16px 32px;
-max-width: 484px;
+max-width: auto;
 height: 58px;
 background: var(--green);
 border:var(--green);
