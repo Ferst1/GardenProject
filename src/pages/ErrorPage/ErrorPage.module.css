@@ -29,9 +29,10 @@
   
   .button_return {
     border-radius: 6px;
-    padding: 16px 56px;
+    margin-top: 20px;
+    padding: 16px 59px;
     max-width: 209px;
-    height: 58px;
+    font-size: 20px;
     background: var(--green);
     color: var(--white);
     border: none;
