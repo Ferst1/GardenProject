@@ -1,14 +1,22 @@
-.button_elem {
-  border-radius: 6px;
-  padding: 16px 32px;
-  max-width: auto;
-  height: 58px;
-  text-align: center;
+.button_elem{
+border-radius: 6px;
+padding: 16px 32px;
+max-width: auto;
+height: 58px;
+background: var(--green);
+border:var(--green);
+text-align: center;
+  color: var(--txt-white);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
 }
 
 .button_elem:hover {
-  color: #FFFFFF;
-}
+    background: #424436;
+    color: #FFFFFF;
+  }
 
+  .button_elem:active {
+    background: var(--light-grey);
+  }
+  
