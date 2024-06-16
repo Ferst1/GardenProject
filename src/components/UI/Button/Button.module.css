@@ -1,20 +1,16 @@
-.button_elem{
-border-radius: 6px;
-padding: 16px 32px;
-max-width: auto;
-height: 58px;
-background: var(--green);
-border:var(--green);
-text-align: center;
-  color: var(--txt-white);
+.button_elem {
+  border-radius: 6px;
+  padding: 16px 32px;
+  max-width: auto;
+  height: 58px;
+  text-align: center;
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .button_elem:hover {
-    background: var(--black);
-    color: var(--green);
-  }
+  color: #FFFFFF;
+}
 
   .button_elem:active {
     background: var(--light-grey);

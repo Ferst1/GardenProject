@@ -29,7 +29,8 @@ const CategoriesPage = () => {
   }
 
   return (
-    <div className={s.container}>
+    <div className="container">
+      <div className={s.wrapper_container}>
       <div className={s.title_wrapper}>
       </div>
       <div className={s.buttons_wrapper}>
@@ -38,6 +39,7 @@ const CategoriesPage = () => {
       </div>
       <h2>Categories</h2>
       <CategoriesCard categories={categories} limit={5} styles={categoryStyles} onClick={handleCategoryClick} />
+      </div>
     </div>
   );
 };

@@ -14,7 +14,6 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         justify-content: center;
-        padding-top: 32px;
         gap: 20px;
     }
 }
@@ -23,7 +22,6 @@
     .products_grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
         gap: 20px;
     }
 }
