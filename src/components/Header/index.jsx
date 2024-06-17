@@ -11,7 +11,6 @@ import Favorite from "./Favorite";
 import Basket from "../Header/Basket";
 import BurgerMenu from "./BurgerMenu";
 import MobileMenu from "../MobileMenu";
-
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
