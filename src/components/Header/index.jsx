@@ -1,4 +1,5 @@
 
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -10,7 +11,6 @@ import Favorite from "../UI/FavoriteHeader";
 import Basket from "../UI/BasketHeader";
 import BurgerMenu from "./BurgerMenu";
 import MobileMenu from "../MobileMenu";
-
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +21,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // const handleBasketClick = () => {
-  //   window.location.href = "/basket";
-  // };
+
 
   return (
     <div className={`${s.header} container`}>
