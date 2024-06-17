@@ -1,6 +1,7 @@
 .count_controls {
     display: flex;
     align-items: center;
+    padding-left: 0;
 
 
   }
@@ -46,14 +47,18 @@ width: 58px;
   
   @media screen and (max-width: 480px) {
 
+.count_controls{
+
+}
+
+
     .count_controls button{
       width: 47px;
-      height: 47px;
+       height: 47px;
     }
     .count_controls span {
-
-width: 52px;
-height: 47px;
+      width: 52px;
+      height: 47px;
 
     }}
   @media screen and (max-width: 360px) {

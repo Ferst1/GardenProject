@@ -1,5 +1,6 @@
+
 .basket_products_page {
-  padding: 20px;
+
 }
 
 .product_card_wrapper {
@@ -37,7 +38,6 @@
 
   .order_details {
     margin-top: 20px;
-    width: 728px;
-    height: 963px;
+    width: 100%;
   }
 }
