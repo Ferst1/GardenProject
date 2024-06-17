@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/actions/productsActions';
 import SaleCards from '../../components/SaleCards';
+import ButtonSection from '../../components/UI/ButtonSection';
 import styles from './AllSalesPage.module.css';
 
 const AllSalesPage = () => {
@@ -38,8 +39,13 @@ const AllSalesPage = () => {
     return <div>No products on sale</div>;
   }
 
+  
   return (
     <div className="container">
+      <div className={styles.buttons_wrapper}>
+        <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} />
+        <ButtonSection text="All sales" to="/all_sales" backgroundColor={"transparent"} />
+      </div>
       <h2>All Sales</h2>
       <div className={styles.sale_card_wrapper}>
         <SaleCards products={saleProducts} />
