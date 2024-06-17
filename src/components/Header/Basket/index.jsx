@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import BasDark from '../../../media/icons/basket-hover-dark.svg';
 import BasLight from '../../../media/icons/basket-white.svg';
@@ -53,3 +54,4 @@ const Basket = ({ onClick, isInBasket }) => {
 };
 
 export default Basket;
+

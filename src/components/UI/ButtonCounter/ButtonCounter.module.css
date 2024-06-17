@@ -1,7 +1,8 @@
 .count_controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+
+
   }
   
   .count_controls button {
@@ -11,10 +12,54 @@
     height: 58px;
     font-size: 24px;
     cursor: pointer;
+    color: var(--grey);
+    background-color: transparent;
+
   }
   
   .count_controls span {
-    font-size: 20px;
-    font-weight: bold;
+    border-bottom: 1px solid var(--grey-divider);
+    border-top: 1px solid var(--grey-divider);
+    width: 96px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   
   }
   
+  @media screen and (max-width: 1000px) {
+
+    .count_controls span {
+
+width: 58px;
+
+    }}
+  
+  @media screen and (max-width: 768px) {
+
+    .count_controls span {
+
+width: 58px;
+
+    }}
+  
+  @media screen and (max-width: 480px) {
+
+    .count_controls button{
+      width: 47px;
+      height: 47px;
+    }
+    .count_controls span {
+
+width: 52px;
+height: 47px;
+
+    }}
+  @media screen and (max-width: 360px) {
+
+    .count_controls span {
+
+width: 58px;
+
+    }}

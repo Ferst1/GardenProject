@@ -57,8 +57,3 @@ const BasketProductsPage = () => {
 };
 
 export default BasketProductsPage;
-
-
-
-
-

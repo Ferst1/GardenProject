@@ -8,8 +8,9 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
     <div className={s.order_details_wrapper}>
       <h3>Order details</h3>
       <div className={s.detail_row_total}>
-        <p>Items</p>
+        
         <p>{totalItems}</p>
+        <p>items</p>
       </div>
       <div className={s.detail_row}>
         <p>Total</p>
