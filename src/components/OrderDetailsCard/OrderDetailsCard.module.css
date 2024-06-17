@@ -1,8 +1,9 @@
 
+
    .order_details_wrapper {
     border-radius: 12px;
     padding: 32px;
-    max-width: 548px;
+    width: 548px;
     background: var(--light-grey);
   }
   
@@ -45,12 +46,11 @@
     color: var(--black) !important;
   }
   
-  
   @media screen and (max-width: 768px) {
     .order_details_wrapper {
       width: 100%;
+      max-width: none;
       margin-top: 20px;
-
     }
   }
   

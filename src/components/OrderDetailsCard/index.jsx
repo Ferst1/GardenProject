@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './OrderDetailsCard.module.css';
@@ -8,9 +10,9 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
     <div className={s.order_details_wrapper}>
       <h3>Order details</h3>
       <div className={s.detail_row_total}>
-        
+       
         <p>{totalItems}</p>
-        <p>items</p>
+        <p>Items</p>
       </div>
       <div className={s.detail_row}>
         <p>Total</p>
