@@ -20,7 +20,6 @@ export default function DiscountForm(props) {
   const [currentErrorIndex, setCurrentErrorIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isAllFieldsFilled, setIsAllFieldsFilled] = useState(false);
-  const [buttonText, setButtonText] = useState(buttons.submit);
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   useEffect(() => {
@@ -58,11 +57,9 @@ export default function DiscountForm(props) {
   const onSubmit = (data) => {
     console.log(data);
     setIsSubmitted(true);
-    setButtonText('Request Submitted');
     reset();
     setTimeout(() => {
       setIsSubmitted(false);
-      setButtonText(buttons.submit);
     }, 5000);
   };
 
@@ -149,7 +146,7 @@ export default function DiscountForm(props) {
           {isSubmitted && (
             <p className={s.success_text}>The discount has been successfully sent by email</p>
           )}
-          <Button text={buttonText} ref={ButtonRef} onClick={displayNextError} className={isSubmitted ? s.greenBackground : ''}/>
+          <Button text={buttons.submit} ref={ButtonRef} onClick={displayNextError} />
         </form>
         <img src={HandsImage} alt="Hands holding garden tools" className={s.form_image} />
       </div>

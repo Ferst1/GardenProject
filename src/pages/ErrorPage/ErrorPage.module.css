@@ -1,6 +1,6 @@
 
 
-  .error_page {
+   .error_page {
     margin: 0 auto;
   }
   
@@ -14,19 +14,13 @@
   }
   
   .error_wrapper > h1 {
-    padding-top: 40px;
     font-weight: 700;
     font-size: 64px;
-    color: #282828;
+    line-height: 1.1;
   }
   
   .error_wrapper > p {
-    width: 760px;
-    line-height: 10px;
-    font-weight: 300;
-    font-size: 20px;
     text-align: center;
-
   }
   
   .error_wrapper > p .homepage-link {
@@ -35,10 +29,9 @@
   
   .button_return {
     border-radius: 6px;
-    margin-top: 20px;
-    padding: 16px 59px;
-    max-width: 100%;
-    font-size: 20px;
+    padding: 16px 56px;
+    max-width: 209px;
+    height: 58px;
     background: var(--green);
     color: var(--white);
     border: none;
@@ -55,7 +48,6 @@
     width: 100%;
     max-width: 690px;
     margin: 0 auto;
-    padding-top: 100px;
   }
   
   @media (min-width: 1440px) {

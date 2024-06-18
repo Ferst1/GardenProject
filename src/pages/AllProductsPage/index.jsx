@@ -65,8 +65,6 @@ const AllProductsPage = () => {
   }
 
   return (
-  
-    <div>
     <div className="container">
       <div className={styles.buttons_wrapper}>
         <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} />
@@ -82,7 +80,6 @@ const AllProductsPage = () => {
           isDiscounted={showDiscounted}
         />
       </div>
-    </div>
       <AllProducts products={sortedProducts} />
     </div>
   );

@@ -23,7 +23,6 @@ const ButtonDiscount = () => {
         text="1 day discount"
         backgroundColor="var(--green)"
         color="var(--white)"
-        border='none'
         className={s.button_discount}
         onClick={handleOpen}
       />
