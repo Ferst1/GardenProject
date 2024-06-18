@@ -1,0 +1,97 @@
+
+.header{
+    justify-content: space-between;
+    max-width: 1440px;
+    padding:30px 40px ;
+    height: 128px;
+    display: flex;
+    margin: 0 auto;
+    cursor: pointer;
+    border-bottom: 1px solid var(--grey-divider);
+}
+.logoAndSwitcher {
+    display: flex;
+    align-items: center;
+}
+.logoAndSwitcher > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+.favoriteAndBasket{
+    display: flex;
+    align-items: center;
+}
+
+.favoriteAndBasket > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+.favoriteLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.commonCount {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+}
+
+.favoriteCount {
+  composes: commonCount;
+}
+
+.basketCount {
+  composes: commonCount;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .header{
+        padding: 20px 30px;
+
+    }
+}
+
+@media (max-width: 480px) {
+   
+  }
+
+  @media (min-width: 481px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mobile-menu {
+      display: flex;
+    }
+  }
+
+  .favoriteAndBasket {
+    display: flex;
+    align-items: center;
+  }
+  
+  .basketLink {
+    position: relative;
+  }
+  
+  .basketContainer {
+    position: relative;
+    display: inline-block;
+  }
+  

@@ -1,0 +1,41 @@
+
+.basket {
+    width: 48px;
+    height: 48px;
+  }
+  
+  @media (max-width: 1000px) {
+    .basket {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .basket {
+      width: calc(44px - (12px * ((480px - 100vw) / (480 - 360))));
+      height: calc(44px - (12px * ((480px - 100vw) / (480 - 360))));
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .basket {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  
+.basketCount {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+}

@@ -1,0 +1,43 @@
+
+h2{
+    padding-top: 32px;
+}
+.sorted_section{
+    display: flex;
+    
+}
+
+
+.sorted_section > * {
+    margin-right: 40px;
+  }
+  
+  .buttons_wrapper{
+    display: flex;
+	margin-top: 40px;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .sorted_section{
+        display:grid;
+        gap: 16px;
+        
+    }
+
+}
+@media (max-width: 480px) {
+    .sorted_section{
+        display:grid;
+        
+    }
+    .buttons_wrapper{
+        display: none;
+    }
+}
+
+
+
+
+
+

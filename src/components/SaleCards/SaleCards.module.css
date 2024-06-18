@@ -1,0 +1,36 @@
+
+.saleCardWrapperStyle {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+
+}
+
+
+  .saleCardWrapperStyle  {
+    max-width: 316px;
+    height: 422px;
+    border: 1px solid var(--grey-divider);
+    border-radius: 12px;
+  }
+
+  @media (max-width: 1000px) {
+    .saleCardWrapperStyle {
+      grid-template-columns: repeat(4,1fr);
+      
+    }}
+  @media (max-width: 768px) {
+    .saleCardWrapperStyle {
+      grid-template-columns: repeat(2,1fr);
+      
+    }}
+  @media (max-width: 480px) {
+    .saleCardWrapperStyle {
+      grid-template-columns: repeat(2,1fr);
+      
+    }}
+  @media (max-width: 360px) {
+    .saleCardWrapperStyle {
+      grid-template-columns: repeat(1,1fr);
+      
+    }}

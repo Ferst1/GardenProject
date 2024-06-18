@@ -1,0 +1,31 @@
+
+.buttonAdd{
+    max-width: 100%;
+    display: flex;
+    border-radius: 6px;
+padding: 16px 32px;
+min-width: 284px;
+height: 58px;
+background: var(--green);
+color: var(--white);
+transition: background var(--transition);
+justify-content: center;
+align-items: center;
+
+
+
+}
+
+
+.buttonAdd.added {
+    color:var(--black);
+    background-color: var(--white);
+    border-color: var(--green);
+  }
+.buttonAdd:hover{
+    background: var(--black);
+    color: var(--white);
+
+}
+
+
