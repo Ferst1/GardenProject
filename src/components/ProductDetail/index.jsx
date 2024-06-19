@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +13,6 @@ const ProductDetail = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
-    const basket = useSelector((state) => state.basket.basket);
     const [isFavorite, setIsFavorite] = useState(false);
     const [productCount, setProductCount] = useState(1);
 

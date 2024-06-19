@@ -29,3 +29,4 @@ OrderDetailsCard.propTypes = {
 };
 
 export default OrderDetailsCard;
+

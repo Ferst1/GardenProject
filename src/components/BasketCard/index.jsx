@@ -1,6 +1,4 @@
 
-
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { incrementProductCount, decrementProductCount, removeFromBasket } from '../../redux/basketReducer';
@@ -77,3 +75,4 @@ const BasketCard = ({ product }) => {
 };
 
 export default BasketCard;
+
