@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './ButtonAddToCard.module.css';
-import { addToBasket } from '../../../redux/basketReducer';
+import { addToBasket, removeFromBasket } from '../../../redux/basketReducer';
 
-const ButtonAddToCard = ({ product, onAddToBasket,className }) => {
+const ButtonAddToCard = ({ product, onAddToBasket, className }) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
   const [isAdded, setIsAdded] = useState(false);
@@ -19,9 +19,14 @@ const ButtonAddToCard = ({ product, onAddToBasket,className }) => {
 
   const handleClick = () => {
     if (product) {
-      dispatch(addToBasket(product));
-      setIsAdded(true);
-      onAddToBasket && onAddToBasket();
+      if (isAdded) {
+        dispatch(removeFromBasket(product.id));
+        setIsAdded(false);
+      } else {
+        dispatch(addToBasket(product));
+        setIsAdded(true);
+        onAddToBasket && onAddToBasket();
+      }
     }
   };
 
@@ -31,7 +36,7 @@ const ButtonAddToCard = ({ product, onAddToBasket,className }) => {
 
   return (
     <button
-      className={`${s.buttonAdd} ${isAdded ? s.added : ''}`}
+      className={`${s.buttonAdd} ${isAdded ? s.added : ''} ${className}`}
       onClick={handleClick}
     >
       {isAdded ? 'Added' : 'Add to Cart'}

@@ -1,11 +1,13 @@
 
+
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { incrementProductCount, decrementProductCount, removeFromBasket } from '../../redux/basketReducer';
 import styles from './BasketCard.module.css';
 import { baseUrl } from '../../instance';
 import { ReactComponent as CloseIcon } from '../../media/icons/x-burgermenu-dark.svg';
-import ButtonCounter from '../UI/ButtonCounter'; 
+import ButtonCounter from '../UI/ButtonCounter';
 
 const BasketCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -45,23 +47,27 @@ const BasketCard = ({ product }) => {
         </div>
         <div className={styles.count_wrapper}>
           <div className={styles.controls_and_cart}>
-            <ButtonCounter 
+            <ButtonCounter
               productCount={product.count ?? 0}
               handleIncrement={handleIncrement}
               handleDecrement={handleDecrement}
             />
           </div>
           <div className={styles.price_container}>
-            <div className={styles.product_price}>
-              ${totalPrice.toFixed(2)}
-            </div>
-            {product.discont_price && (
-              <div className={styles.discont_price}>
-                ${product.discont_price.toFixed(2)}
+            {product.discont_price ? (
+              <>
+                <div className={styles.product_price}>
+                  ${totalPrice.toFixed(2)}
+                </div>
+                <div className={styles.original_price}>
+                  ${product.price.toFixed(2)}
+                </div>
+                <div className={styles.discont_tag}>{`-${discount}%`}</div>
+              </>
+            ) : (
+              <div className={styles.product_price}>
+                ${totalPrice.toFixed(2)}
               </div>
-            )}
-            {discount !== null && (
-              <div className={styles.discont_tag}>{`-${discount}%`}</div>
             )}
           </div>
         </div>
