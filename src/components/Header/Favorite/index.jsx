@@ -30,7 +30,7 @@ const Favorite = ({ onClick, isFavorite }) => {
       onClick={onClick} 
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave} 
-      className={s.favoriteContainer}
+      className={s.favoriteIcon}
     >
       <img
         className={s.favorite}

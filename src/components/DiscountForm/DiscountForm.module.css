@@ -31,7 +31,7 @@
 
 .form_section {
     padding-top: 80px;
-    padding-bottom: 115px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +85,12 @@ form {
     margin-top: 20px;
 }
 .form_container button:hover {
-    background-color: #f4f4ce;
+    background-color: #424436;
+    color: #FFFFF1;
+}
+.greenBackground {
+    background-color: #F2F6D3 !important;
+    color: #92A134 !important;
 }
 
 .warning_text {
