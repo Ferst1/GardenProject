@@ -1,67 +1,92 @@
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Выровнять по верху */
+  background-color: rgba(40, 40, 40, 0.4);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  z-index: 1000; /* Обеспечиваем, что бэкдроп будет выше всех остальных элементов */
+}
+
+.backdropOpen {
+  opacity: 1;
+}
+
 .modal {
-    position: relative;
-    margin: 180px auto 0; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+  position: relative;
+  margin: 180px auto 0; /* Отступ сверху 180px */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.modalOpen {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  stroke: var(--white);
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: zoom-in; 
+  transition: transform 0.3s ease; 
+}
+
+.modalImage.zoomed {
+  transform: scale(2);
+  cursor: move; 
+}
+
+
+@media (max-width: 1440px) {
+  .modalImage, .imageContainer {
+    width: 900px;
+    height: 610px;
   }
-  
-  .modalOpen {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (max-width: 999px) {
+  .modalImage, .imageContainer {
+    width: 728px;
+    height: 494px;
   }
-  
-  .close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    cursor: pointer;
-    stroke: var(--white);
+}
+
+@media (max-width: 767px) {
+  .modalImage, .imageContainer {
+    width: 440px;
+    height: 298px;
   }
-  
-  .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+}
+
+@media (max-width: 479px) {
+  .modalImage, .imageContainer {
+    width: 320px;
+    height: 216px;
   }
-  
-  .modalImage {
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: contain;
-  }
-  
-  
-  @media (max-width: 1440px) {
-    .modalImage, .imageContainer {
-      width: 900px;
-      height: 610px;
-    }
-  }
-  
-  @media (max-width: 999px) {
-    .modalImage, .imageContainer {
-      width: 728px;
-      height: 494px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .modalImage, .imageContainer {
-      width: 440px;
-      height: 298px;
-    }
-  }
-  
-  @media (max-width: 479px) {
-    .modalImage, .imageContainer {
-      width: 320px;
-      height: 216px;
-    }
-  }
-  
+}
