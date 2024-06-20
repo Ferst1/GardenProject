@@ -20,6 +20,7 @@
 .favoriteAndBasket{
     display: flex;
     align-items: center;
+    
 }
 
 .favoriteAndBasket > *:not(:last-child) {
@@ -46,13 +47,41 @@
   display: flex;
 }
 
-.favoriteCount {
+.basketCount {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+}
+
+.favoriteCount{
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+}
+
+/* .favoriteCount {
   composes: commonCount;
 }
 
 .basketCount {
   composes: commonCount;
-}
+} */
 
 
 

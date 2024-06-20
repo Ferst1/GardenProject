@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  padding: 8px 16px;
+  padding: 6px 16px 6px 16px;
   border: 1px solid var(--grey-divider);
   border-radius: 6px;
   font-weight: 500;

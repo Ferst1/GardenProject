@@ -9,6 +9,11 @@
 .inputWrapper {
     display: flex;
   }
+
+.filter_wrapper h3{
+  margin: 0;
+}
+  
   
   .inputWrapper input {
     border: 1px solid var(--grey-divider);

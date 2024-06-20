@@ -36,27 +36,6 @@
   border-bottom: 1px solid #dddddd;
 }
 
-/* .product_title {
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 26px;
-  text-align: left;
-  width: 252px;
-  height: 26px;
-  margin: 20px 32px 16px 32px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #424436;
-  text-decoration: none;
-}
-.product_title:hover {
-  transition: margin-bottom 0.3s;
-  white-space: normal;
-  overflow: visible;
-  margin-bottom: 40px;
-} */
 .product_title {
   font-family: Montserrat;
   font-size: 20px;
@@ -139,10 +118,10 @@
 @media (max-width:768px) {
 
   .product_item {
-      width: 354px;
+      width: 343px;
   }
   .category_img {
-      width: 354px;
+      width: 343px;
       height: 290px;
   }
   .product_title {

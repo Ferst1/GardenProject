@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
 import s from "./ProductsCard.module.css";
 import ButtonAddToCard from "../UI/ButtonAddToCard";
-import Favorite from "../../components/Header/Favorite";
+import Favorite from "../Header/Favorite";
 import Basket from "../../components/Header/Basket";
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, removeFromBasket } from '../../redux/basketReducer';
