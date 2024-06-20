@@ -10,7 +10,6 @@ const SaleModal = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     openModal: handleOpen
   }));
-
   return (
     <div>
       <ModalWindow
@@ -23,5 +22,4 @@ const SaleModal = forwardRef((props, ref) => {
     </div>
   );
 });
-
 export default SaleModal;
