@@ -1,23 +1,25 @@
-
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import BasketCard from "../../components/BasketCard";
 import styles from "./BasketProductsPage.module.css";
 import ButtonSection from "../../components/UI/ButtonSection";
-import Button from "../../components/UI/Button"; 
+import Button from "../../components/UI/Button";
 import OrderDetailsCard from "../../components/OrderDetailsCard";
+import { formatPrice } from "../../utils"; // Импортируем функцию formatPrice
 
 const BasketProductsPage = () => {
   const basket = useSelector((state) => state.basket.basket);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleContinueShopping = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   const totalItems = basket.reduce((acc, item) => acc + item.count, 0);
-  const totalPrice = basket.reduce((acc, item) => acc + (item.count * (item.discont_price || item.price)), 0).toFixed(2);
+  const totalPrice = basket
+    .reduce((acc, item) => acc + item.count * (item.discont_price || item.price), 0)
+    .toFixed(2).replace('.',',');
 
   return (
     <div className="container">
@@ -26,15 +28,16 @@ const BasketProductsPage = () => {
           <h3>Shopping cart</h3>
           <ButtonSection to="/all_products" text="Back to the store" />
         </div>
-        
+
         <div className={styles.product_card_wrapper}>
           <div className={styles.basket_items}>
             {basket.length === 0 ? (
               <>
                 <p>Looks like you have no items in your basket currently.</p>
-                <Button 
+                <Button
                   text="Continue Shopping"
                   onClick={handleContinueShopping}
+                  className={styles.button_details}
                 />
               </>
             ) : (
@@ -47,9 +50,9 @@ const BasketProductsPage = () => {
               </ul>
             )}
           </div>
-          
+
           <div className={styles.order_details}>
-            <OrderDetailsCard totalItems={totalItems} totalPrice={totalPrice} />
+            <OrderDetailsCard totalItems={totalItems} totalPrice={formatPrice(totalPrice)} />
           </div>
         </div>
       </div>

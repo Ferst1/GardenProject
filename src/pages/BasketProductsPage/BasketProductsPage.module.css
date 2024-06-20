@@ -2,7 +2,21 @@
 .basket_products_page {
 
 }
+.button_details{
+  background-color: var(--green);
+  color:var(--white);
+  border:none;
+  transition: bacground-color var(--transition);
+  cursor: pointer;
+}
 
+
+.button_details:hover{
+background-color: var(--black);
+color: var(--white);
+
+
+}
 .product_card_wrapper {
   display: flex;
   justify-content: space-between;

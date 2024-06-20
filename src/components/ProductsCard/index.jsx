@@ -1,16 +1,23 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
 import s from "./ProductsCard.module.css";
-import ButtonAddToCard from "../UI/ButtonAddToCard";
 import Favorite from "../UI/Favorite";
 import Basket from "../UI/Basket";
-import { useDispatch, useSelector } from 'react-redux';
-import { addToBasket, removeFromBasket } from '../../redux/basketReducer';
-import { addToFavorites, removeFromFavorites } from '../../redux/actions/productsActions';
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket, removeFromBasket } from "../../redux/basketReducer";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/actions/productsActions";
 
-const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) => {
+import { formatPrice } from "../../utils";
+
+const ProductsCard = ({
+  product,
+  showAddToCartButton,
+  showBasketIcon = true,
+}) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
   const favorites = useSelector((state) => state.products.favorites);
@@ -18,11 +25,11 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    setIsInBasket(basket.some(item => item.id === product.id));
+    setIsInBasket(basket.some((item) => item.id === product.id));
   }, [basket, product.id]);
 
   useEffect(() => {
-    setIsFavorite(favorites.some(fav => fav.id === product.id));
+    setIsFavorite(favorites.some((fav) => fav.id === product.id));
   }, [favorites, product.id]);
 
   if (!product) {
@@ -37,7 +44,7 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
   }
 
   const handleAddToBasket = (e, addToBasketAction) => {
-    if (e && typeof e.preventDefault === 'function') {
+    if (e && typeof e.preventDefault === "function") {
       e.preventDefault();
       e.stopPropagation();
     }
@@ -50,7 +57,7 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
   };
 
   const handleAddToFavorites = (e) => {
-    if (e && typeof e.preventDefault === 'function') {
+    if (e && typeof e.preventDefault === "function") {
       e.preventDefault();
       e.stopPropagation();
     }
@@ -75,14 +82,17 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
                   alt={product.title}
                 />
                 <div className={s.icons}>
-                  <Favorite onClick={handleAddToFavorites} isFavorite={isFavorite} />
+                  <Favorite
+                    onClick={handleAddToFavorites}
+                    isFavorite={isFavorite}
+                  />
                   {showBasketIcon && (
-                    <Basket onClick={(e) => handleAddToBasket(e, !isInBasket)} isInBasket={isInBasket} />
+                    <Basket
+                      onClick={(e) => handleAddToBasket(e, !isInBasket)}
+                      isInBasket={isInBasket}
+                    />
                   )}
                 </div>
-                {/* {showAddToCartButton && (
-                  <ButtonAddToCard text="Add to Cart" onClick={(e) => handleAddToBasket(e, true)} />
-                )} */}
               </>
             )}
             {discount !== null && (
@@ -93,12 +103,16 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
           <div className={s.product_price}>
             {product.discont_price ? (
               <>
-                <span className={s.original_price}>${product.discont_price.toFixed(2)}</span>
+                <span className={s.original_price}>
+                ${formatPrice(product.discont_price)}
+                </span>
 
-                <span className={s.discont_price}>${product.price.toFixed(2)}</span>
+                <span className={s.discont_price}>
+                ${formatPrice(product.discont_price)}
+                </span>
               </>
             ) : (
-              <span>${product.price.toFixed(2)}</span>
+              <span>${formatPrice(product.price)}</span>
             )}
           </div>
         </div>
