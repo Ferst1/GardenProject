@@ -16,6 +16,10 @@ align-items: center;
 
 }
 
+.added {
+    background-color: var(--green);
+    color: var(--white);
+}
 
 .buttonAdd.added {
     color:var(--black);
