@@ -23,6 +23,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+
   const handleBasketClick = () => {
   
     window.location.href = "/basket";
