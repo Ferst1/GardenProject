@@ -6,7 +6,7 @@ import { fetchProduct, incrementProductCount, decrementProductCount, addToFavori
 import styles from './ProductDetail.module.css';
 import ButtonAddToCard from '../UI/ButtonAddToCard';
 import { baseUrl } from '../../instance';
-import Favorite from '../Header/Favorite';
+import Favorite from '../UI/Favorite';
 import ButtonCounter from '../UI/ButtonCounter';
 
 const ProductDetail = () => {

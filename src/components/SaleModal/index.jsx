@@ -1,5 +1,5 @@
 import React, { useState, useRef, useImperativeHandle, forwardRef } from 'react';
-import ModalWindow from '../../ModalWindow';
+import ModalWindow from '../ModalWindow';
 
 const SaleModal = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
