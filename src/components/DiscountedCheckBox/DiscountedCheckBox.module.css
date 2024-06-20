@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.discount_wrapper h3{
+    margin: 0;
+}
+
 select{
     border: 1px solid var(--grey-divider);
     border-radius: 6px;

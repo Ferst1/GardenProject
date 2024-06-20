@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, setMinPriceFilter, setMaxPriceFilter } from '../../redux/actions/productsActions';
 import SaleCards from '../../components/SaleCards';
-import FilterPrice from '../../components/FilterPrice';
-import SorterSelect from '../../components/SorterSelect';
+import ButtonSection from '../../components/UI/ButtonSection';
 import styles from './AllSalesPage.module.css';
 import filterPriceStyles from '../../components/FilterPrice/FilterPrice.module.css';
 import sorterSelectStyles from '../../components/SorterSelect/SorterSelect.module.css';
@@ -76,18 +75,12 @@ const AllSalesPage = () => {
     return <div>No products on sale</div>;
   }
 
+  
   return (
     <div className="container">
-      <div className={styles.filter_sort_wrapper}>
-        <FilterPrice
-          styles={filterPriceStyles}
-          onMinPriceChange={handleMinPriceChange}
-          onMaxPriceChange={handleMaxPriceChange}
-        />
-        <SorterSelect
-          styles={sorterSelectStyles}
-          onChange={handleSortChange}
-        />
+      <div className={styles.buttons_wrapper}>
+        <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} />
+        <ButtonSection text="All sales" to="/all_sales" backgroundColor={"transparent"} />
       </div>
       <h2>All Sales</h2>
       <div className={styles.sale_card_wrapper}>

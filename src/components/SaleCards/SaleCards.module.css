@@ -7,13 +7,6 @@
 }
 
 
-  .saleCardWrapperStyle  {
-    max-width: 316px;
-    height: 422px;
-    border: 1px solid var(--grey-divider);
-    border-radius: 12px;
-  }
-
   @media (max-width: 1000px) {
     .saleCardWrapperStyle {
       grid-template-columns: repeat(4,1fr);
@@ -33,4 +26,4 @@
     .saleCardWrapperStyle {
       grid-template-columns: repeat(1,1fr);
       
-    }}
+}}

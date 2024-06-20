@@ -8,8 +8,8 @@ import Navigation from "./Navigation";
 import s from "./Header.module.css";
 import Logo from "./Logo";
 import Switcher from "./Switcher";
-import Favorite from "./Favorite";
-import Basket from "../Header/Basket";
+import Favorite from "../UI/FavoriteHeader";
+import Basket from "../UI/BasketHeader";
 import BurgerMenu from "./BurgerMenu";
 import MobileMenu from "../MobileMenu";
 
@@ -27,7 +27,7 @@ const Header = () => {
   
     window.location.href = "/basket";
   };
-
+  
   return (
     <div className={`${s.header} container`}>
       <div className={s.logoAndSwitcher}>
@@ -43,10 +43,12 @@ const Header = () => {
           )}
         </Link>
         <div className={s.basketContainer} >
-          <Basket isDarkMode={isDarkMode} hasItems={basket.length > 0} onClick={handleBasketClick} />
+          <Link to="/basket">
+          <Basket isDarkMode={isDarkMode} hasItems={basket.length > 0}/>
           {basket.length > 0 && (
             <span className={s.basketCount}>{basket.length}</span>
           )}
+          </Link>
         </div>
         <BurgerMenu onClick={handleToggleMenu} />
       </div>
