@@ -93,8 +93,9 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
           <div className={s.product_price}>
             {product.discont_price ? (
               <>
-                <span className={s.original_price}>${product.price.toFixed(2)}</span>
-                <span className={s.discont_price}>${product.discont_price.toFixed(2)}</span>
+                <span className={s.original_price}>${product.discont_price.toFixed(2)}</span>
+
+                <span className={s.discont_price}>${product.price.toFixed(2)}</span>
               </>
             ) : (
               <span>${product.price.toFixed(2)}</span>
