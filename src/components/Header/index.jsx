@@ -8,8 +8,8 @@ import Navigation from "./Navigation";
 import s from "./Header.module.css";
 import Logo from "./Logo";
 import Switcher from "./Switcher";
-import Favorite from "../UI/FavoriteHeader";
-import Basket from "../UI/BasketHeader";
+import FavoriteHeader from "../UI/FavoriteHeader";
+import BasketHeader from "../UI/BasketHeader";
 import BurgerMenu from "./BurgerMenu";
 import MobileMenu from "../MobileMenu";
 
@@ -38,14 +38,14 @@ const Header = () => {
       <Navigation />
       <div className={s.favoriteAndBasket}>
         <Link to="/favorites" className={s.favoriteLink}>
-          <Favorite isDarkMode={isDarkMode} />
+          <FavoriteHeader isDarkMode={isDarkMode} />
           {favorites.length > 0 && (
             <span className={s.favoriteCount}>{favorites.length}</span>
           )}
         </Link>
         <div className={s.basketContainer} >
           <Link to="/basket">
-          <Basket isDarkMode={isDarkMode} hasItems={basket.length > 0}/>
+          <BasketHeader isDarkMode={isDarkMode} hasItems={basket.length > 0}/>
           {basket.length > 0 && (
             <span className={s.basketCount}>{basket.length}</span>
           )}

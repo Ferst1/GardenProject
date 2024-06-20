@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
 import s from "./ProductsCard.module.css";
 import ButtonAddToCard from "../UI/ButtonAddToCard";
-import Favorite from "../Header/Favorite";
-import Basket from "../../components/Header/Basket";
+import Favorite from "../UI/Favorite";
+import Basket from "../UI/Basket";
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, removeFromBasket } from '../../redux/basketReducer';
 import { addToFavorites, removeFromFavorites } from '../../redux/actions/productsActions';
@@ -80,9 +80,9 @@ const ProductsCard = ({ product, showAddToCartButton, showBasketIcon = true }) =
                     <Basket onClick={(e) => handleAddToBasket(e, !isInBasket)} isInBasket={isInBasket} />
                   )}
                 </div>
-                {showAddToCartButton && (
+                {/* {showAddToCartButton && (
                   <ButtonAddToCard text="Add to Cart" onClick={(e) => handleAddToBasket(e, true)} />
-                )}
+                )} */}
               </>
             )}
             {discount !== null && (
