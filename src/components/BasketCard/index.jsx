@@ -7,7 +7,7 @@ import styles from './BasketCard.module.css';
 import { baseUrl } from '../../instance';
 import { ReactComponent as CloseIcon } from '../../media/icons/x-burgermenu-dark.svg';
 import ButtonCounter from '../UI/ButtonCounter';
-
+import { formatPrice } from '../../utils';
 const BasketCard = ({ product }) => {
   const dispatch = useDispatch();
 
@@ -23,9 +23,7 @@ const BasketCard = ({ product }) => {
     dispatch(removeFromBasket(product.id));
   };
 
-  const formatPrice = (price) => {
-    return price.toFixed(0);
-  };
+ 
 
   const totalPrice = product.discont_price ? product.discont_price * product.count : product.price * product.count;
 
@@ -41,7 +39,7 @@ const BasketCard = ({ product }) => {
       />
       <div className={styles.product_details}>
         <div className={styles.title_and_close}>
-          <h5>{product.title}</h5>
+          <h5 title={product.title}>{product.title}</h5>
         </div>
         <div className={styles.count_wrapper}>
           <div className={styles.controls_and_cart}>
