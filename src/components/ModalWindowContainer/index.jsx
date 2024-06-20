@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ModalWindow from '../../components/ModalWindow';
+import ImageModal from '../../components/ImageModal';
 import { closeModal } from '../../redux/actions/modalActions';
 import { addToBasket } from '../../redux/basketReducer';
+import s from './ModalWindowContainer.module.css';
 
 const ModalWindowContainer = () => {
   const dispatch = useDispatch();
@@ -20,12 +23,24 @@ const ModalWindowContainer = () => {
   };
 
   return (
-    <ModalWindow 
-      isOpen={isOpen} 
-      handleClose={handleClose} 
-      content={content} 
-      onAddToBasket={handleAddToBasket}
-    />
+    isOpen && (
+      <div className={`${s.backdrop} ${isOpen ? s.backdropOpen : ''}`}>
+        {content && content.image ? (
+          <ImageModal
+            isOpen={isOpen}
+            handleClose={handleClose}
+            imageUrl={content.image}
+          />
+        ) : (
+          <ModalWindow
+            isOpen={isOpen}
+            handleClose={handleClose}
+            content={content}
+            onAddToBasket={handleAddToBasket}
+          />
+        )}
+      </div>
+    )
   );
 };
 
