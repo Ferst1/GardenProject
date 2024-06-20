@@ -8,6 +8,8 @@ import ButtonAddToCard from '../UI/ButtonAddToCard';
 import { baseUrl } from '../../instance';
 import Favorite from '../UI/Favorite';
 import ButtonCounter from '../UI/ButtonCounter';
+import { openModal } from '../../redux/actions/modalActions';
+import ModalWindowContainer from '../ModalWindowContainer';
 
 const ProductDetail = () => {
     const { productId } = useParams();
@@ -47,6 +49,10 @@ const ProductDetail = () => {
         setIsFavorite(!isFavorite);
     };
 
+    const handleImageClick = () => {
+        dispatch(openModal({ image: `${baseUrl}${product.image}` }));
+    };
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -67,49 +73,53 @@ const ProductDetail = () => {
     const totalPrice = product.discont_price ? product.discont_price * productCount : product.price * productCount;
 
     return (
-        <div className={styles.product_detail}>
-            <img
-                src={`${baseUrl}${product.image}`}
-                alt={product.title}
-                className={styles.category_img}
-            />
-            <div className={styles.product_detail_content}>
-                <div className={styles.title_favorite_wrapper}>
-                    <h4>{product.title}</h4>
-                    <Favorite
-                        isDarkMode={false}
-                        onClick={handleAddToFavorites}
-                        isFavorite={isFavorite}
-                    />
-                </div>
-                <div className={styles.product_price}>
-                    ${totalPrice.toFixed(2)}
-                    {product.discont_price && (
-                        <span className={styles.discont_price}>
-                            ${product.discont_price.toFixed(2)}
-                        </span>
-                    )}
-                    {discount !== null && (
-                        <div className={styles.discont_tag}>{`-${discount}%`}</div>
-                    )}
-                </div>
-                <div className={styles.controls_and_cart}>
-                    <ButtonCounter 
-                        productCount={productCount}
-                        handleIncrement={handleIncrement}
-                        handleDecrement={handleDecrement}
-                    />
-                    <ButtonAddToCard 
-                        product={{ ...product, count: productCount }}
-                    /> 
-                </div>
-                <div className={styles.description_wrapper}>
-                    <h5>Description</h5>
-                    <p>{product.description}</p>
-                    <Link to={`/product/${product.id}`}>Read more</Link>
+        <>
+            <div className={styles.product_detail}>
+                <img
+                    src={`${baseUrl}${product.image}`}
+                    alt={product.title}
+                    className={styles.category_img}
+                    onClick={handleImageClick} 
+                />
+                <div className={styles.product_detail_content}>
+                    <div className={styles.title_favorite_wrapper}>
+                        <h4>{product.title}</h4>
+                        <Favorite
+                            isDarkMode={false}
+                            onClick={handleAddToFavorites}
+                            isFavorite={isFavorite}
+                        />
+                    </div>
+                    <div className={styles.product_price}>
+                        ${totalPrice.toFixed(2)}
+                        {product.discont_price && (
+                            <span className={styles.discont_price}>
+                                ${product.discont_price.toFixed(2)}
+                            </span>
+                        )}
+                        {discount !== null && (
+                            <div className={styles.discont_tag}>{`-${discount}%`}</div>
+                        )}
+                    </div>
+                    <div className={styles.controls_and_cart}>
+                        <ButtonCounter 
+                            productCount={productCount}
+                            handleIncrement={handleIncrement}
+                            handleDecrement={handleDecrement}
+                        />
+                        <ButtonAddToCard 
+                            product={{ ...product, count: productCount }}
+                        /> 
+                    </div>
+                    <div className={styles.description_wrapper}>
+                        <h5>Description</h5>
+                        <p>{product.description}</p>
+                        <Link to={`/product/${product.id}`}>Read more</Link>
+                    </div>
                 </div>
             </div>
-        </div>
+            <ModalWindowContainer />
+        </>
     );
 };
 

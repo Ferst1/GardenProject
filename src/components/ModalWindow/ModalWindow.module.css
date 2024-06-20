@@ -103,12 +103,12 @@ width: 100%;
   }
   
   .buttonAddModal.added {
-    background-color: var(--green);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
     border-color: var(--green);
   }
   
   .buttonAddModal.added:hover {
-    background-color: var(--dark-green);
+    background-color: var(--black);
   }
    
