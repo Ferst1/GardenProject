@@ -24,7 +24,7 @@ const BasketCard = ({ product }) => {
   };
 
   const formatPrice = (price) => {
-    return price.toFixed(2).replace('.', ',');
+    return price.toFixed(0);
   };
 
   const totalPrice = product.discont_price ? product.discont_price * product.count : product.price * product.count;
