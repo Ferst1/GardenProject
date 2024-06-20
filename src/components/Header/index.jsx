@@ -1,4 +1,6 @@
 
+
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -21,9 +23,6 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // const handleBasketClick = () => {
-  //   window.location.href = "/basket";
-  // };
 
   return (
     <div className={`${s.header} container`}>
