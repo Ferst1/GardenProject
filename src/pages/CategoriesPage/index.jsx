@@ -30,7 +30,7 @@ const CategoriesPage = () => {
 
   return (
     <div className='container'>
-    <div className={s.container}>
+    <div className={s.wrapper_container}>
       <div className={s.title_wrapper}>
       </div>
       <div className={s.buttons_wrapper}>
