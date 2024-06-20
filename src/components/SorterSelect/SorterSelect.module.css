@@ -7,3 +7,10 @@
 .sorter_wrapper h3{
     margin: 0;
 }
+
+select{
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 112px;
+    height: 36px;
+}
