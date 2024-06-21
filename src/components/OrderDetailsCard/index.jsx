@@ -22,7 +22,7 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
 
 OrderDetailsCard.propTypes = {
   totalItems: PropTypes.number.isRequired,
-  totalPrice: PropTypes.string.isRequired,
+  totalPrice: PropTypes.number.isRequired,
 };
 
 export default OrderDetailsCard;

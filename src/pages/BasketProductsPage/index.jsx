@@ -7,7 +7,7 @@ import styles from "./BasketProductsPage.module.css";
 import ButtonSection from "../../components/UI/ButtonSection";
 import Button from "../../components/UI/Button";
 import OrderDetailsCard from "../../components/OrderDetailsCard";
-import { formatPrice } from "../../utils";
+import { formatPriceWithComma } from "../../utils";
 
 const BasketProductsPage = () => {
   const dispatch = useDispatch();
@@ -73,7 +73,7 @@ const BasketProductsPage = () => {
 
           {basket.length > 0 && (
             <div className={styles.order_details}>
-              <OrderDetailsCard totalItems={totalItems} totalPrice={formatPrice(totalPrice)} />
+              <OrderDetailsCard totalItems={totalItems} totalPrice={formatPriceWithComma(totalPrice)} />
             </div>
           )}
         </div>
