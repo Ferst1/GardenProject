@@ -5,3 +5,11 @@ export const formatPrice = (price) => {
     });
   };
   
+  export const formatPriceWithComma = (price) => {
+    return price.toLocaleString('de-DE', { 
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+  
+  
