@@ -13,7 +13,7 @@ const AllProductsPage = lazy(() => import('../pages/AllProductsPage'));
 const AllSalesPage = lazy(() => import('../pages/AllSalesPage'));
 const CategoryProductsPage = lazy(() => import('../pages/CategoryProductsPage'));
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
-const BasketPage = lazy(() => import('../pages/BasketProductsPage'));
+
 
 const router = createBrowserRouter([
   {
@@ -79,9 +79,9 @@ const router = createBrowserRouter([
       {
         path: 'basket',
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          // <Suspense fallback={<div>Loading...</div>}>
             <BasketProductsPage />
-          </Suspense>
+          // </Suspense>
         ),
       },
       {
