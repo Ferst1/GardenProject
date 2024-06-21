@@ -1,13 +1,21 @@
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import s from './ButtonSection.module.css';
 
 const ButtonSection = ({ text, to, color, backgroundColor, className, onClick }) => {
   return (
-    <Link to={to || '#'} className={`${s.button} ${className}`} style={{ color, backgroundColor }} onClick={onClick}>
+    <NavLink 
+      to={to || '#'} 
+      className={({ isActive }) => `${s.button} ${isActive ? s.active : ''} ${className}`}
+      style={{ color, backgroundColor }} 
+      onClick={onClick}
+      
+    >
       {text}
-    </Link>
+    </NavLink>
   );
 };
 

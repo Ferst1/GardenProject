@@ -7,6 +7,10 @@ h2{
     
 }
 
+.button_section:hover{	
+    background-color: var(--light-grey);   
+    color: var(--grey);
+}
 
 .sorted_section > * {
     margin-right: 40px;

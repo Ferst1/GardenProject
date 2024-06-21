@@ -1,6 +1,4 @@
 
-
-
  .navigation {
     display: flex;
     flex-direction: column;
@@ -38,6 +36,10 @@
   .navLink {
     color: var(--black);
     transition: color var(--transition);
+  }
+
+  .navLink.active{
+    color: var(--light-grey);
   }
   
   .navLink:hover {

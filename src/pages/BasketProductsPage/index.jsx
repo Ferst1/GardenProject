@@ -35,15 +35,18 @@ const BasketProductsPage = () => {
   const totalItems = basket.reduce((acc, item) => acc + item.count, 0);
   const totalPrice = basket
     .reduce((acc, item) => acc + item.count * (item.discont_price || item.price), 0)
-    .toFixed(2)
-    .replace('.', ',');
+    
 
   return (
     <div className="container">
       <div className={styles.basket_products_page}>
         <div className={styles.title_wrapper}>
           <h3>Shopping cart</h3>
-          <ButtonSection to="/all_products" text="Back to the store" />
+          <ButtonSection 
+            to="/all_products" 
+            text="Back to the store" 
+             className={styles.button_section} 
+          />
         </div>
 
         <div className={styles.product_card_wrapper}>
@@ -68,9 +71,11 @@ const BasketProductsPage = () => {
             )}
           </div>
 
-          <div className={styles.order_details}>
-            <OrderDetailsCard totalItems={totalItems} totalPrice={formatPrice(totalPrice)} />
-          </div>
+          {basket.length > 0 && (
+            <div className={styles.order_details}>
+              <OrderDetailsCard totalItems={totalItems} totalPrice={formatPrice(totalPrice)} />
+            </div>
+          )}
         </div>
       </div>
     </div>
