@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
 import ButtonSection from "../UI/ButtonSection";
 import s from "../CategoriesSection/CategoriesSection.module.css";
 import categoryStyles from "../CategoriesCard/CategoriesCard.module.css";
