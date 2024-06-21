@@ -22,6 +22,11 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
     return null;
   }
 
+  const handleAddToBasket = (product) => {
+    onAddToBasket(product);
+    setIsAdded(true);
+  };
+
   return (
     <MuiModal
       open={isOpen}
@@ -44,8 +49,8 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
         <div className={s.buttonContainer}>
           <ButtonAddToCard
             product={content.product}
-            onAddToBasket={() => onAddToBasket(content.product)}
-            className={`${s.buttonAddModal} ${isAdded ? s.added : ''}`}
+            onAddToBasket={() => handleAddToBasket(content.product)}
+            className={`${s.buttonAddModal}`}
           />
         </div>
       </div>
