@@ -103,14 +103,22 @@
     height: 68px;
   }
 }
-@media (max-width: 480px) and (min-width: 320px) {
+@media (max-width: 480px) and (min-width: 360px) {
 
   .header{
     padding: 0px 10px;
     height: 68px;
   }
+  .favoriteCount{
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  .basketCount {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
 }
-@media (max-width: 320px) and (min-width: 0px) {
+@media (max-width: 360px) and (min-width: 0px) {
 
   .header{
     padding: 0px 10px;
