@@ -1,28 +1,52 @@
 
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import BasketCard from "../../components/BasketCard";
-import styles from "./BasketProductsPage.module.css";
-import ButtonSection from "../../components/UI/ButtonSection";
-import Button from "../../components/UI/Button";
-import OrderDetailsCard from "../../components/OrderDetailsCard";
-import { formatPriceWithComma } from "../../utils";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import BasketCard from '../../components/BasketCard';
+import styles from './BasketProductsPage.module.css';
+import ButtonSection from '../../components/UI/ButtonSection';
+import Button from '../../components/UI/Button';
+import OrderDetailsCard from '../../components/OrderDetailsCard';
+import { persistor } from '../../redux/store';
 
 const BasketProductsPage = () => {
-  const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
   const loading = useSelector((state) => state.basket.loading);
   const error = useSelector((state) => state.basket.error);
   const navigate = useNavigate();
+  const [rehydrated, setRehydrated] = useState(false);
+
+  useEffect(() => {
+    const handleRehydrate = () => {
+      if (persistor.getState().bootstrapped) {
+        setRehydrated(true);
+        console.log("Rehydrated");
+      }
+    };
+
+    const unsubscribe = persistor.subscribe(handleRehydrate);
+
+    
+    if (persistor.getState().bootstrapped) {
+      setRehydrated(true);
+    }
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     console.log("Basket state:", basket);
   }, [basket]);
 
   const handleContinueShopping = () => {
-    navigate(-1);
+    navigate('/all_products');
   };
+
+  if (!rehydrated) {
+    return <div>Loading...</div>;
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -33,19 +57,20 @@ const BasketProductsPage = () => {
   }
 
   const totalItems = basket.reduce((acc, item) => acc + item.count, 0);
-  const totalPrice = basket
-    .reduce((acc, item) => acc + item.count * (item.discont_price || item.price), 0)
-    
+  const totalPrice = basket.reduce(
+    (acc, item) => acc + item.count * (item.discont_price || item.price),
+    0
+  );
 
   return (
     <div className="container">
       <div className={styles.basket_products_page}>
         <div className={styles.title_wrapper}>
           <h3>Shopping cart</h3>
-          <ButtonSection 
-            to="/all_products" 
-            text="Back to the store" 
-             className={styles.button_section} 
+          <ButtonSection
+            to="/all_products"
+            text="Back to the store"
+            className={styles.button_section}
           />
         </div>
 
@@ -73,7 +98,10 @@ const BasketProductsPage = () => {
 
           {basket.length > 0 && (
             <div className={styles.order_details}>
-              <OrderDetailsCard totalItems={totalItems} totalPrice={formatPriceWithComma(totalPrice)} />
+              <OrderDetailsCard
+                totalItems={totalItems}
+                totalPrice={totalPrice} 
+              />
             </div>
           )}
         </div>
