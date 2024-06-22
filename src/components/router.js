@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import SharedLayout from './SharedLayout';
 import ErrorPage from '../pages/ErrorPage';
 import ProductDetailPage from '../pages/ProductDetailPage';
-import BasketProductsPage from '../pages/BasketProductsPage';
+
 
 
 
@@ -13,7 +13,7 @@ const AllProductsPage = lazy(() => import('../pages/AllProductsPage'));
 const AllSalesPage = lazy(() => import('../pages/AllSalesPage'));
 const CategoryProductsPage = lazy(() => import('../pages/CategoryProductsPage'));
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
-
+const BasketProductsPage = lazy(() => import('../pages/BasketProductsPage'));
 
 const router = createBrowserRouter([
   {

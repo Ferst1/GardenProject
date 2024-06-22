@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './OrderDetailsCard.module.css';
 import OrderDetailsForm from '../OrderDetailsForm';
-
+import { formatPriceWithComma } from '../../utils';
 const OrderDetailsCard = ({ totalItems, totalPrice }) => {
   return (
     <div className={s.order_details_wrapper}>
@@ -13,7 +13,7 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
       </div>
       <div className={s.detail_row}>
         <p>Total</p>
-        <p className={s.total_price}>${totalPrice}</p>
+        <p className={s.total_price}>${formatPriceWithComma(totalPrice)}</p>
       </div>
       <OrderDetailsForm />
     </div>
