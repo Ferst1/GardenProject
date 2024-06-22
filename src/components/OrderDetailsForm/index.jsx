@@ -2,12 +2,18 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import s from './OrderDetailsForm.module.css';
 import Button from '../UI/Button';
+import { openModal } from '../../redux/actions/modalActions';
+import { useDispatch } from 'react-redux';
 
 const OrderDetailsForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const dispatch=useDispatch();
 
   const onSubmit = data => {
     console.log(data);
+    dispatch(openModal({
+      type:'CONFIRMATION'
+    }))
   };
 
   return (
