@@ -33,10 +33,6 @@ const AllProductsPage = () => {
     setShowDiscounted(isDiscounted);
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -65,25 +61,24 @@ const AllProductsPage = () => {
   }
 
   return (
-  
     <div>
-    <div className="container">
-      <div className={styles.buttons_wrapper}>
-        <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} className={styles.button_section}/>
-        <ButtonSection text="All products" to="/all_products" backgroundColor={"transparent"}className={styles.button_section} />
+      <div className="container">
+        <div className={styles.buttons_wrapper}>
+          <ButtonSection text="Main Page" to="/" backgroundColor={"transparent"} className={styles.button_section} />
+          <ButtonSection text="All products" to="/all_products" backgroundColor={"transparent"} className={styles.button_section} />
+        </div>
+        <h2>All products</h2>
+        <div className={styles.sorted_section}>
+          <SortFilteredComponents
+            onMinPriceChange={handleMinPriceChange}
+            onMaxPriceChange={handleMaxPriceChange}
+            onDiscountChange={handleDiscountChange}
+            onSortChange={handleSortChange}
+            isDiscounted={showDiscounted}
+          />
+        </div>
       </div>
-      <h2>All products</h2>
-      <div className={styles.sorted_section}>
-        <SortFilteredComponents
-          onMinPriceChange={handleMinPriceChange}
-          onMaxPriceChange={handleMaxPriceChange}
-          onDiscountChange={handleDiscountChange}
-          onSortChange={handleSortChange}
-          isDiscounted={showDiscounted}
-        />
-      </div>
-    </div>
-      <AllProducts products={sortedProducts} />
+      <AllProducts products={sortedProducts} loading={loading} />
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.card_skeleton{
+   
+}
+.card_images{
+    background-color: #f3f5c8;
+    width: 316px;
+    height: 422px;
+}
+
+.card_title{
+    max-width: 250px;
+    padding: 10px;
+}
+
+.card_price{
+    max-width: 50px;
+    height: 80px;
+    padding-left: 10px;
+}
+
+
