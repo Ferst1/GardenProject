@@ -74,53 +74,54 @@
   text-align: center;
   display: flex;
 }
-
-/* .favoriteCount {
-  composes: commonCount;
+.favoriteAndBasket {
+  display: flex;
+  align-items: center;
 }
 
-.basketCount {
-  composes: commonCount;
-} */
-
-
-
-
-
-@media (max-width: 768px) {
-    .header{
-        padding: 20px 30px;
-
-    }
+.basketLink {
+  position: relative;
 }
 
-@media (max-width: 480px) {
-   
-  }
+.basketContainer {
+  position: relative;
+  display: inline-block;
+}
 
-  @media (min-width: 481px) {
-    .mobile-menu {
-      display: none;
-    }
-  }
+
   
-  @media (max-width: 480px) {
-    .mobile-menu {
-      display: flex;
-    }
-  }
-
-  .favoriteAndBasket {
+@media (max-width: 1000px) and (min-width: 768px) {
+  .mobile-menu {
     display: flex;
-    align-items: center;
   }
+
+}
+@media (max-width: 768px) and (min-width: 480px) {
+
+  .header{
+    padding: 0px 10px;
+    height: 68px;
+  }
+}
+@media (max-width: 480px) and (min-width: 320px) {
+
+  .header{
+    padding: 0px 10px;
+    height: 68px;
+  }
+}
+@media (max-width: 320px) and (min-width: 0px) {
+
+  .header{
+    padding: 0px 10px;
+    height: 68px;
+  }
+  .basketCount {
+    display: none;
+  }
+  .favoriteCount{
+    display: none;
+  }
+}
   
-  .basketLink {
-    position: relative;
-  }
-  
-  .basketContainer {
-    position: relative;
-    display: inline-block;
-  }
   

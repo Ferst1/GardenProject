@@ -20,7 +20,7 @@
 }
 
   .button.active {
-    font-weight: 700;
+    font-weight: 500;
     color: var(--black);
 }
 .button + .button::before {

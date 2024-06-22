@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <div className={`${s.header} container`}>
       <div className={s.logoAndSwitcher}>
-        <Logo />
+        <Logo/>
         <Switcher isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
       <Navigation />
