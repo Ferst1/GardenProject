@@ -23,7 +23,7 @@ const fetchProductsByCategoryFailure = (error) => ({ type: actionTypes.FETCH_PRO
 
 const fetchProductRequest = () => ({ type: actionTypes.FETCH_PRODUCT_REQUEST });
 const fetchProductSuccess = (product) => ({ type: actionTypes.FETCH_PRODUCT_SUCCESS, payload: product });
-const fetchProductFailure = (error) => ({ type: actionTypes.FETCH_PRODUCT_FAILURE, payload: error });
+ const fetchProductFailure = (error) => ({ type: actionTypes.FETCH_PRODUCT_FAILURE, payload: error });
 
 export const fetchProducts = () => async (dispatch) => {
   dispatch(fetchProductsRequest());
@@ -46,7 +46,7 @@ export const fetchProducts = () => async (dispatch) => {
 //       setTimeout(async () => {
 //         const res = await axios.get(`${baseUrl}/products/all`);
 //         resolve(res);
-//       }, 6000); 
+//       }, 4000); 
 //     });
 //     dispatch(fetchProductsSuccess(response.data));
 //   } catch (error) {

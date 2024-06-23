@@ -6,7 +6,7 @@ const CardSkeleton = () => {
   return (
     <div className={styled.card_skeleton}>
 <div className={styled.card_images}>
-    <Skeleton width={316} height={410}/> 
+    <Skeleton width={220} height={230}/> 
 </div>
 <div className={styled.card_title}>
     <Skeleton height={21}/> 
