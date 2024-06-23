@@ -13,6 +13,10 @@ import {
 
 import { formatPrice } from "../../utils";
 
+
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 const ProductsCard = ({
   product,
   showAddToCartButton,
@@ -79,7 +83,7 @@ const ProductsCard = ({
               <>
                 <img
                   className={s.category_img}
-                  src={`${baseUrl}${product.image}`}
+                  src={`${baseUrl}${product.image ||<Skeleton/>}`}
                   alt={product.title}
                 />
                 <div className={s.icons}>
@@ -100,20 +104,20 @@ const ProductsCard = ({
               <div className={s.discont_tag}>{`-${discount}%`}</div>
             )}
           </div>
-          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""}`}>{product.title}</div>
+          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""}`}>{product.title||<Skeleton/>}</div>
           <div className={`${s.product_price} ${darkMode ? s["dark-mode"] : ""}`}>
             {product.discont_price ? (
               <>
                 <span className={`${s.original_price} ${darkMode ? s["dark-mode"] : ""}`}>
-                ${formatPrice(product.discont_price)}
+                ${formatPrice(product.discont_price)||<Skeleton/>}
                 </span>
 
-                <span className={`${s.discont_price} ${darkMode ? s["dark-mode"] : ""}`}>
-                ${formatPrice(product.discont_price)}
+                <span className={s.discont_price}>
+                ${formatPrice(product.discont_price)||<Skeleton/>}
                 </span>
               </>
             ) : (
-              <span className={`${darkMode ? s["dark-mode"] : ""}`} >${formatPrice(product.price)}</span>
+              <span className={`${darkMode ? s["dark-mode"] : ""}`} >${formatPrice(product.price)||<Skeleton/>}</span>
             )}
           </div>
         </div>

@@ -189,15 +189,15 @@
       height: 23px;
       margin: 20px 20px 10px 20px;
       width: 280px;
-      overflow: hidden; /* Hide overflowed content */
-    white-space: nowrap; /* Prevent text wrapping */
-    text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+      overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
     transition: width 0.3s; 
   }
   .product_title:hover {
-    width: auto; /* Allow the text to expand */
-    white-space: normal; /* Allow text to wrap */
-    overflow: visible; /* Make overflowed content visible */
+    width: auto; 
+    white-space: normal; 
+    overflow: visible; 
 }
   .product_price {
       font-size: 36px;
