@@ -8,6 +8,10 @@
   transition: transform 0.2s ease-in-out;
   width: 316px;
 }
+.product_item.dark-mode {
+  background-color: #383A2C;
+}
+
 
 .product_item:hover {
   transform: translateY(-5px);
@@ -52,12 +56,14 @@
   text-decoration: none;
   display: block;
 }
+.product_title.dark-mode {
+  color: #FFFFFF;
+}
 
 .product_title:hover {
   white-space: normal;
   overflow: visible;
 }
-
 
 
 .product_price {
@@ -68,6 +74,13 @@
   text-align: left;
   padding: 0 32px 32px 32px;
 }
+.product_price.dark-mode {
+  color: #FFFFFF;
+}
+
+.original_price.dark-mode {
+  color: #FFFFFF;
+}
 
 .discont_price {
   font-family: var(--font-family);
@@ -77,6 +90,9 @@
   text-decoration: line-through;
   color: #8b8b8b;
   padding-left: 16px;
+}
+.discont_price.dark-mode {
+  color: #8B8B8B;
 }
 
 .discont_tag {

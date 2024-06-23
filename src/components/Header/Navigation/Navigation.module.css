@@ -38,6 +38,12 @@
     transition: color var(--transition);
   }
 
+
+  .darkMode .navLink {
+    color: #FFFFFF;
+    transition: color var(--transition);
+  }
+
   .navLink.active{
     color: var(--light-grey);
   }

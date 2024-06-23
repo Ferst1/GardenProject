@@ -81,6 +81,22 @@ padding:40px 0  40px;
 }
 
 
+.dark-mode {
+	background-color: #424436;
+}
+  
+.dark-mode h2{
+	color: #FFFFFF;
+}
+
+.dark-mode h4{
+	color: #FFFFFF;
+}
+.dark-mode{
+	color: #FFFFFF;
+}
+
+
 .container {
 	padding: 0 40px 0px 40px;
 	margin: 0 auto;
@@ -88,7 +104,8 @@ padding:40px 0  40px;
 	box-sizing: border-box;
 	overflow-x: hidden;  
 }
-  
+
+
  
   @media (min-width: 1440px) {
 	.container {

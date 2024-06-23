@@ -23,6 +23,15 @@ h1 {
     font-size: 20px;
 }
 
+
+.footer_phone.dark-mode,
+.footer_socials.dark-mode,
+.address.dark-mode,
+.working_hours.dark-mode {
+    background-color: #383A2C;
+}
+
+
 .social_wrapper {
     display: flex;
     gap: 13px;     
@@ -34,6 +43,7 @@ h4 {
     font-weight: 600;
 }
 
+
 p {
     padding-bottom: 16px;
     color: #8B8B8B;
@@ -43,7 +53,10 @@ p {
     width: 100%;
     border-radius: 12px;
     margin-top: 32px;
+    /* filter: invert(90%) grayscale(1); contrast(90%) */
+    /* filter: grayscale(100%) invert(200%) contrast(100%); */
 }
+
 
 @media (max-width: 1000px) {
     .footer {
