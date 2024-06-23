@@ -1,5 +1,5 @@
 import Skeleton from "react-loading-skeleton"
-
+import 'react-loading-skeleton/dist/skeleton.css';
 import styled from "./CardSkeleton.module.css"
 
 const CardSkeleton = () => {
