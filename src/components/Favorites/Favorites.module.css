@@ -7,7 +7,11 @@
     padding-top: 32px;
     gap: 25px;
 }
-
+.button_details{
+    background-color: var(--green);
+    border: none;
+    color: var(--white);
+}
 
 @media (max-width: 1000px) {
 
