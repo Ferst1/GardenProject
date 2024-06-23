@@ -1,5 +1,5 @@
 
-.favorite {
+.favoriteIcon {
     width: 48px;
     height: 48px;
 }
@@ -8,26 +8,24 @@
     cursor: pointer;
 }
   
-@media (max-width: 1000px) {
-    .favorite {
+@media (max-width: 1000px) and (min-width: 480px){
+    .favoriteIcon {
         width: 44px;
         height: 44px;
     }
 }
     
-    
-@media (max-width: 480px) {
-    .favorite {
-        width: calc(44px - (12px * ((480px - 100vw) / (480 - 360))));
-        height: calc(44px - (12px * ((480px - 100vw) / (480 - 360))));
-    }
-}
-    
    
-@media (max-width: 360px) {
-    .favorite {
+@media (max-width: 480px) and (min-width: 360px) {
+    .favoriteIcon {
         width: 32px;
         height: 32px;
     }
+}
+@media (max-width: 360px) and (min-width: 0px) {
+
+    .favoriteIcon{
+       display: none;
+    }  
 }
     

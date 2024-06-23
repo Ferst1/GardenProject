@@ -3,10 +3,35 @@
     height: 32px;
 }
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 1000px) and (min-width: 768px) {
 
     .switcher{
-        width: 52px;
-       height: 28px;
-    }
+        width: 60px;
+        height: 32px;
+    }  
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+
+.switcher{
+    max-width: 52px;
+    max-height: 28px;
+}  
+}
+@media (max-width: 480px) and (min-width: 320px) {
+
+.switcher{
+    max-width: 52px;
+    max-height: 28px;
+}  
+}
+
+@media (max-width: 320px) and (min-width: 0px) {
+
+.switcher{
+    max-width: 52px;
+    max-height: 28px;
+}  
 }

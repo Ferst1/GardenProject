@@ -13,22 +13,31 @@
   
   .logo {
     cursor: pointer; }
+
+    @media (max-width: 1000px) and (min-width: 768px) {
+
+        .logo{
+            width: 64px;
+            height: 64px;
+        }  
+    }
   
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 480px) {
 
     .logo{
-        width: 68px;
-        height: 68px;
+        width: 44px;
+        height: 44px;
     }  
 }
-@media (max-width: 480px) {
+@media (max-width: 480px) and (min-width: 320px) {
 
     .logo{
         max-width: 44px;
         max-height: 44px;
     }  
 }
-@media (max-width: 320px) {
+
+@media (max-width: 320px) and (min-width: 0px) {
 
     .logo{
         max-width: 44px;
