@@ -109,7 +109,7 @@ form {
     padding-bottom: 0px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1373px) and (min-width: 1000px) {
 
     .form_container {
         height: 454px;
@@ -150,9 +150,10 @@ form {
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) and (min-width: 768px) {
     .form_container {
         display: flex;
+        height: 460px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -163,7 +164,7 @@ form {
 
     form {
         width: 334px;
-        height: 304px;
+        height: 308px;
         bottom: 30px; 
         right: 20px;
     }
@@ -192,7 +193,7 @@ form {
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 766px) and (min-width: 480px) {
     .form_container {
         width: 100%;
         height: 614px;
@@ -224,6 +225,7 @@ form {
         bottom: 0;
         right: 0;
         padding: 20px;
+        align-items: center;
     }
     .form_container img {
         width: 454px;
@@ -251,9 +253,10 @@ form {
 }
 
 
-@media (max-width: 360px) {
+@media (max-width: 480px) and (min-width:360px) {
     .form_container {
         width: 100%;
+        height: 100%;
         border-radius: 12px;
         display: flex;
         flex-direction: column;
@@ -263,13 +266,14 @@ form {
 
     .form_container h3 {
         font-size: 40px;
-        width:300px;
+        width:200px;
         height: 88px;
         text-align: center;
         position: relative;
-        top: 0;
+        top: 5;
         left: 0;
         transform: none;
+        white-space: pre-wrap;
     }
 
     form {
@@ -280,6 +284,66 @@ form {
         position: relative; 
         bottom: 0;
         right: 0;
+        margin-top: 90px;
+        align-items: center;
+    }
+    .form_container img {
+        width: 454px;
+        height: 232px;
+        object-fit: cover;
+        margin-left: 0px;
+    }
+
+    .form_container input {
+        padding: 10px;
+        font-size: 18px;
+        width: 280px;
+        height: 47px;
+    }
+
+    .form_container button {
+        font-size: 18px;
+        width: 280px;
+        height: 47px;
+    }
+
+    .warning_text, .success_text {
+        font-size: 14px;
+    }
+}
+@media (max-width: 360px) and (min-width:0px) {
+    .form_container {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .form_container h3 {
+        font-size: 40px;
+        width:200px;
+        height: 88px;
+        text-align: center;
+        position: relative;
+        top: 5;
+        left: 0;
+        transform: none;
+        white-space: pre-wrap;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: relative; 
+        bottom: 0;
+        right: 0;
+        margin-top: 90px;
+        align-items: center;
     }
     .form_container img {
         width: 454px;

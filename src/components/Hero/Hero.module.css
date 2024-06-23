@@ -43,38 +43,44 @@
 }
 
 
-@media (max-width: 1440px) {
+@media (max-width: 1440px) and (min-width: 1000px){
     .hero_container {
         padding: 60px 20px;
     }
 }
 
-@media (max-width: 1000px) {
-    .hero_container {
-        padding: 40px 20px;
-        height: 476px;
-    }
-    .title {
-        font-size: 90px;
-        width: 960px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 999px) and (min-width: 768px){
     .hero_container {
         padding: 60px 20px;
         height: 600px;
     }
     .title {
         font-size: 60px;
-        width: 700px;
+        width: 90%;
     }
     .cta_button {
         font-size: 18px;
     }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 768px) and (min-width: 480px){
+    .hero_container {
+        padding: 40px 20px;
+        height: 600px;
+    }
+    .title {
+        font-size: 60px;
+        line-height: 66px;
+        text-align: left;
+        width: 90%;
+    }
+    .cta_button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 360px){
     .hero_container {
         padding: 40px 20px;
         height: 600px;
@@ -84,6 +90,7 @@
         line-height: 66px;
         text-align: left;
         width: 400px;
+        width: 90%;
     }
     .cta_button {
         font-size: 16px;
@@ -91,15 +98,11 @@
 }
 
 
-@media (max-width: 360px) {
-    .hero_container {
-        padding: 40px 20px;
-        height: 600px;
-        width: auto;
-    }
+@media (max-width: 360px) and (min-width: 0px) {
+
     .title {
         font-size: 50px;
-        width: 320px;
+        width: 90%;
     }
     .cta_button {
         font-size: 16px;
