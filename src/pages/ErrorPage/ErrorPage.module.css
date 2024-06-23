@@ -28,7 +28,13 @@
     text-align: center;
 
   }
+  .dark h1{
+    color: #FFFFFF; 
+  }
   
+  .dark .error_wrapper > p{
+    color: #DDDDDD; 
+  }
   .error_wrapper > p .homepage-link {
     display: block;
   }

@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form';
 import s from './OrderDetailsForm.module.css';
 import Button from '../UI/Button';
 import { openModal } from '../../redux/actions/modalActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const OrderDetailsForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch=useDispatch();
+  const isDarkMode = useSelector((state) => state.theme.darkMode);
 
   const onSubmit = data => {
     console.log(data);
@@ -17,14 +18,14 @@ const OrderDetailsForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
+    <form onSubmit={handleSubmit(onSubmit)} className={`${s.form} ${isDarkMode ? s.darkmode : ''}`}>
       <div className={s.formGroup}>
         <input
           id="name"
           type="text"
           placeholder="Name"
           {...register('name', { required: 'Name is required' })}
-          className={s.input}
+          className={`${s.input} ${isDarkMode ? s.darkmode : ''}`}
         />
         {errors.name && <p className={s.error}>{errors.name.message}</p>}
       </div>
@@ -41,7 +42,7 @@ const OrderDetailsForm = () => {
               message: 'Phone number is invalid'
             }
           })}
-          className={s.input}
+          className={`${s.input} ${isDarkMode ? s.darkmode : ''}`}
         />
         {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
       </div>
@@ -58,7 +59,7 @@ const OrderDetailsForm = () => {
               message: 'Email is invalid'
             }
           })}
-          className={s.input}
+          className={`${s.input} ${isDarkMode ? s.darkmode : ''}`}
         />
         {errors.email && <p className={s.error}>{errors.email.message}</p>}
       </div>

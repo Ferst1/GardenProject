@@ -92,9 +92,20 @@ padding:40px 0  40px;
 .dark-mode h4{
 	color: #FFFFFF;
 }
-.dark-mode{
+.dark-mode h3{
 	color: #FFFFFF;
 }
+.dark-mode h5{
+	color: #FFFFFF;
+}
+.dark-mode div{
+	color: #FFFFFF;
+}
+.dark-mode button{
+	color: #FFFFFF;
+}
+
+
 
 
 .container {
