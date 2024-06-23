@@ -1,36 +1,43 @@
 import React from "react";
 import s from "./Footer.module.css";
-import instagram from "../../media/icons/instagram-dark-icon.svg";
-import whatsap from "../../media/icons/whatsapp-dark-icon.svg";
+import instagramDark from "../../media/icons/instagram-dark-icon.svg";
+import instagramLight from "../../media/icons/instagram-light-icon.svg";
+import whatsappDark from "../../media/icons/whatsapp-dark-icon.svg";
+import whatsappLight from "../../media/icons/whatsapp-light-icon.svg";
+
+import { useSelector } from "react-redux";
 const Footer = () => {
+
+  const darkMode = useSelector((state) => state.theme.darkMode);
+
   return (
-    <div className={`${s.footer} container`}>
+    <div className={`${s.footer} ${darkMode ? s["dark-mode"] : ""} container`}>
       <h2>Contact</h2>
       <div className={s.footer_wrapper}>
-        <div className={s.footer_phone}>
+        <div className={`${s.footer_phone} ${darkMode ? s["dark-mode"] : ""}`}>
           <p>Phone</p>
           <h4>+49 999 999 99 99</h4>
         </div>
-        <div className={s.footer_socials}>
+        <div className={`${s.footer_socials} ${darkMode ? s["dark-mode"] : ""}`}>
           <p>Socials</p>
           <div className={s.social_wrapper}>
             <span>
               <a href="https://www.instagram.com" target="_blank">
-                <img src={instagram} alt="instagram icon" />
+              <img src={darkMode ? instagramLight : instagramDark} alt="instagram icon" />
               </a>
             </span>
             <span>
               <a href="https://www.whatsapp.com" target="_blank">
-                <img src={whatsap} alt="instagram icon" />
+              <img src={darkMode ? whatsappLight : whatsappDark } alt="whatsapp icon" />
               </a>
             </span>
           </div>
         </div>
-        <div className={s.address}>
+        <div className={`${s.address} ${darkMode ? s["dark-mode"] : ""}`}>
           <p>Address</p>
           <h4>Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland</h4>
         </div>
-        <div className={s.working_hours}>
+        <div className={`${s.working_hours} ${darkMode ? s["dark-mode"] : ""}`}>
           <p>Working hours</p>
           <h4>24 hours a day</h4>
         </div>

@@ -19,10 +19,15 @@
   background-color: var(--light-grey);
 }
 
-  .button.active {
-    font-weight: 500;
-    color: var(--black);
+.button.active {
+  font-weight: 500;
+  color: var(--black);
 }
+
+:global(.dark-mode) .button.active{
+	color: #ffffff;
+}
+
 .button + .button::before {
   content: '';
   position: absolute;
