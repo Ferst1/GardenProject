@@ -87,9 +87,6 @@
   position: relative;
   display: inline-block;
 }
-
-
-  
 @media (max-width: 1000px) and (min-width: 768px) {
   .mobile-menu {
     display: flex;

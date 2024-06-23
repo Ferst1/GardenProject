@@ -1,11 +1,11 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import s from '../Navigation/Navigation.module.css';
+import ButtonDiscount from '../ButtonDiscount';
 
-import { NavLink } from "react-router-dom";
-import s from "../Navigation/Navigation.module.css";
-import ButtonDiscount from "../ButtonDiscount";
-
-const Navigation = () => {
+const Navigation = ({ darkMode }) => {
   return (
-    <div className={s.navigation}>
+    <div className={`${s.navigation} ${darkMode ? s.darkMode : ''}`}>
       <div className={s.buttonDiscount}>
         <ButtonDiscount />
       </div>
@@ -23,7 +23,6 @@ const Navigation = () => {
           <NavLink to={"/all_sales"} className={s.navLink}>
             All sales
           </NavLink>
-        
         </nav>
       </div>
     </div>

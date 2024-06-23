@@ -25,6 +25,7 @@ const ProductsCard = ({
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
   const favorites = useSelector((state) => state.products.favorites);
+  const darkMode = useSelector((state) => state.theme.darkMode);
   const [isInBasket, setIsInBasket] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -74,7 +75,7 @@ const ProductsCard = ({
   };
 
   return (
-    <div className={s.product_item}>
+    <div className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""}`}>
       <Link to={`/product/${product.id}`}>
         <div className={s.category_content}>
           <div className={s.image_container}>
@@ -103,11 +104,11 @@ const ProductsCard = ({
               <div className={s.discont_tag}>{`-${discount}%`}</div>
             )}
           </div>
-          <div className={s.product_title}>{product.title||<Skeleton/>}</div>
-          <div className={s.product_price}>
+          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""}`}>{product.title||<Skeleton/>}</div>
+          <div className={`${s.product_price} ${darkMode ? s["dark-mode"] : ""}`}>
             {product.discont_price ? (
               <>
-                <span className={s.original_price}>
+                <span className={`${s.original_price} ${darkMode ? s["dark-mode"] : ""}`}>
                 ${formatPrice(product.discont_price)||<Skeleton/>}
                 </span>
 
@@ -116,7 +117,7 @@ const ProductsCard = ({
                 </span>
               </>
             ) : (
-              <span>${formatPrice(product.price)||<Skeleton/>}</span>
+              <span className={`${darkMode ? s["dark-mode"] : ""}`} >${formatPrice(product.price)||<Skeleton/>}</span>
             )}
           </div>
         </div>

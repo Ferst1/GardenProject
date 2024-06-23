@@ -16,19 +16,21 @@ import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
 import { basketReducer } from './basketReducer';
 import modalReducer from './modalReducer';
+import themeReducer from './themeSlice';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['basket', 'products'],
+  whitelist: ['basket', 'products', 'theme'],
 };
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
   basket: basketReducer,
-  modal: modalReducer, 
+  modal: modalReducer,
+  theme: themeReducer, 
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -41,6 +43,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+
 });
 
 export const persistor = persistStore(store);

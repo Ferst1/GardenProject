@@ -1,36 +1,58 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BaskLight from "../../../media/icons/basket-light-icon.svg";
 import BaskDark from "../../../media/icons/basket-night-icon.svg";
 import BaskDarkDark from "../../../media/icons/basket-hover-dark.svg";
+import BaskLightLight from "../../../media/icons/basketLightLightLight.svg";
 import s from "./BasketHeader.module.css";
 
-const BasketHeader = ({ isDarkMode, isBasket }) => {
+const BasketHeader = ({ darkMode, isBasket }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
+  const [currentIcon, setCurrentIcon] = useState(null);
 
-  const getIcon = () => {
+  useEffect(() => {
     if (isBasket) {
-      return isDarkMode ? BaskLight : BaskDark;
+        if (darkMode) {
+            setCurrentIcon(isHovered ? BaskLightLight : BaskLight);
+        } else {
+            setCurrentIcon(isHovered ? BaskDarkDark : BaskDark);
+        }
     } else {
-      return isHovered ? BaskDarkDark : BaskDark;
+        if (darkMode) {
+            setCurrentIcon(isHovered ? BaskLightLight : BaskLight);
+        } else {
+            setCurrentIcon(isHovered ? BaskDarkDark : BaskDark);
+        }
     }
-  };
+}, [darkMode, isBasket, isHovered]);
 
   const handleNavigateToBasket = () => {
     navigate('/basket');
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div
       className={s.basket}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={handleNavigateToBasket}
       style={{ cursor: 'pointer' }}
     >
-      <img src={getIcon()} alt="Basket Icon" className={s.basketIcon} />
+      <img 
+        src={currentIcon} 
+        alt="Basket Icon" 
+        className={s.basketIcon} 
+      />
     </div>
   );
 };

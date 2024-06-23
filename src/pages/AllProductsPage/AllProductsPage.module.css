@@ -14,9 +14,9 @@ h2{
 
 .sorted_section > * {
     margin-right: 40px;
-  }
+}
   
-  .buttons_wrapper{
+.buttons_wrapper{
     display: flex;
 	margin-top: 40px;
     gap: 16px;

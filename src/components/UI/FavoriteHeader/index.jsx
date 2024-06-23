@@ -1,30 +1,49 @@
-import React, { useState } from 'react';
-import FavLight from '../../../media/icons/favorite-light-transparent-icon.svg';
+
+import React, { useState, useEffect } from 'react';
 import FavDark from '../../../media/icons/favorite-transparent-night-icon.svg';
 import FavDarkDark from '../../../media/icons/favorite-hover-dark.svg';
+import FavLight from '../../../media/icons/favorite-light-transparent-icon.svg';
+import FavLightLight from '../../../media/icons/favoriteLightLightLight.svg';
 import s from './FavoriteHeader.module.css';
 
-const FavoriteHeader = ({ isDarkMode, isFavorite }) => {
+const FavoriteHeader = ({ darkMode, isFavorite }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [currentIcon, setCurrentIcon] = useState(null);
 
-    const getIcon = () => {
+    useEffect(() => {
         if (isFavorite) {
-            return isDarkMode ? FavLight : FavDark;
+            if (darkMode) {
+                setCurrentIcon(isHovered ? FavLightLight : FavLight);
+            } else {
+                setCurrentIcon(isHovered ? FavDarkDark : FavDark);
+            }
         } else {
-            return isHovered ? FavDarkDark : FavDark;
+            if (darkMode) {
+                setCurrentIcon(isHovered ? FavLightLight : FavLight);
+            } else {
+                setCurrentIcon(isHovered ? FavDarkDark : FavDark);
+            }
         }
+    }, [darkMode, isFavorite, isHovered]);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
     };
 
     return (
-        <div 
+        <div
             className={s.favorite}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            <img 
-                src={getIcon()} 
-                alt="Favorite Icon" 
-                className={s.favoriteIcon} 
+            <img
+                src={currentIcon}
+                alt="Favorite Icon"
+                className={s.favoriteIcon}
             />
         </div>
     );

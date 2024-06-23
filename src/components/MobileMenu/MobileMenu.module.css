@@ -7,7 +7,7 @@
     right: -50%; 
     bottom: 0;
     width: 50%; 
-    background-color: white;
+    background-color: #FFFFF1;
     z-index: 1000;
     transition: right 0.8s ease-in-out; 
     display: flex;
@@ -22,31 +22,48 @@
   .mobileMenu.open {
     right: 0; 
   } 
+
+  .mobileMenu.darkMode {
+    background-color: #424436;
+  }
   
   .close {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    width: 22px;
-    height: 22px;
+    width: 44px;
+    height: 44px;
     stroke:#0000;
   }
-  
+
+  .prob{ 
+    margin-top: 36px;
+  }
+
   .link { 
-padding: 10px;   
- text-decoration: none; 
-font-weight: 500;
-font-size: 18px;
-line-height: 1.3;
-color: var(--black);
-transition: color var(--transition);
+    padding: 10px; 
+    text-decoration: none; 
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--black);
+    transition: color var(--transition);
   }
   
+  .link.darkMode {
+    color: #ffffff;
+  }
+
   .link:hover, 
   .link:focus {
     color:var(--green);
   }
 
 
+  .button_discount{
+    font-size: large;
+  }
   
+
+ 
