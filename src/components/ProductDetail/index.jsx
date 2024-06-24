@@ -17,7 +17,9 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
     const [isFavorite, setIsFavorite] = useState(false);
-    const [productCount, setProductCount] = useState(1);
+    const [productCount, setProductCount] = useState(0);
+    const [darkMode, setDarkMode] = useState(false);
+    const [showFullDescription, setShowFullDescription] = useState(false);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -35,7 +37,7 @@ const ProductDetail = () => {
     };
 
     const handleDecrement = () => {
-        if (productCount > 1) {
+        if (productCount > 0) {
             setProductCount(productCount - 1);
             dispatch(decrementProductCount());
         }
@@ -52,6 +54,10 @@ const ProductDetail = () => {
 
     const handleImageClick = () => {
         dispatch(openModal({ image: `${baseUrl}${product.image}` }));
+    };
+
+    const toggleDescription = () => {
+        setShowFullDescription(!showFullDescription);
     };
 
     if (loading) {
@@ -75,14 +81,14 @@ const ProductDetail = () => {
 
     return (
         <>
-            <div className={styles.product_detail}>
+            <div className={`${styles.product_detail} ${darkMode ? styles.dark : ''}`}>
                 <img
                     src={`${baseUrl}${product.image}`}
                     alt={product.title}
-                    className={styles.category_img}
+                    className={`${styles.category_img} ${darkMode ? styles.dark : ''}`}
                     onClick={handleImageClick} 
                 />
-                <div className={styles.product_detail_content}>
+                <div className={`${styles.product_detail_content} ${darkMode ? styles.dark : ''}`}>
                     <div className={styles.title_favorite_wrapper}>
                         <h4>{product.title}</h4>
                         <Favorite
@@ -112,10 +118,20 @@ const ProductDetail = () => {
                             product={{ ...product, count: productCount }}
                         /> 
                     </div>
-                    <div className={styles.description_wrapper}>
+                    <div className={`${styles.description_wrapper} ${darkMode ? styles.dark : ''}`}>
+                        
                         <h5>Description</h5>
-                        <p>{product.description}</p>
-                        <Link to={`/product/${product.id}`}>Read more</Link>
+                        <div className="product-description">
+                            {showFullDescription ? (
+                                <p>{product.description}</p>
+                            ) : (
+                                <p>{product.description.substring(0, 150)}...</p>
+                            )}
+                            <button className={`${styles.product_desc} ${darkMode ? styles.dark : ''}`} onClick={toggleDescription}>
+                                {showFullDescription ? 'Read less' : 'Read more'}
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
