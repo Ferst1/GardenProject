@@ -115,18 +115,4 @@
     padding: 3px 8px;
   }
 }
-@media (max-width: 360px) and (min-width: 0px) {
 
-  .header{
-    padding: 0px 10px;
-    height: 68px;
-  }
-  .basketCount {
-    display: none;
-  }
-  .favoriteCount{
-    display: none;
-  }
-}
-  
-  

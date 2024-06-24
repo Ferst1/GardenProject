@@ -72,7 +72,7 @@
       font-weight: 400;
     }
   }
-  
+
   @media (max-width: 768px) {
     .categories_items {
       grid-template-columns: repeat(2, 354px);

@@ -7,9 +7,20 @@
     padding-top: 32px;
     gap: 25px;
 }
+.button_details{
+    background-color: var(--green);
+    border: none;
+    color: var(--white);
+    transition: all var(--transition);
+}
 
 
-@media (max-width: 1000px) {
+.button_details:hover{
+
+    background-color: var(--black);
+    color: var(--white);
+}
+@media (max-width: 1437px) and (min-width: 1000px) {
 
     .favoritesList {
         display: grid;
@@ -20,7 +31,7 @@
     }
 }
 
-@media (max-width:768px) {
+@media (max-width: 999px) and (min-width: 768px) {
     .favoritesList{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -29,7 +40,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) and (min-width: 480px) {
     .favoritesList{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -37,8 +48,8 @@
     }
 }
 
-@media (max-width: 360px) {
-    .favorites{
+@media (max-width: 479px) and (min-width: 360px){
+    .favoritesList{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 24px;
