@@ -12,4 +12,13 @@ export const formatPrice = (price) => {
     });
   };
   
-  
+  export const calculateDiscount = (price, discountPrice) => {
+    if (!price || !discountPrice) return null;
+    return Math.round(((price - discountPrice) / price) * 100);
+};
+
+export const calculateTotalPrice = (price, discountPrice, count) => {
+    if (!price || count < 0) return 0;
+    const finalPrice = discountPrice || price;
+    return finalPrice * count;
+};

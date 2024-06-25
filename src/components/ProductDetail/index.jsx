@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct, incrementProductCount, decrementProductCount, addToFavorites, removeFromFavorites } from '../../redux/actions/productsActions';
 import styles from './ProductDetail.module.css';
@@ -11,6 +11,7 @@ import ButtonCounter from '../UI/ButtonCounter';
 import { openModal } from '../../redux/actions/modalActions';
 import ModalWindowContainer from '../ModalWindowContainer';
 import { formatPrice } from '../../utils';
+import { calculateDiscount, calculateTotalPrice } from '../../utils';
 
 const ProductDetail = () => {
     const { productId } = useParams();
@@ -72,12 +73,8 @@ const ProductDetail = () => {
         return <div>Product not found</div>;
     }
 
-    let discount = null;
-    if (product.price && product.discont_price) {
-        discount = Math.round(((product.price - product.discont_price) / product.price) * 100);
-    }
-
-    const totalPrice = product.discont_price ? product.discont_price * productCount : product.price * productCount;
+    const discount = calculateDiscount(product.price, product.discont_price);
+    const totalPrice = calculateTotalPrice(product.price, product.discont_price, productCount);
 
     return (
         <>
@@ -101,7 +98,7 @@ const ProductDetail = () => {
                         {formatPrice(totalPrice)}€
                         {product.discont_price && (
                             <span className={styles.discont_price}>
-                                {formatPrice(product.discont_price)}€
+                                {formatPrice(product.price)}€
                             </span>
                         )}
                         {discount !== null && (
@@ -119,7 +116,6 @@ const ProductDetail = () => {
                         /> 
                     </div>
                     <div className={`${styles.description_wrapper} ${darkMode ? styles.dark : ''}`}>
-                        
                         <h5>Description</h5>
                         <div className="product-description">
                             {showFullDescription ? (
@@ -131,7 +127,6 @@ const ProductDetail = () => {
                                 {showFullDescription ? 'Read less' : 'Read more'}
                             </button>
                         </div>
-
                     </div>
                 </div>
             </div>

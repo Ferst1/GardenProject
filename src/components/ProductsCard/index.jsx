@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
@@ -12,7 +14,7 @@ import {
 } from "../../redux/actions/productsActions";
 
 import { formatPrice } from "../../utils";
-
+import { calculateDiscount } from "../../utils";
 
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -41,12 +43,7 @@ const ProductsCard = ({
     return <div>Product data is missing</div>;
   }
 
-  let discount = null;
-  if (product.price && product.discont_price) {
-    discount = Math.round(
-      ((product.price - product.discont_price) / product.price) * 100
-    );
-  }
+  const discount = calculateDiscount(product.price, product.discont_price);
   
   const handleAddToBasket = (e, addToBasketAction) => {
     if (e && typeof e.preventDefault === "function") {
