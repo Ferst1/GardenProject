@@ -16,6 +16,7 @@
     flex-grow: 1;
   }
   
+
   .button_with_line::before {
     content: '';
     flex-grow: 1;
