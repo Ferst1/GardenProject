@@ -10,7 +10,7 @@ import Favorite from '../UI/Favorite';
 import ButtonCounter from '../UI/ButtonCounter';
 import { openModal } from '../../redux/actions/modalActions';
 import ModalWindowContainer from '../ModalWindowContainer';
-import { formatPriceWithComma } from '../../utils';
+import { formatPrice } from '../../utils';
 
 const ProductDetail = () => {
     const { productId } = useParams();
@@ -98,10 +98,10 @@ const ProductDetail = () => {
                         />
                     </div>
                     <div className={styles.product_price}>
-                        {formatPriceWithComma(totalPrice)}€
+                        {formatPrice(totalPrice)}€
                         {product.discont_price && (
                             <span className={styles.discont_price}>
-                                {formatPriceWithComma(product.discont_price)}€
+                                {formatPrice(product.discont_price)}€
                             </span>
                         )}
                         {discount !== null && (

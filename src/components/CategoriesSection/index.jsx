@@ -32,7 +32,7 @@ const CategoriesSection = () => {
           <ButtonSection
             text="All categories"
             to="/categories"
-            backgroundColor={"transparent"}
+            
           />
         </div>
       </div>

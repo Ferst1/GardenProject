@@ -16,6 +16,7 @@ const DiscountedCheckBox = ({ styles = defaultStyles, setShowDiscounted, showDis
         <img
           src={showDiscounted ? checkedIcon : uncheckedIcon} 
           className={styles.checkbox_image}
+             alt="Discount checkbox"
         />
       </div>
     </div>

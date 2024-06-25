@@ -10,7 +10,10 @@ export const initialState = {
     minPrice: 0,
     maxPrice: Infinity,
   },
+  sortBy: 'default',
+  showDiscounted: false,
 };
+
 
 export const actionTypes = {
   FETCH_PRODUCTS_REQUEST: 'FETCH_PRODUCTS_REQUEST',
@@ -28,7 +31,11 @@ export const actionTypes = {
   REMOVE_FROM_FAVORITES: 'REMOVE_FROM_FAVORITES',
   SET_MIN_PRICE_FILTER: 'SET_MIN_PRICE_FILTER', 
   SET_MAX_PRICE_FILTER: 'SET_MAX_PRICE_FILTER',
+  SET_SORT_BY: 'SET_SORT_BY',
+  SET_SHOW_DISCOUNTED: 'SET_SHOW_DISCOUNTED',
+  SET_FILTERED_AND_SORTED_PRODUCTS: 'SET_FILTERED_AND_SORTED_PRODUCTS',
 };
+
 
 export function productsReducer(state = initialState, action) {
   switch (action.type) {
@@ -124,6 +131,16 @@ export function productsReducer(state = initialState, action) {
           maxPrice: action.payload,
         },
       };
+      case actionTypes.SET_SORT_BY:
+        return { ...state, sortBy: action.payload };
+      case actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS:
+        return { ...state, filteredAndSortedProducts: action.payload };
+      
+
+        case actionTypes.SET_SHOW_DISCOUNTED:
+          return { ...state, showDiscounted: action.payload };
+        case actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS:
+          return { ...state, filteredAndSortedProducts: action.payload };
 
     default:
       return state;

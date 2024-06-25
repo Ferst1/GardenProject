@@ -1,7 +1,7 @@
 
 import axios from 'axios';
-import baseUrl from '../../instance';
 import { actionTypes } from '../../redux/productsReducer';
+import baseUrl from '../../instance';
 
 export const setMinPriceFilter = (minPrice) => ({
   type: actionTypes.SET_MIN_PRICE_FILTER,
@@ -11,6 +11,16 @@ export const setMinPriceFilter = (minPrice) => ({
 export const setMaxPriceFilter = (maxPrice) => ({
   type: actionTypes.SET_MAX_PRICE_FILTER,
   payload: maxPrice,
+});
+
+export const setSortBy = (sortBy) => ({
+  type: actionTypes.SET_SORT_BY,
+  payload: sortBy,
+});
+
+export const setShowDiscounted = (showDiscounted) => ({
+  type: actionTypes.SET_SHOW_DISCOUNTED,
+  payload: showDiscounted,
 });
 
 const fetchProductsRequest = () => ({ type: actionTypes.FETCH_PRODUCTS_REQUEST });
@@ -23,36 +33,17 @@ const fetchProductsByCategoryFailure = (error) => ({ type: actionTypes.FETCH_PRO
 
 const fetchProductRequest = () => ({ type: actionTypes.FETCH_PRODUCT_REQUEST });
 const fetchProductSuccess = (product) => ({ type: actionTypes.FETCH_PRODUCT_SUCCESS, payload: product });
- const fetchProductFailure = (error) => ({ type: actionTypes.FETCH_PRODUCT_FAILURE, payload: error });
+const fetchProductFailure = (error) => ({ type: actionTypes.FETCH_PRODUCT_FAILURE, payload: error });
 
 export const fetchProducts = () => async (dispatch) => {
   dispatch(fetchProductsRequest());
   try {
     const response = await axios.get(`${baseUrl}/products/all`);
-
-    
-
     dispatch(fetchProductsSuccess(response.data));
   } catch (error) {
     dispatch(fetchProductsFailure(error.message));
   }
 };
-
-
-// export const fetchProducts = () => async (dispatch) => {
-//   dispatch(fetchProductsRequest());
-//   try {
-//     const response = await new Promise((resolve) => {
-//       setTimeout(async () => {
-//         const res = await axios.get(`${baseUrl}/products/all`);
-//         resolve(res);
-//       }, 4000); 
-//     });
-//     dispatch(fetchProductsSuccess(response.data));
-//   } catch (error) {
-//     dispatch(fetchProductsFailure(error.message));
-//   }
-// };
 
 export const fetchProductsByCategory = (categoryId) => async (dispatch) => {
   dispatch(fetchProductsByCategoryRequest());
@@ -94,3 +85,30 @@ export const removeFromFavorites = (product) => ({
   type: actionTypes.REMOVE_FROM_FAVORITES,
   payload: product,
 });
+
+export const filterAndSortProducts = () => (dispatch, getState) => {
+  const { products, filters, sortBy, showDiscounted } = getState().products;
+  const filteredProducts = products.filter(product => {
+    const price = product.discont_price ?? product.price;
+    const meetsPriceCriteria = price >= filters.minPrice && price <= filters.maxPrice;
+    const meetsDiscountCriteria = showDiscounted ? product.discont_price : true;
+    return meetsPriceCriteria && meetsDiscountCriteria;
+  });
+
+  let sortedProducts = [...filteredProducts];
+  switch (sortBy) {
+    case 'newest':
+      sortedProducts.sort((a, b) => b.id - a.id);
+      break;
+    case 'price-high-low':
+      sortedProducts.sort((a, b) => (b.discont_price ?? b.price) - (a.discont_price ?? a.price));
+      break;
+    case 'price-low-high':
+      sortedProducts.sort((a, b) => (a.discont_price ?? a.price) - (b.discont_price ?? b.price));
+      break;
+    default:
+      break;
+  }
+
+  dispatch({ type: actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS, payload: sortedProducts });
+};
