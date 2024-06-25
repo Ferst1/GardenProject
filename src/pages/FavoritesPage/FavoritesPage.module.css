@@ -1,9 +1,17 @@
 
 .sorted_section{
-    display: flex;
+    display: flex;  
     gap: 40px;
     margin-bottom: 40px;
 
+}
+
+.buttons_wrapper{
+    display: flex;
+margin-top: 40px;
+gap: 16px;
+
+    
 }
 h3{
     font-size: 20px;

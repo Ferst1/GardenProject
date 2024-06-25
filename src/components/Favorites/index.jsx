@@ -1,20 +1,22 @@
-
 import React from 'react';
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import ProductsCard from '../ProductsCard'; 
+import ProductsCard from '../ProductsCard';
 import Button from '../UI/Button';
 import styles from './Favorites.module.css';
 
-const Favorites = () => {
-  const favorites = useSelector((state) => state.products.favorites || []);
+const Favorites = ({ products, loading }) => {
   const navigate = useNavigate();
 
   const handleContinueShopping = () => {
     navigate('/all_products');
   };
 
-  if (favorites.length === 0) {
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (products.length === 0) {
     return (
       <div className={styles.empty}>
         <p>Looks like you have no items in your favorites currently.</p>
@@ -30,12 +32,17 @@ const Favorites = () => {
   return (
     <div className={styles.favorites}>
       <div className={styles.favoritesList}>
-        {favorites.map((product) => (
+        {products.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
+};
+
+Favorites.propTypes = {
+  products: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default Favorites;
