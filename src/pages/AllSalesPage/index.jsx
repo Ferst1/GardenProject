@@ -50,19 +50,16 @@ const AllSalesPage = () => {
         <ButtonSection
           text="Main Page"
           to="/"
-          backgroundColor={"transparent"}
           className={styles.button_section}
         />
         <ButtonSection
           text="All products"
           to="/all_products"
-          backgroundColor={"transparent"}
           className={styles.button_section}
         />
         <ButtonSection
           text="All sales"
           to="/all_sales"
-          backgroundColor={"transparent"}
           className={styles.button_section}
         />
       </div>
