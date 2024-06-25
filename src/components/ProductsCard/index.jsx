@@ -47,7 +47,7 @@ const ProductsCard = ({
       ((product.price - product.discont_price) / product.price) * 100
     );
   }
-
+  
   const handleAddToBasket = (e, addToBasketAction) => {
     if (e && typeof e.preventDefault === "function") {
       e.preventDefault();
@@ -113,7 +113,7 @@ const ProductsCard = ({
                 </span>
 
                 <span className={s.discont_price}>
-                ${formatPrice(product.discont_price)||<Skeleton/>}
+                ${formatPrice(product.price)||<Skeleton/>}
                 </span>
               </>
             ) : (
