@@ -25,10 +25,4 @@
         height: 32px;
     }
 }
-@media (max-width: 360px) and (min-width: 0px) {
-
-    .favoriteIcon{
-       display: none;
-    }  
-}
     

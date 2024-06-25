@@ -1,25 +1,30 @@
+
 .saleCardWrapperStyle {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4,1fr);
   gap: 20px;
+
 }
 
-@media (max-width: 1400px) and (min-width: 1000px) {
-  .saleCardWrapperStyle {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-  @media  (max-width: 999px) and (max-width: 768px) {
+
+  @media (max-width: 1437px) and (min-width: 1000px) {
     .saleCardWrapperStyle {
-      grid-template-columns: repeat(2,1fr);
-    }
-  }
-  @media (max-width: 767px) and (max-width: 480px) {
+      grid-template-columns: repeat(4,1fr);
+      object-fit: cover;
+      
+    }}
+  
+  @media (max-width: 999px) and (min-width: 768px) {
     .saleCardWrapperStyle {
       grid-template-columns: repeat(2,1fr);
       
     }}
-  @media (max-width: 479px) and (max-width: 360px) {
+  @media (max-width: 767px) and (min-width: 480px) {
+    .saleCardWrapperStyle {
+      grid-template-columns: repeat(2,1fr);
+      
+    }}
+  @media (max-width: 479px) and (min-width: 360px) {
     .saleCardWrapperStyle {
       grid-template-columns: repeat(1,1fr);
       

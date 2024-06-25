@@ -45,7 +45,7 @@
   }
 
   .navLink.active{
-    color: var(--light-grey);
+    color: #92A134;
   }
   
   .navLink:hover {
