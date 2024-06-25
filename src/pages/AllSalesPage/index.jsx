@@ -1,7 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, setMinPriceFilter, setMaxPriceFilter } from '../../redux/actions/productsActions';
+import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, filterAndSortProducts } from '../../redux/actions/productsActions';
 import SaleCards from '../../components/SaleCards';
 import FilterPrice from '../../components/FilterPrice';
 import SorterSelect from '../../components/SorterSelect';
@@ -11,66 +10,29 @@ import styles from './AllSalesPage.module.css';
 
 const AllSalesPage = () => {
   const dispatch = useDispatch();
-  const { products, loading, error, filters } = useSelector(state => state.products);
-  const [sortBy, setSortBy] = useState('default');
+  const { filteredAndSortedProducts, loading, error } = useSelector(state => state.products);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
   }, [dispatch]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
+    dispatch(filterAndSortProducts());
   };
 
   const handleMaxPriceChange = (maxPrice) => {
     dispatch(setMaxPriceFilter(maxPrice));
+    dispatch(filterAndSortProducts());
   };
 
   const handleSortChange = (selectedValue) => {
-    setSortBy(selectedValue);
+    dispatch(setSortBy(selectedValue));
+    dispatch(filterAndSortProducts());
   };
 
   if (error) {
     return <div>Error: {error}</div>;
-  }
-
-  if (!products) {
-    console.error('AllSalesPage: products is undefined');
-    return <div>Products are undefined</div>;
-  }
-
-  if (!Array.isArray(products)) {
-    console.error('AllSalesPage: products is not an array:', products);
-    return <div>Products is not an array</div>;
-  }
-
-  const saleProducts = products.filter(product => product.discont_price);
-
-  if (saleProducts.length === 0) {
-    console.warn('AllSalesPage: no products on sale');
-    return <div>No products on sale</div>;
-  }
-
-  const filteredProducts = saleProducts.filter(product => {
-    const price = product.discont_price ?? product.price;
-    const meetsPriceCriteria = price >= filters.minPrice && price <= filters.maxPrice;
-    return meetsPriceCriteria;
-  });
-
-  const sortedProducts = [...filteredProducts];
-
-  switch (sortBy) {
-    case 'newest':
-      sortedProducts.sort((a, b) => b.id - a.id);
-      break;
-    case 'price-high-low':
-      sortedProducts.sort((a, b) => (b.discont_price ?? b.price) - (a.discont_price ?? a.price));
-      break;
-    case 'price-low-high':
-      sortedProducts.sort((a, b) => (a.discont_price ?? a.price) - (b.discont_price ?? b.price));
-      break;
-    default:
-      break;
   }
 
   return (
@@ -81,7 +43,7 @@ const AllSalesPage = () => {
         <SorterSelect styles={sorterSelectStyles} onChange={handleSortChange} />
       </div>
       <div className={styles.sale_card_wrapper}>
-        <SaleCards products={sortedProducts} loading={loading} />
+        <SaleCards products={filteredAndSortedProducts} loading={loading} />
       </div>
     </div>
   );

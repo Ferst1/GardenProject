@@ -1,3 +1,4 @@
+
 import React from 'react';
 import SorterSelect from '../SorterSelect';
 import DiscountedCheckBox from '../DiscountedCheckBox';
@@ -20,4 +21,3 @@ const SortFilteredComponents = ({ onMinPriceChange, onMaxPriceChange, onDiscount
 };
 
 export default SortFilteredComponents;
-
