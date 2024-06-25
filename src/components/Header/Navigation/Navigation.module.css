@@ -10,6 +10,8 @@
   .buttonDiscount {
     padding-bottom: 20px;
     text-align: center;
+    border-radius: 6px;
+
   }
   
   .nav_wrapper {
@@ -77,6 +79,9 @@
     }
     .navLink {
       font-size: 16px;
+    }
+    .navigation{
+      display: none;
     }
     
   }

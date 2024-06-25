@@ -81,6 +81,11 @@ padding:40px 0  40px;
 }
 
 
+.no-scroll {
+	overflow: hidden;
+  }
+  
+
 .dark-mode {
 	background-color: #424436;
 }

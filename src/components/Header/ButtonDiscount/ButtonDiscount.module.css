@@ -8,8 +8,20 @@ padding: 6px 16px;
 max-width: 151px;
 border: none !important;
 background: var(--green);
+
 }
-@media (max-width: 768px) and (min-width: 480px) {
+
+
+
+
+@media (max-width: 480px) and (min-width: 360px) {
+  .button_discount {
+  padding: 6px 16px;
+  width: 211px;
+  height: 42px;
+  }
+}
+@media (max-width: 768px) and (min-width: 767px) {
     .button_discount {
       display: none;
     }
