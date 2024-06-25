@@ -1,7 +1,5 @@
 
-
-
-.mobileMenu {
+  .mobileMenu {
     position: fixed;
     top: 0;
     right: -50%; 
@@ -16,13 +14,12 @@
     padding-top: 44px;
     align-items: flex-start;
     padding-left: 32px;   
-
   }
   
   .mobileMenu.open {
     right: 0; 
   } 
-
+  
   .mobileMenu.darkMode {
     background-color: #424436;
   }
@@ -36,11 +33,11 @@
     height: 44px;
     stroke:#0000;
   }
-
-  .prob{ 
+  
+  .prob { 
     margin-top: 36px;
   }
-
+  
   .link { 
     padding: 10px; 
     text-decoration: none; 
@@ -54,16 +51,19 @@
   .link.darkMode {
     color: #ffffff;
   }
-
+  
   .link:hover, 
   .link:focus {
     color:var(--green);
   }
-
-
-  .button_discount{
+  
+  .button_discount {
     font-size: large;
   }
   
-
- 
+  @media (min-width: 767px) {
+    .mobileMenu {
+      display: none;
+    }
+  }
+  

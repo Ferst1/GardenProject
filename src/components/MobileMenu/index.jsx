@@ -1,13 +1,38 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./MobileMenu.module.css";
 import Close from "../../media/icons/x-burgermenu-dark.svg";
 import CloseWhite from "../../media/icons/x-burgermenu-light.svg"; 
-
 import ButtonDiscount from "../../components/Header/ButtonDiscount";
 
 const MobileMenu = ({ isMenuOpen, handleToggleMenu, className, darkMode }) => {
   const closeIcon = darkMode ? CloseWhite : Close;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
+
+  const updateMedia = () => {
+    setIsMobile(window.innerWidth < 767);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isMenuOpen]);
+
+  if (!isMobile) {
+    return null;
+  }
 
   return (
     <div className={`${s.mobileMenu} ${className} ${isMenuOpen ? s.open : ""} ${darkMode ? s.darkMode : ""}`}>
