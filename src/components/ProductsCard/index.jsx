@@ -23,6 +23,7 @@ const ProductsCard = ({
   product,
   showAddToCartButton,
   showBasketIcon = true,
+  additionalClass = '',
 }) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
@@ -72,7 +73,7 @@ const ProductsCard = ({
   };
 
   return (
-    <div className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""}`}>
+    <div className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""} ${additionalClass}`}>
       <Link to={`/product/${product.id}`}>
         <div className={s.category_content}>
           <div className={s.image_container}>
