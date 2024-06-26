@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -79,12 +78,14 @@ const ProductDetail = () => {
     return (
         <>
             <div className={`${styles.product_detail} ${darkMode ? styles.dark : ''}`}>
-                <img
-                    src={`${baseUrl}${product.image}`}
-                    alt={product.title}
-                    className={`${styles.category_img} ${darkMode ? styles.dark : ''}`}
-                    onClick={handleImageClick} 
-                />
+                <div className={styles.wrapper_img}>
+                    <img
+                        src={`${baseUrl}${product.image}`}
+                        alt={product.title}
+                        className={`${styles.category_img} ${darkMode ? styles.dark : ''}`}
+                        onClick={handleImageClick}
+                    />
+                </div>
                 <div className={`${styles.product_detail_content} ${darkMode ? styles.dark : ''}`}>
                     <div className={styles.title_favorite_wrapper}>
                         <h4>{product.title}</h4>
@@ -106,27 +107,27 @@ const ProductDetail = () => {
                         )}
                     </div>
                     <div className={styles.controls_and_cart}>
-                        <ButtonCounter 
+                        <ButtonCounter
                             productCount={productCount}
                             handleIncrement={handleIncrement}
                             handleDecrement={handleDecrement}
                         />
-                        <ButtonAddToCard 
+                        <ButtonAddToCard
                             product={{ ...product, count: productCount }}
-                        /> 
+                        />
                     </div>
-                    <div className={`${styles.description_wrapper} ${darkMode ? styles.dark : ''}`}>
-                        <h5>Description</h5>
-                        <div className="product-description">
-                            {showFullDescription ? (
-                                <p>{product.description}</p>
-                            ) : (
-                                <p>{product.description.substring(0, 150)}...</p>
-                            )}
-                            <button className={`${styles.product_desc} ${darkMode ? styles.dark : ''}`} onClick={toggleDescription}>
-                                {showFullDescription ? 'Read less' : 'Read more'}
-                            </button>
-                        </div>
+                </div>
+                <div className={`${styles.description_wrapper} ${darkMode ? styles.dark : ''}`}>
+                    <h5>Description</h5>
+                    <div className="product-description">
+                        {showFullDescription ? (
+                            <p>{product.description}</p>
+                        ) : (
+                            <p>{product.description.substring(0, 150)}...</p>
+                        )}
+                        <button className={`${styles.product_desc} ${darkMode ? styles.dark : ''}`} onClick={toggleDescription}>
+                            {showFullDescription ? 'Read less' : 'Read more'}
+                        </button>
                     </div>
                 </div>
             </div>
