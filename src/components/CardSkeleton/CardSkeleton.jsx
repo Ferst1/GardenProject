@@ -12,8 +12,8 @@ const CardSkeleton = () => {
         <Skeleton width="100%" height="100%" />
       </div>
       <div style={{ padding: '20px' }}>
-        <Skeleton width="80%" height={30} style={{ marginBottom: '10px' }} />
-        <Skeleton width="60%" height={30} />
+        <Skeleton className={styled.skeleton_text} width="80%" height={30} style={{ marginBottom: '10px' }} />
+        <Skeleton className={styled.skeleton_text} width="60%" height={30} />
       </div>
     </div>
   );

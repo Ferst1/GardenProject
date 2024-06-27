@@ -1,15 +1,11 @@
 
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import s from './AllProducts.module.css';
 import ProductsCard from '../ProductsCard';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
 
 const AllProducts = ({ products, loading }) => {
-  useEffect(() => {
-    console.log('Loading:', loading);
-    console.log('Products:', products);
-  }, [loading, products]);
-
   return (
     <div className="container">
       <div className={s.products_grid}>
