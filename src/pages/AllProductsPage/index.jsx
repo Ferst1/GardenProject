@@ -43,8 +43,8 @@ const AllProductsPage = () => {
     <div>
       <div className="container">
         <div className={styles.buttons_wrapper}>
-          <ButtonSection text="Main Page" to="/"  className={styles.button_section} />
-          <ButtonSection text="All products" to="/all_products"  className={styles.button_section} />
+          <ButtonSection text="Main Page" to="/" className={styles.button_section} />
+          <ButtonSection text="All products" to="/all_products" className={styles.button_section} />
         </div>
         <h2>All products</h2>
         <div className={styles.sorted_section}>

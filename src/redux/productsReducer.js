@@ -1,9 +1,10 @@
 
+import { actionTypes } from './actionTypes';
 
 export const initialState = {
   products: [],
   product: null,
-  favorites: [], 
+  favorites: [],
   loading: false,
   error: null,
   filters: {
@@ -13,29 +14,6 @@ export const initialState = {
   sortBy: 'default',
   showDiscounted: false,
 };
-
-
-export const actionTypes = {
-  FETCH_PRODUCTS_REQUEST: 'FETCH_PRODUCTS_REQUEST',
-  FETCH_PRODUCTS_SUCCESS: 'FETCH_PRODUCTS_SUCCESS',
-  FETCH_PRODUCTS_FAILURE: 'FETCH_PRODUCTS_FAILURE',
-  FETCH_PRODUCTS_BY_CATEGORY_REQUEST: 'FETCH_PRODUCTS_BY_CATEGORY_REQUEST',
-  FETCH_PRODUCTS_BY_CATEGORY_SUCCESS: 'FETCH_PRODUCTS_BY_CATEGORY_SUCCESS',
-  FETCH_PRODUCTS_BY_CATEGORY_FAILURE: 'FETCH_PRODUCTS_BY_CATEGORY_FAILURE',
-  FETCH_PRODUCT_REQUEST: 'FETCH_PRODUCT_REQUEST',
-  FETCH_PRODUCT_SUCCESS: 'FETCH_PRODUCT_SUCCESS',
-  FETCH_PRODUCT_FAILURE: 'FETCH_PRODUCT_FAILURE',
-  INCREMENT_PRODUCT_COUNT: 'INCREMENT_PRODUCT_COUNT',
-  DECREMENT_PRODUCT_COUNT: 'DECREMENT_PRODUCT_COUNT',
-  ADD_TO_FAVORITES: 'ADD_TO_FAVORITES',
-  REMOVE_FROM_FAVORITES: 'REMOVE_FROM_FAVORITES',
-  SET_MIN_PRICE_FILTER: 'SET_MIN_PRICE_FILTER', 
-  SET_MAX_PRICE_FILTER: 'SET_MAX_PRICE_FILTER',
-  SET_SORT_BY: 'SET_SORT_BY',
-  SET_SHOW_DISCOUNTED: 'SET_SHOW_DISCOUNTED',
-  SET_FILTERED_AND_SORTED_PRODUCTS: 'SET_FILTERED_AND_SORTED_PRODUCTS',
-};
-
 
 export function productsReducer(state = initialState, action) {
   switch (action.type) {
@@ -92,7 +70,7 @@ export function productsReducer(state = initialState, action) {
         console.error('favorites is not an array', state.favorites);
         return {
           ...state,
-          favorites: [action.payload], 
+          favorites: [action.payload],
         };
       }
       return {
@@ -106,7 +84,7 @@ export function productsReducer(state = initialState, action) {
         console.error('favorites is not an array', state.favorites);
         return {
           ...state,
-          favorites: [], 
+          favorites: [],
         };
       }
       return {
@@ -131,16 +109,15 @@ export function productsReducer(state = initialState, action) {
           maxPrice: action.payload,
         },
       };
-      case actionTypes.SET_SORT_BY:
-        return { ...state, sortBy: action.payload };
-      case actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS:
-        return { ...state, filteredAndSortedProducts: action.payload };
-      
 
-        case actionTypes.SET_SHOW_DISCOUNTED:
-          return { ...state, showDiscounted: action.payload };
-        case actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS:
-          return { ...state, filteredAndSortedProducts: action.payload };
+    case actionTypes.SET_SORT_BY:
+      return { ...state, sortBy: action.payload };
+
+    case actionTypes.SET_SHOW_DISCOUNTED:
+      return { ...state, showDiscounted: action.payload };
+
+    case actionTypes.SET_FILTERED_AND_SORTED_PRODUCTS:
+      return { ...state, filteredAndSortedProducts: action.payload };
 
     default:
       return state;
