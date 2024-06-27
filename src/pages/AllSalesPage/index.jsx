@@ -5,6 +5,7 @@ import {
   setMinPriceFilter,
   setMaxPriceFilter,
   setSortBy,
+  setShowDiscounted,
   filterAndSortProducts,
 } from "../../redux/actions/productsActions";
 import SaleCards from "../../components/SaleCards";
@@ -22,7 +23,10 @@ const AllSalesPage = () => {
   );
 
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
+    dispatch(fetchProducts()).then(() => {
+      dispatch(setShowDiscounted(true)); 
+      dispatch(filterAndSortProducts());
+    });
   }, [dispatch]);
 
   const handleMinPriceChange = (minPrice) => {
