@@ -17,7 +17,7 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
     const [isFavorite, setIsFavorite] = useState(false);
-    const [productCount, setProductCount] = useState(0);
+    const [productCount, setProductCount] = useState(1);
     const [darkMode, setDarkMode] = useState(false);
     const [showFullDescription, setShowFullDescription] = useState(false);
 
