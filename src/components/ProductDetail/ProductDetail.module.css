@@ -118,7 +118,9 @@ margin-bottom: 16px
 .title_favorite_wrapper {
   display: flex;
 }
-
+.button_add{
+  border-color: transparent;
+}
 @media (min-width: 1000px) {
   .product_detail {
     grid-template-columns: 1fr 1fr;

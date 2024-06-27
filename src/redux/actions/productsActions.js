@@ -39,17 +39,26 @@ export const fetchProducts = () => async (dispatch) => {
   dispatch(fetchProductsRequest());
   try {
     const response = await axios.get(`${baseUrl}/products/all`);
-    dispatch(fetchProductsSuccess(response.data));
+
+    setTimeout(() => {
+      dispatch(fetchProductsSuccess(response.data));
+    }, 2000); 
   } catch (error) {
     dispatch(fetchProductsFailure(error.message));
   }
 };
 
+
+
 export const fetchProductsByCategory = (categoryId) => async (dispatch) => {
   dispatch(fetchProductsByCategoryRequest());
   try {
     const response = await axios.get(`${baseUrl}/categories/${categoryId}`);
-    dispatch(fetchProductsByCategorySuccess(response.data.data));
+
+    setTimeout(() => {
+      dispatch(fetchProductsByCategorySuccess(response.data.data));
+    },2000)
+   
   } catch (error) {
     dispatch(fetchProductsByCategoryFailure(error.message));
   }

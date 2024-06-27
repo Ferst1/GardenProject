@@ -13,6 +13,7 @@
       margin: 267px auto;
     }
     
+
     .modalOpen {
       opacity: 1;
       transform: translateY(0);
@@ -45,6 +46,8 @@
       padding: 16px;
       gap: 16px;
       margin-bottom: 16px;
+      border: none;
+      margin-top: 16px;
     }
     
     .title {

@@ -6,6 +6,15 @@
     margin: 40px 0;
   }
   
+
+  .skeleton_wrapper{
+display: flex;
+flex-wrap: wrap;
+gap: 32px;
+
+
+
+  }
   @media (max-width: 480px) {
     .buttons_wrapper {
       display: none;
