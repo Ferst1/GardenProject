@@ -28,6 +28,13 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
     setIsAdded(true);
   };
 
+  const modalCardStyles = {
+      border:'none',
+    borderRadius: '12px',
+    width: '484px',
+    height: '422px',
+  };
+
   return (
     <MuiModal
       open={isOpen}
@@ -49,7 +56,7 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
           <>
             <p className={s.discountHeader}>50% discount on product of the day!</p>
             <div className={s.cardContainer}>
-              <ProductsCard product={content.product} showBasketIcon={false} />
+              <ProductsCard product={content.product} showBasketIcon={false} style={modalCardStyles} />
             </div>
             <div className={s.buttonContainer}>
               <ButtonAddToCard

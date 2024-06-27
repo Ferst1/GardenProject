@@ -113,6 +113,7 @@ const ProductDetail = () => {
                             handleDecrement={handleDecrement}
                         />
                         <ButtonAddToCard
+                        className={styles.button_add}
                             product={{ ...product, count: productCount }}
                         />
                     </div>
