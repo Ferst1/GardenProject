@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <MainPage />
             </Suspense>
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: 'categories',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <CategoriesPage />
             </Suspense>
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: 'all_products',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <AllProductsPage />
             </Suspense>
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: 'all_sales',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <AllSalesPage />
             </Suspense>
