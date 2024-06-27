@@ -10,6 +10,7 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
   const dispatch = useDispatch();
   const displayCategories = limit ? categories.slice(0, limit) : categories;
 
+
   const handleCategoryClick = (categoryId) => {
     dispatch(fetchProductsByCategory(categoryId))
       .then(() => {
@@ -36,7 +37,6 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
                   src={`${baseUrl}${category.image}`}
                   alt={category.title}
                 />
-
                 <div className={styles.category_title}>{category.title}</div>
               </div>
             )}
