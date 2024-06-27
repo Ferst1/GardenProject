@@ -6,13 +6,13 @@ const CardSkeleton = () => {
   return (
     <div className={styled.card_skeleton}>
 <div className={styled.card_images}>
-    <Skeleton width={220} height={230}/> 
+    <Skeleton/> 
 </div>
 <div className={styled.card_title}>
-    <Skeleton height={21}/> 
+    <Skeleton/> 
 </div>
 <div className={styled.card_price}>
-    <Skeleton height={41}/> 
+    <Skeleton/> 
 </div>
 
     </div>
