@@ -79,7 +79,7 @@ const ProductsCard = ({
   };
 
   return (
-    <div className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""}`}>
+    <div style={style} className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""}`}>
       <Link to={`/product/${product.id}`}>
         <div className={s.category_content}>
           <div className={s.image_container}>
