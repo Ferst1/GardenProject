@@ -23,6 +23,8 @@ const ProductsCard = ({
   product,
   showAddToCartButton,
   showBasketIcon = true,
+  className,
+  style,
 }) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
@@ -40,7 +42,12 @@ const ProductsCard = ({
   }, [favorites, product.id]);
 
   if (!product) {
-    return <div>Product data is missing</div>;
+
+    <div className={s.product_item}>
+    <Skeleton height={200} />
+    <Skeleton count={3} />
+  </div>
+    // return <div>Product data is missing</div>;
   }
 
   const discount = calculateDiscount(product.price, product.discont_price);
