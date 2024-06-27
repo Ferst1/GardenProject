@@ -7,25 +7,24 @@ import ButtonAddToCard from '../UI/ButtonAddToCard';
 import ModalWindowContent from '../ModalWindowContent';
 import { useSelector } from 'react-redux';
 
-const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
+const ModalWindow = ({ isOpen, handleClose, content }) => {
   const basket = useSelector((state) => state.basket.basket);
   const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     if (content && content.product) {
-      const isProductInBasket = basket.some(item => item.id === content.product.id);
-      setIsAdded(isProductInBasket);
+      setIsAdded(basket.some(item => item.id === content.product.id));
     }
   }, [basket, content]);
+
+  const handleAddToBasket = (product) => {
+    setIsAdded(true);
+    handleClose();
+  };
 
   if (!content) {
     return null;
   }
-
-  const handleAddToBasket = (product) => {
-    onAddToBasket(product);
-    setIsAdded(true);
-  };
 
   return (
     <MuiModal
@@ -37,28 +36,31 @@ const ModalWindow = ({ isOpen, handleClose, content, onAddToBasket }) => {
         className: `${s.backdrop} ${isOpen ? s.backdropOpen : ''}`,
       }}
     >
-      <div className={`${s.modal} ${isOpen ? s.modalOpen : ''}`}>
-        <CloseIcon
-          className={s.close}
-          onClick={handleClose}
-        />
-        {content.type === 'CONFIRMATION' ? (
-          <ModalWindowContent />
-        ) : (
-          <>
-            <p className={s.discountHeader}>50% discount on product of the day!</p>
-            <div className={s.cardContainer}>
-              <ProductsCard product={content.product} showBasketIcon={false}  isModal={true} />
-            </div>
-            <div className={s.buttonContainer}>
-              <ButtonAddToCard
-                product={content.product}
-                onAddToBasket={() => handleAddToBasket(content.product)}
-                className={`${s.buttonAddModal}`}
-              />
-            </div>
-          </>
-        )}
+      <div className={s.modal_container}>
+        <div className={`${s.modal} ${isOpen ? s.modalOpen : ''}`}>
+          <CloseIcon className={s.close} onClick={handleClose} />
+          {content.type === 'CONFIRMATION' ? (
+            <ModalWindowContent />
+          ) : (
+            <>
+              <p className={s.discountHeader}>50% discount on product of the day!</p>
+              <div className={s.cardContainer}>
+                <ProductsCard 
+                  product={content.product} 
+                  showBasketIcon={false}  
+                  style={{ border: 'none', width: '100%'}}
+                />
+              </div>
+              <div className={s.buttonContainer}>
+                <ButtonAddToCard
+                  product={content.product}
+                  onAddToBasket={() => handleAddToBasket(content.product)}
+                  className={`${s.buttonAddModal}`}
+                />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </MuiModal>
   );

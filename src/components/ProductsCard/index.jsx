@@ -213,7 +213,7 @@ const ProductsCard = ({
   };
 
   return (
-    <div className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""}`}>
+    <div style={style} className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_item : ""}`}>
       <Link to={`/product/${product.id}`}>
         <div className={s.category_content}>
           <div className={`${s.image_container} ${isModal ? s.modal_image_container : ""}`}>
@@ -223,6 +223,7 @@ const ProductsCard = ({
                   className={`${s.category_img} ${isModal ? s.modal_category_img : ""}`}
                   src={`${baseUrl}${product.image}`}
                   alt={product.title}
+                  style={{ ...style, height: '284px' }}
                 />
                 <div className={`${s.icons} ${isModal ? s.modal_icons : ""}`}>
                   <Favorite
@@ -244,7 +245,12 @@ const ProductsCard = ({
               <div className={s.discont_tag}>{`-${discount}%`}</div>
             )}
           </div>
-          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_title : ""}`}>
+          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_title : ""}`}
+          style={{ minWidth: '200px',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          width: '100%',}}>
             {product.title || <Skeleton />}
           </div>
           <div className={`${s.product_price} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_price : ""}`}>
