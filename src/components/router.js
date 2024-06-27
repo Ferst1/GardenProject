@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: 'product/:productId',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <ProductDetailPage />
             </Suspense>
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
       {
         path: 'category/:categoryId',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<div>Loading...</div>}>
               <CategoryProductsPage />
             </Suspense>
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
       {
         path: 'favorites',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<CardSkeleton />}>
               <FavoritesPage />
             </Suspense>
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
       {
         path: 'basket',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<div>Loading...</div>}>
               <BasketProductsPage />
             </Suspense>
