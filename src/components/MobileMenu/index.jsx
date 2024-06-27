@@ -35,29 +35,32 @@ const MobileMenu = ({ isMenuOpen, handleToggleMenu, className, darkMode }) => {
   }
 
   return (
-    <div className={`${s.mobileMenu} ${className} ${isMenuOpen ? s.open : ""} ${darkMode ? s.darkMode : ""}`}>
-      <img
-        className={s.close}
-        src={closeIcon}
-        alt="Close Icon"
-        onClick={handleToggleMenu}
-      />
-      <div className={s.prob}></div>
-      <NavLink to="/" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
-        Main Page
-      </NavLink>
-      <NavLink to="/categories" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
-        Categories
-      </NavLink>
-      <NavLink to="/all_products" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
-        All Products
-      </NavLink>
-      <NavLink to="/all_sales" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
-        All Sales
-      </NavLink>
+    <>
+      {isMenuOpen && <div className={s.mobileMenuBackground} onClick={handleToggleMenu}></div>}
+      <div className={`${s.mobileMenu} ${className} ${isMenuOpen ? s.open : ""} ${darkMode ? s.darkMode : ""}`}>
+        <img
+          className={s.close}
+          src={closeIcon}
+          alt="Close Icon"
+          onClick={handleToggleMenu}
+        />
+        <div className={s.prob}></div>
+        <NavLink to="/" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
+          Main Page
+        </NavLink>
+        <NavLink to="/categories" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
+          Categories
+        </NavLink>
+        <NavLink to="/all_products" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
+          All Products
+        </NavLink>
+        <NavLink to="/all_sales" className={`${s.link} ${darkMode ? s.darkMode : ""}`} onClick={handleToggleMenu}>
+          All Sales
+        </NavLink>
 
-      <ButtonDiscount className={s.button_discount}/>
-    </div>
+        <ButtonDiscount className={s.button_discount}/>
+      </div>
+    </>
   );
 };
 
