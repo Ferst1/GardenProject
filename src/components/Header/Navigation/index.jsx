@@ -17,16 +17,16 @@ const Navigation = ({ darkMode }) => {
       </div>
       <div className={s.nav_wrapper}>
         <nav className={s.mainNavLink}>
-          <NavLink exact to={"/"} className={`${s.navLink} ${activeLink === '/' ? s.active : ''}`} onClick={() => handleNavLinkClick('/')}>
+          <NavLink to="/" className={`${s.navLink} ${activeLink === '/' ? s.active : ''}`} onClick={() => handleNavLinkClick('/')}>
             Main Page
           </NavLink>
-          <NavLink to={"/categories"} className={`${s.navLink} ${activeLink === '/categories' ? s.active : ''}`} onClick={() => handleNavLinkClick('/categories')}>
+          <NavLink to="/categories" className={`${s.navLink} ${activeLink === '/categories' ? s.active : ''}`} onClick={() => handleNavLinkClick('/categories')}>
             Categories
           </NavLink>
-          <NavLink to={"/all_products"} className={`${s.navLink} ${activeLink === '/all_products' ? s.active : ''}`} onClick={() => handleNavLinkClick('/all_products')}>
+          <NavLink to="/all_products" className={`${s.navLink} ${activeLink === '/all_products' ? s.active : ''}`} onClick={() => handleNavLinkClick('/all_products')}>
             All Products
           </NavLink>
-          <NavLink to={"/all_sales"} className={`${s.navLink} ${activeLink === '/all_sales' ? s.active : ''}`} onClick={() => handleNavLinkClick('/all_sales')}>
+          <NavLink to="/all_sales" className={`${s.navLink} ${activeLink === '/all_sales' ? s.active : ''}`} onClick={() => handleNavLinkClick('/all_sales')}>
             All Sales
           </NavLink>
         </nav>
