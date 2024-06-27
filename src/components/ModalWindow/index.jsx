@@ -48,7 +48,8 @@ const ModalWindow = ({ isOpen, handleClose, content }) => {
                 <ProductsCard 
                   product={content.product} 
                   showBasketIcon={false}  
-                  style={{ border: 'none', width: '100%'}}
+                  style={{ border: 'none', width: '100%' }}
+                  disableDarkMode={true} // Disable dark mode
                 />
               </div>
               <div className={s.buttonContainer}>

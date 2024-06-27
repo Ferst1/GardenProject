@@ -13,6 +13,11 @@
       margin: 180px auto;
     }
 
+    .modal div p{
+      width: auto;
+      margin-right: 32px;
+    }
+
     .modal_container {
       margin: 18px;
     }
