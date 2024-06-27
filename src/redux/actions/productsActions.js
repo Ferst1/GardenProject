@@ -42,7 +42,7 @@ export const fetchProducts = () => async (dispatch) => {
 
     setTimeout(() => {
       dispatch(fetchProductsSuccess(response.data));
-    }, 8000); 
+    }, 2000); 
   } catch (error) {
     dispatch(fetchProductsFailure(error.message));
   }
@@ -57,7 +57,7 @@ export const fetchProductsByCategory = (categoryId) => async (dispatch) => {
 
     setTimeout(() => {
       dispatch(fetchProductsByCategorySuccess(response.data.data));
-    },4000)
+    },2000)
    
   } catch (error) {
     dispatch(fetchProductsByCategoryFailure(error.message));

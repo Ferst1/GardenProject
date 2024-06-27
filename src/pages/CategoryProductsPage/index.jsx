@@ -39,26 +39,6 @@ const CategoryProductsPage = () => {
     setShowDiscounted(isDiscounted);
   };
 
-  if (loading) {
-    return (
-      <div className="container">
-        <div className={styles.skeleton_wrapper}>
-          {[...Array(10)].map((_, index) => (
-            <CardSkeleton key={index} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return <div className="container">Error: {error}</div>;
-  }
-
-  if (!Array.isArray(products) || products.length === 0) {
-    return <div className="container">No products available</div>;
-  }
-
   const filteredProducts = products.filter(product => {
     const price = product.discont_price ?? product.price;
     const meetsPriceCriteria = price >= filters.minPrice && price <= filters.maxPrice;
@@ -100,11 +80,21 @@ const CategoryProductsPage = () => {
           />
         </div>
         <div className={styles.products}>
-          {sortedProducts.map((product) => (
-            <Link key={product.id} to={`/product/${product.id}`} className={styles.product_link}>
-              <CategoryProductsCard product={product} />
-            </Link>
-          ))}
+          {loading ? (
+            [...Array(10)].map((_, index) => (
+              <CardSkeleton key={index} />
+            ))
+          ) : error ? (
+            <div className="container">Error: {error}</div>
+          ) : !Array.isArray(products) || products.length === 0 ? (
+            <div className="container">No products available</div>
+          ) : (
+            sortedProducts.map((product) => (
+              <Link key={product.id} to={`/product/${product.id}`} className={styles.product_link}>
+                <CategoryProductsCard product={product} />
+              </Link>
+            ))
+          )}
         </div>
       </div>
     </div>
