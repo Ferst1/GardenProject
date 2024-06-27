@@ -13,7 +13,7 @@ import filterPriceStyles from "../../components/FilterPrice/FilterPrice.module.c
 import sorterSelectStyles from "../../components/SorterSelect/SorterSelect.module.css";
 import styles from "./FavoritesPage.module.css";
 import ButtonSection from "../../components/UI/ButtonSection";
-import { sortProducts } from "../../utils"; // Используем вашу функцию сортировки
+import { sortProducts } from "../../utils"; 
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();
