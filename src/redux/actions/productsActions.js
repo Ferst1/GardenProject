@@ -92,6 +92,8 @@ export const fetchProductsByCategory = (categoryId) => async (dispatch) => {
 export const filterAndSortProducts = () => (dispatch, getState) => {
   const { products, filters, sortBy, showDiscounted } = getState().products;
 
+  if (!products || !filters) return;
+
   const filteredProducts = products.filter(product => {
     const price = product.discont_price ?? product.price;
     const meetsPriceCriteria = price >= filters.minPrice && price <= filters.maxPrice;
