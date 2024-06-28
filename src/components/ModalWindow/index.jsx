@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 
 const ModalWindow = ({ isOpen, handleClose, content }) => {
   const basket = useSelector((state) => state.basket.basket);
+  // eslint-disable-next-line no-unused-vars
   const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const ModalWindow = ({ isOpen, handleClose, content }) => {
                   product={content.product} 
                   showBasketIcon={false}  
                   style={{ border: 'none', width: '100%' }}
-                  disableDarkMode={true} // Disable dark mode
+                  disableDarkMode={true} 
                 />
               </div>
               <div className={s.buttonContainer}>
