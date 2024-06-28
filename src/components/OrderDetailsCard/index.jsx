@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import s from './OrderDetailsCard.module.css';
 import OrderDetailsForm from '../OrderDetailsForm';
 import { formatPriceWithComma } from '../../utils';
+import DiscountForm from '../DiscountForm';
 
 const OrderDetailsCard = ({ totalItems, totalPrice }) => {
   const isDarkMode = useSelector((state) => state.theme.darkMode); 
@@ -30,3 +31,4 @@ OrderDetailsCard.propTypes = {
 };
 
 export default OrderDetailsCard;
+

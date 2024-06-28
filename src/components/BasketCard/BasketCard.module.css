@@ -7,14 +7,16 @@
     margin-bottom: 20px;
     border: 1px solid var(--grey-divider);
     border-radius: 12px;
-    width: 100%;
-    max-width: 780px;
     background-color: var(--white);
     border: 1px solid var(--grey-divider);
     height: 180px;
-   
+    width: 100%;
   }
 
+  ul{
+    width: 780px;
+    
+  }
   .dark.basket_card {
     background-color: #383A2C;
   }
