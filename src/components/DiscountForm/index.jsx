@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import s from './DiscountForm.module.css';
 import HandsImage from '../../media/images/image-order.png';
@@ -9,29 +10,33 @@ export default function DiscountForm(props) {
   const {
     title = '5% off on the first order',
     buttons = { submit: 'Get a discount' },
-    input = { name: 'Name', phone: 'Phone number', email: 'Email' },
+    input = { name: 'Name', phone: 'Phone number', email: 'Email' }, 
   } = props;
 
   const ButtonRef = useRef();
   const [timer, setTimer] = useState(0);
-  const [startTimer, setStartTimer] = useState(false);
   const [id, setId] = useState(null);
   const [errorMessages, setErrorMessages] = useState([]);
   const [currentErrorIndex, setCurrentErrorIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isAllFieldsFilled, setIsAllFieldsFilled] = useState(false);
   const [buttonText, setButtonText] = useState(buttons.submit);
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
+  const decrementTime = useCallback(() => {
+    if (timer > 0) {
+      setTimer((prevState) => prevState - 1);
+    }
+  }, [timer]);
+
   useEffect(() => {
-    if (startTimer) {
-      const intervalId = setInterval(decrementTime, 1000);
-      setId(intervalId);
-      return () => clearInterval(intervalId);
-    } else {
+    if (id !== null) {
       clearInterval(id);
     }
-  }, [startTimer]);
+
+    const intervalId = setInterval(decrementTime, 1000);
+    setId(intervalId);
+    return () => clearInterval(intervalId);
+  }, [decrementTime, id]);
 
   useEffect(() => {
     const messages = [];
@@ -41,19 +46,11 @@ export default function DiscountForm(props) {
       }
     });
     setErrorMessages(messages);
-
-    setIsAllFieldsFilled(Object.keys(input).every((key) => !!register[key]?.value));
   }, [errors]);
 
   useEffect(() => {
     setCurrentErrorIndex(0);
   }, [errorMessages]);
-
-  const decrementTime = () => {
-    if (timer > 0) {
-      setTimer((prevState) => prevState - 1);
-    }
-  };
 
   const onSubmit = (data) => {
     console.log(data);
