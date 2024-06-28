@@ -4,7 +4,7 @@ import DiscountForm from '../../components/DiscountForm'
 import SaleSection from '../../components/SaleSection'
 import CategoriesSection from '../../components/CategoriesSection'
 
-const index = () => {
+const MainPage = () => {
   return (
     
     <div>
@@ -19,4 +19,4 @@ const index = () => {
   )
 }
 
-export default index
+export default MainPage
