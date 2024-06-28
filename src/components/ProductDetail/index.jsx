@@ -19,6 +19,7 @@ const ProductDetail = () => {
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
     const [isFavorite, setIsFavorite] = useState(false);
     const [productCount, setProductCount] = useState(1);
+    // eslint-disable-next-line no-unused-vars
     const [darkMode, setDarkMode] = useState(false);
     const [showFullDescription, setShowFullDescription] = useState(false);
 

@@ -95,7 +95,7 @@ import CardSkeleton from "../../components/CardSkeleton/CardSkeleton";
 const CategoryProductsPage = () => {
   const { categoryId } = useParams();
   const dispatch = useDispatch();
-  const { filteredAndSortedProducts, loading, error, filters, showDiscounted, sortBy } = useSelector(
+  const { filteredAndSortedProducts, loading, error, showDiscounted } = useSelector(
     (state) => state.products
   );
 
@@ -127,9 +127,9 @@ const CategoryProductsPage = () => {
     <div className="container">
       <div>
         <div className={styles.buttons_wrapper}>
-          <ButtonSection text="Main Page" to="/" backgroundColor="transparent" />
-          <ButtonSection text="Categories" to="/categories" backgroundColor="transparent" />
-          <ButtonSection text="Tools and equipment" to={`/category/${categoryId}`} backgroundColor="transparent" />
+          <ButtonSection text="Main Page" to="/"  />
+          <ButtonSection text="Categories" to="/categories" />
+          <ButtonSection text="Tools and equipment" to={`/category/${categoryId}`} />
         </div>
         <h2>Tools and equipment</h2>
         <div className={styles.sorted_section}>

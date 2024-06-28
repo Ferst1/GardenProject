@@ -6,7 +6,7 @@ import ProductDetail from '../../components/ProductDetail';
 import ButtonSection from '../../components/UI/ButtonSection';
 import s from './ProductDetailPage.module.css';
 const ProductDetailPage = ({ favorites, setFavorites }) => {
-  const { categoryId, productId } = useParams();
+  const { categoryId } = useParams();
   const product = useSelector((state) => state.products.product);
 
   return (
