@@ -52,6 +52,7 @@ const Footer = () => {
           loading="lazy"
           className={s.map}
           referrerPolicy="no-referrer-when-downgrade"
+          title="UniqueTitle"
         ></iframe>
       </div>
     </div>
