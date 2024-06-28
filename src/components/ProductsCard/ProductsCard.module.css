@@ -5,7 +5,6 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  width: 316px;
   width: 100%;
 }
 .product_item.dark-mode {
@@ -40,6 +39,7 @@
   border-bottom: 1px solid #dddddd;
   object-fit: cover;
 }
+
 
 .product_title {
   font-family: Montserrat;
@@ -212,39 +212,5 @@
 
 
 
-.modal_product_item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
 
-.modal_image_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 
-.modal_category_img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-   width: 484px;
-   height: 422px;
-}
-
-.modal_icons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 20px;
-}
-
-.modal_product_title,
-.modal_product_price {
-  text-align: left;
-  align-self: flex-start;
-}

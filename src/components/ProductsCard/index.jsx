@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import baseUrl from "../../instance";
@@ -23,6 +22,7 @@ const ProductsCard = ({
   className,
   style,
   isModal = false,
+  disableDarkMode = false,
 }) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
@@ -77,7 +77,10 @@ const ProductsCard = ({
   };
 
   return (
-    <div style={style} className={`${s.product_item} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_item : ""}`}>
+    <div
+      style={style}
+      className={`${s.product_item} ${!disableDarkMode && darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_item : ""}`}
+    >
       <Link to={`/product/${product.id}`}>
         <div className={s.category_content}>
           <div className={`${s.image_container} ${isModal ? s.modal_image_container : ""}`}>
@@ -87,34 +90,27 @@ const ProductsCard = ({
                   className={`${s.category_img} ${isModal ? s.modal_category_img : ""}`}
                   src={`${baseUrl}${product.image}`}
                   alt={product.title}
+                  style={{ ...style, height: '284px' }}
                 />
                 <div className={`${s.icons} ${isModal ? s.modal_icons : ""}`}>
-                  <Favorite
-                    onClick={handleAddToFavorites}
-                    isFavorite={isFavorite}
-                  />
+                  <Favorite onClick={handleAddToFavorites} isFavorite={isFavorite} />
                   {showBasketIcon && (
-                    <Basket
-                      onClick={(e) => handleAddToBasket(e, !isInBasket)}
-                      isInBasket={isInBasket}
-                    />
+                    <Basket onClick={(e) => handleAddToBasket(e, !isInBasket)} isInBasket={isInBasket} />
                   )}
                 </div>
               </>
             ) : (
               <Skeleton width={220} height={230} />
             )}
-            {discount !== null && (
-              <div className={s.discont_tag}>{`-${discount}%`}</div>
-            )}
+            {discount !== null && <div className={s.discont_tag}>{`-${discount}%`}</div>}
           </div>
-          <div className={`${s.product_title} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_title : ""}`}>
+          <p className={`${s.product_title} ${!disableDarkMode && darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_title : ""}`}>
             {product.title || <Skeleton />}
-          </div>
-          <div className={`${s.product_price} ${darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_price : ""}`}>
+          </p>
+          <div className={`${s.product_price} ${!disableDarkMode && darkMode ? s["dark-mode"] : ""} ${isModal ? s.modal_product_price : ""}`}>
             {product.discont_price ? (
               <>
-                <span className={`${s.original_price} ${darkMode ? s["dark-mode"] : ""}`}>
+                <span className={`${s.original_price} ${!disableDarkMode && darkMode ? s["dark-mode"] : ""}`}>
                   ${formatPrice(product.discont_price) || <Skeleton />}
                 </span>
                 <span className={s.discont_price}>
@@ -122,7 +118,7 @@ const ProductsCard = ({
                 </span>
               </>
             ) : (
-              <span className={`${darkMode ? s["dark-mode"] : ""}`}>
+              <span className={`${!disableDarkMode && darkMode ? s["dark-mode"] : ""}`}>
                 ${formatPrice(product.price) || <Skeleton />}
               </span>
             )}

@@ -22,7 +22,7 @@ const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
       setIsAdded(true);
       setTimeout(() => {
         setIsAdded(false);
-      }, 500);
+      }, 5000);
     }
   };
 
@@ -41,3 +41,4 @@ const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
 };
 
 export default ButtonAddToCard;
+
