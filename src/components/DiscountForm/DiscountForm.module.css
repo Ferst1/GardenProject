@@ -135,7 +135,10 @@ form {
     height: 58px !important;
     margin-top: 16px !important;
     margin-bottom: 0 !important;
+    border: 1px solid #DDDDDD !important;
+    background-color: #FFFFFF !important;
 }
+
 .input_alternative:first-child {
     margin-top:  7px !important;
 }
@@ -146,6 +149,39 @@ form {
     margin-top:  32px !important;
     position: absolute;
     bottom: 20px; 
+}
+.alternative_form_container .dark_mode_input{
+    border: 1px solid #8B8B8B !important;
+    background-color: #424436 !important;
+}
+/* 
+.warning_text {
+    display: inline-flex;
+    width: 100%;
+    color: #FFFFF1;
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+
+.success_text {
+    display: inline-flex;
+    width: 100%;
+    color: #FFFFF1;
+    margin-top: 0px;
+    padding-bottom: 0px;
+} */
+
+.button_alternative {
+    background-color: #92A134 !important;
+    color: #FFFFFF !important;
+}
+.button_alternative:hover {
+    background-color: #424436 !important;
+    color: #FFFFF1 !important;
+}
+.dark_mode .button_alternative:hover {
+    background-color: #f2f6d3!important; 
+    color: #424436 !important; 
 }
 /* -------------------------------------------- */
   

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import s from './OrderDetailsCard.module.css';
-import OrderDetailsForm from '../OrderDetailsForm';
 import { formatPriceWithComma } from '../../utils';
 import DiscountForm from '../DiscountForm';
 
