@@ -20,7 +20,9 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
         <p>Total</p>
         <p className={s.total_price}>${formatPriceWithComma(totalPrice)}</p>
       </div>
-      <OrderDetailsForm />
+      <DiscountForm
+        isAlternativeStyle={true}  
+      />
     </div>
   );
 };
