@@ -32,7 +32,6 @@ const CategoriesSection = () => {
           <ButtonSection
             text="All categories"
             to="/categories"
-            
           />
         </div>
       </div>
