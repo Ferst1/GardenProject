@@ -1,11 +1,10 @@
-
 .title_wrapper {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.title_wrapper h2 {
+.title_wrapper h3 {
   margin-right: 10px;
   white-space: nowrap;
 }
@@ -13,7 +12,6 @@
 .basket_products_page {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px; 
 }
 
 .button_with_line {
@@ -37,6 +35,7 @@
   background-color: var(--black);
 }
 
+
 .button_with_line {
   display: flex;
   align-items: center;
@@ -55,15 +54,40 @@
 .basket_items {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; 
+  gap: 32px; 
 }
 
 .basket_items p {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 1.25rem; 
-  line-height: 1.3;
+  font-size: 20px; 
+  line-height: 26px;
   color: var(--black);
+}
+
+.button_details{
+  background-color: #92A134;
+  border: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  width: 313px;
+  height: 58px;
+  color: white !important;
+}
+.button_details:hover{
+  background-color: #424436;
+  border: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  width: 313px;
+  height: 58px;
+  color: white !important;
 }
 
 .order_details {
@@ -71,7 +95,6 @@
   flex-direction: column;
   gap: 1.25rem; 
 }
-
 
 
 @media (min-width: 770px) {
@@ -91,15 +114,6 @@
   .product_card_wrapper {
     grid-template-columns: 1fr;
     justify-items: center;
-  }
-
-  .basket_items, .order_details {
-    max-width: 90%; 
-    width: 100%;
-  }
-
-  .button_section::before {
-    --line-length: 72px; 
   }
 }
 
@@ -123,6 +137,3 @@
     font-size: 40px;
   }
 }
-
-
-

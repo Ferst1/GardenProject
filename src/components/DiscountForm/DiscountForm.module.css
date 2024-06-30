@@ -154,22 +154,20 @@ form {
     border: 1px solid #8B8B8B !important;
     background-color: #424436 !important;
 }
-/* 
-.warning_text {
-    display: inline-flex;
-    width: 100%;
-    color: #FFFFF1;
-    margin-top: 0px;
-    padding-bottom: 0px;
+
+.alternative_form_container .warning_text_alternative{
+    color: #8B8B8B !important;
+}
+.alternative_form_container .dark_mode_warning_text.warning_text_alternative{
+    color: #8B8B8B !important;
 }
 
-.success_text {
-    display: inline-flex;
-    width: 100%;
-    color: #FFFFF1;
-    margin-top: 0px;
-    padding-bottom: 0px;
-} */
+.alternative_form_container .success_text_alternative{
+    color: #92A134!important;
+}
+.alternative_form_container .dark_mode_success_text.success_text_alternative{
+    color: #8B8B8B !important;
+}
 
 .button_alternative {
     background-color: #92A134 !important;
