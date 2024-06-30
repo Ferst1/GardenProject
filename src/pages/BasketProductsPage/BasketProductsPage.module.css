@@ -1,12 +1,13 @@
 
 .title_wrapper{
   font-family: var(--font-family);
-font-weight: 700;
-font-size: 56px;
-line-height: 1.1;
-margin-top: 32px;
-display: flex;
-justify-content: space-between;}
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
 
 
 .basket_products_page {
@@ -76,7 +77,7 @@ justify-content: space-between;}
 .product_card_wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem; 
+  gap: 32px;
   justify-items: center;
 }
 

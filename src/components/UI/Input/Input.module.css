@@ -1,3 +1,12 @@
 .input::placeholder {
-    color: white; 
+    color: #FFFFFF; 
+}
+.input::placeholder {
+    color: #FFFFFF; 
+}
+.input_alternative::placeholder {
+    color: #8B8B8B !important;
+}
+.input_alternative {
+    color: #8B8B8B !important; 
 }
