@@ -121,7 +121,7 @@ export default function DiscountForm(props) {
           {errorMessages.length > 0 && (
             <div>
               <div className={s.error_message}>
-                <p className={s.warning_text}>
+                <p className={`${s.warning_text} ${isAlternativeStyle ? s.warning_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_warning_text : ''}`}>
                   <svg
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ export default function DiscountForm(props) {
             </div>
           )}
           {isSubmitted && (
-            <p className={s.success_text}>The discount has been successfully sent by email</p>
+            <p className={`${s.success_text} ${isAlternativeStyle ? s.success_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_success_text : ''}`}>The discount has been successfully sent by email</p>
           )}
           <Button
             text={isAlternativeStyle ? 'Order' : buttonText}

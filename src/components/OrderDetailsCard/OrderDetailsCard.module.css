@@ -20,6 +20,13 @@
   color: #8B8B8B;
   font-weight: 700;
 }
+.order_details_wrapper h3 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  color: var(--black);
+}
 
 .detail_row p {
   font-family: var(--font-family);
