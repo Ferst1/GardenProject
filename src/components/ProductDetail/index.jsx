@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -105,8 +106,8 @@ const ProductDetail = () => {
                         )}
                         {discount !== null && (
                             <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background : ''}`}>
-                            {`-${discount}%`}
-                          </div>
+                                {`-${discount}%`}
+                            </div>
                         )}
                     </div>
                     <div className={styles.controls_and_cart}>
@@ -138,10 +139,6 @@ const ProductDetail = () => {
             <ModalWindowContainer />
         </>
     );
-    
-    
 };
 
 export default ProductDetail;
-
-
