@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate,Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByCategory, setMinPriceFilter, setMaxPriceFilter, setShowDiscounted, setSortBy, filterAndSortProducts } from "../../redux/slices/productsSlice";
 import styles from "./CategoryProductsPage.module.css";
@@ -11,6 +11,7 @@ import CardSkeleton from "../../components/CardSkeleton/CardSkeleton";
 
 const CategoryProductsPage = () => {
   const { categoryId } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { filteredAndSortedProducts, loading, error, showDiscounted } = useSelector(
     (state) => state.products
@@ -44,13 +45,18 @@ const CategoryProductsPage = () => {
     dispatch(filterAndSortProducts());
   };
 
+
+  const handleGoBack = () => {
+    navigate(-1); 
+  };
+
   return (
     <div className="container">
       <div>
         <div className={styles.buttons_wrapper}>
           <ButtonSection text="Main Page" to="/"  />
           <ButtonSection text="Categories" to="/categories" />
-          <ButtonSection text="Tools and equipment" to={`/category/${categoryId}`} />
+          <ButtonSection text="Tools and equipment" onClick={handleGoBack}/>
         </div>
         <h2>Tools and equipment</h2>
         <div className={styles.sorted_section}>
