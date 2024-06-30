@@ -17,8 +17,12 @@ const CategoryProductsPage = () => {
   );
 
   useEffect(() => {
+    console.log("Initial showDiscounted state:", showDiscounted);
+  }, [showDiscounted]);
+
+  useEffect(() => {
     dispatch(fetchProductsByCategory(categoryId));
-  }, [dispatch, categoryId]);
+  }, [dispatch, categoryId, showDiscounted]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));

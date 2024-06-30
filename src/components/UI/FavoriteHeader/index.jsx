@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useEffect } from 'react';
 import FavDark from '../../../media/icons/favorite-transparent-night-icon.svg';
 import FavDarkDark from '../../../media/icons/favorite-hover-dark.svg';
@@ -8,31 +10,21 @@ import s from './FavoriteHeader.module.css';
 
 const FavoriteHeader = ({ darkMode, isFavorite }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [currentIcon, setCurrentIcon] = useState(null);
+    const [currentIcon, setCurrentIcon] = useState(FavLight);
 
     useEffect(() => {
-        if (isFavorite) {
+        const getIcon = () => {
             if (darkMode) {
-                setCurrentIcon(isHovered ? FavLightLight : FavLight);
+                return isHovered ? FavLightLight : FavLight;
             } else {
-                setCurrentIcon(isHovered ? FavDarkDark : FavDark);
+                return isHovered ? FavDarkDark : FavDark;
             }
-        } else {
-            if (darkMode) {
-                setCurrentIcon(isHovered ? FavLightLight : FavLight);
-            } else {
-                setCurrentIcon(isHovered ? FavDarkDark : FavDark);
-            }
-        }
-    }, [darkMode, isFavorite, isHovered]);
+        };
+        setCurrentIcon(getIcon());
+    }, [darkMode, isHovered]);
 
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
 
     return (
         <div

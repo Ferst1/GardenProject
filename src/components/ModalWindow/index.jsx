@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import MuiModal from '@mui/material/Modal';
 import s from './ModalWindow.module.css';
 import { ReactComponent as CloseIcon } from '../../media/icons/close.svg';
@@ -9,16 +9,15 @@ import { useSelector } from 'react-redux';
 
 const ModalWindow = ({ isOpen, handleClose, content }) => {
   const basket = useSelector((state) => state.basket.basket);
-  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     if (content && content.product) {
-      setIsAdded(basket.some(item => item.id === content.product.id));
+      // eslint-disable-next-line no-unused-vars
+      const isProductInBasket = basket.some(item => item.id === content.product.id);
     }
   }, [basket, content]);
 
   const handleAddToBasket = (product) => {
-    setIsAdded(true);
     handleClose();
   };
 
