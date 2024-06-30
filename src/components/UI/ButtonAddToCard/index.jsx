@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './ButtonAddToCard.module.css';
-import { addToBasket } from '../../../redux/basketReducer';
+import { addToBasket } from '../../../redux/basketSlice';
 
 const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
   const dispatch = useDispatch();
