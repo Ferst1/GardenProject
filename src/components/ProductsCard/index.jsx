@@ -139,7 +139,7 @@ import s from "./ProductsCard.module.css";
 import Favorite from "../UI/Favorite";
 import Basket from "../UI/Basket";
 import { useDispatch, useSelector } from "react-redux";
-import { addToBasket, removeFromBasket } from "../../redux/basketSlice"; // Импортируйте из basketSlice
+import { addToBasket, removeFromBasket } from "../../redux/slices/basketSlice"; // Импортируйте из basketSlice
 import {
   addToFavorites,
   removeFromFavorites,

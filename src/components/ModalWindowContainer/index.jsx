@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ModalWindow from '../../components/ModalWindow';
 import ImageModal from '../../components/ImageModal';
 import { closeModal } from '../../redux/actions/modalActions';
-import { addToBasket } from '../../redux/basketSlice';
+import { addToBasket } from '../../redux/slices/basketSlice';
 
 const ModalWindowContainer = () => {
   const dispatch = useDispatch();

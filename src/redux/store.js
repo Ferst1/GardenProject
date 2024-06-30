@@ -15,9 +15,9 @@ import storage from 'redux-persist/lib/storage';
 import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
 // import { basketReducer } from './basketReducer';
-import basketReducer from './basketSlice'
+import basketReducer from './slices/basketSlice'
 import modalReducer from './modalReducer';
-import themeReducer from './themeSlice';
+import themeReducer from './slices/themeSlice';
 
 const persistConfig = {
   key: 'root',

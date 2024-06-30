@@ -8,7 +8,7 @@ import ButtonSection from '../../components/UI/ButtonSection';
 import Button from '../../components/UI/Button';
 import OrderDetailsCard from '../../components/OrderDetailsCard';
 import { persistor } from '../../redux/store';
-import { removeFromBasket } from '../../redux/basketSlice'; 
+import { removeFromBasket } from '../../redux/slices/basketSlice'; 
 
 const BasketProductsPage = () => {
   const basket = useSelector((state) => state.basket.basket);
