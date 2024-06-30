@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ButtonSection from "../../components/UI/ButtonSection";
 import s from "./CategoriesPage.module.css";
 import categoryStyles from '../CategoriesPage/CategoriesPage.module.css';
-import { fetchCategories } from '../../redux/actions/categoriesActions';
+import { fetchCategories } from '../../redux/slices/categoriesSlice';
 import CategoriesCard from '../../components/CategoriesCard';
 
 

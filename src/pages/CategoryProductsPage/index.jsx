@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsByCategory, setMinPriceFilter, setMaxPriceFilter, setShowDiscounted, setSortBy, filterAndSortProducts } from "../../redux/actions/productsActions";
+import { fetchProductsByCategory, setMinPriceFilter, setMaxPriceFilter, setShowDiscounted, setSortBy, filterAndSortProducts } from "../../redux/slices/productsSlice";
 import styles from "./CategoryProductsPage.module.css";
 import SortFilteredComponents from "../../components/SortFilteredComponents";
 import ButtonSection from "../../components/UI/ButtonSection";
