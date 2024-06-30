@@ -5,7 +5,8 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  width: 100%;
+  width: 316px;
+  gap: 32px;
 }
 .product_item.dark-mode {
   background-color: #383A2C;

@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 
 const ModalWindow = ({ isOpen, handleClose, content }) => {
   const basket = useSelector((state) => state.basket.basket);
-  // eslint-disable-next-line no-unused-vars
   const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {

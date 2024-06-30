@@ -55,18 +55,6 @@
       border: none;
       margin-top: 16px;
     }
-/*     
-    .title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-    
-    .paragraph {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: var(--white);
-    } */
     
     .buttonContainer {
       width: 100%;
@@ -81,6 +69,7 @@
       padding: 10px 20px;
       background-color: #FFFFF1 !important;
       color: #424436 !important;
+      border: 1px solid var(--green);
       cursor: pointer;
       transition: all var(--transition);
       font-family: Montserrat;
@@ -94,32 +83,10 @@
     }
     
     .buttonAddModal.added {
-      background-color: var(--black) !important;
-      color: var(--white)  !important;
+      background-color: #FFFFF1 !important;
+      color: #424436 !important;
+      border: 1px solid #424436 !important;
       
-    }
-    
-    .buttonAddModal:hover{
-      background-color: var(--black) !important;
-      color: var(--white) !important;
-    }
-  
-    .buttonAddModal {
-      background-color: var(--white);
-      color: var(--black);
-      border: 1px solid var(--green);
-      transition: all var(--transition);
-    }
-    
-    .buttonAddModal:hover {
-      background-color: var(--black);
-      color: var(--white);
-    }
-    
-    .added {
-      background-color: var(--black) !important;
-      color: var(--white) !important;
-      border-color: var(--green);
     }
 
 
