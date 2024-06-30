@@ -7,7 +7,7 @@ import {
   setSortBy,
   setShowDiscounted,
   filterAndSortProducts,
-} from "../../redux/actions/productsActions";
+} from "../../redux/slices/productsSlice";
 import SaleCards from "../../components/SaleCards";
 import FilterPrice from "../../components/FilterPrice";
 import SorterSelect from "../../components/SorterSelect";

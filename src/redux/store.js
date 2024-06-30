@@ -1,4 +1,4 @@
-import { configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import {
   persistStore,
@@ -12,12 +12,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import categoriesReducer from './categoriesReducer';
-import productsReducer from './productsReducer';
-// import { basketReducer } from './basketReducer';
-import basketReducer from './basketSlice'
+import productsReducer from './slices/productsSlice';
+import categoriesReducer from './slices/categoriesSlice';
+import basketReducer from './slices/basketSlice';
 import modalReducer from './modalReducer';
-import themeReducer from './themeSlice';
+import themeReducer from './slices/themeSlice';
 
 const persistConfig = {
   key: 'root',
@@ -31,7 +30,7 @@ const rootReducer = combineReducers({
   products: productsReducer,
   basket: basketReducer,
   modal: modalReducer,
-  theme: themeReducer, 
+  theme: themeReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -44,7 +43,6 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-
 });
 
 export const persistor = persistStore(store);

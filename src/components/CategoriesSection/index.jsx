@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ButtonSection from "../UI/ButtonSection";
 import s from "../CategoriesSection/CategoriesSection.module.css";
 import categoryStyles from "../CategoriesCard/CategoriesCard.module.css";
-import { fetchCategories } from "../../redux/actions/categoriesActions";
+import { fetchCategories } from "../../redux/slices/categoriesSlice";
 import CategoriesCard from "../CategoriesCard";
 
 const CategoriesSection = () => {

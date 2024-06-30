@@ -1,22 +1,28 @@
-import React from 'react'
-import Hero from '../../components/Hero/Hero'
-import DiscountForm from '../../components/DiscountForm'
-import SaleSection from '../../components/SaleSection'
-import CategoriesSection from '../../components/CategoriesSection'
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux'; 
+import Hero from '../../components/Hero/Hero';
+import DiscountForm from '../../components/DiscountForm';
+import SaleSection from '../../components/SaleSection';
+import CategoriesSection from '../../components/CategoriesSection';
+import { fetchCategories } from '../../redux/slices/categoriesSlice'; 
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
   return (
-    
     <div>
-      <Hero/>
-      
+      <Hero />
       <div className='container'>   
-        <CategoriesSection/>
-        <DiscountForm/>
-        <SaleSection/>
+        <CategoriesSection />
+        <DiscountForm />
+        <SaleSection />
       </div>
     </div>
-  )
+  );
 }
 
-export default MainPage
+export default MainPage;

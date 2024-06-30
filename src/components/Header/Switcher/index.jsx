@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from '../../../redux/themeSlice';
+import { toggleTheme } from '../../../redux/slices/themeSlice';
 import switcherDarkSVG from '../../../media/icons/mode-night-icon.svg';
 import switcherLightSVG from '../../../media/icons/mode-light-icon.svg';
 import s from './Switcher.module.css';
