@@ -41,18 +41,19 @@
   }
 
 
-  .darkMode .navLink {
-    color: #FFFFFF;
-    transition: color var(--transition);
-  }
+.darkMode .navLink {
+  color: #FFFFFF;
+  transition: color var(--transition);
+}
 
-  .navLink.active{
-    color: #92A134;
-  }
-  
-  .navLink:hover {
-    color: var(--green);
-  }
+.navLink:hover {
+  color: #92A134;;
+}
+
+.navLink:focus{
+  color: #92A134; 
+}
+
   
   @media (max-width: 1000px) and (min-width: 889px) {
     .mainNavLink {
