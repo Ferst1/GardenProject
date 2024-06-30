@@ -14,7 +14,8 @@ import storage from 'redux-persist/lib/storage';
 
 import categoriesReducer from './categoriesReducer';
 import productsReducer from './productsReducer';
-import { basketReducer } from './basketReducer';
+// import { basketReducer } from './basketReducer';
+import basketReducer from './basketSlice'
 import modalReducer from './modalReducer';
 import themeReducer from './themeSlice';
 
