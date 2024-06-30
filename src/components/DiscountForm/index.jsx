@@ -6,7 +6,7 @@ import HandsImage from '../../media/images/image-order.png';
 import Button from '../UI/Button/index';
 import Input from '../UI/Input/index';
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal } from '../../redux/actions/modalActions';
+import { openModal } from '../../redux/slices/modalSlice';
 
 export default function DiscountForm(props) {
   const darkMode = useSelector((state) => state.theme.darkMode);

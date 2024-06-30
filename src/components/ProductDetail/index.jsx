@@ -7,7 +7,7 @@ import ButtonAddToCard from '../UI/ButtonAddToCard';
 import { baseUrl } from '../../instance';
 import Favorite from '../UI/Favorite';
 import ButtonCounter from '../UI/ButtonCounter';
-import { openModal } from '../../redux/actions/modalActions';
+import { openModal } from '../../redux/slices/modalSlice';
 import ModalWindowContainer from '../ModalWindowContainer';
 import { formatPrice } from '../../utils';
 import { calculateDiscount, calculateTotalPrice } from '../../utils';
