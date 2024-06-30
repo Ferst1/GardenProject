@@ -5,7 +5,7 @@ import {
   setMinPriceFilter,
   setMaxPriceFilter,
   setSortBy,
-} from "../../redux/actions/productsActions";
+} from "../../redux/slices/productsSlice";
 import Favorites from "../../components/Favorites";
 import FilterPrice from "../../components/FilterPrice";
 import SorterSelect from "../../components/SorterSelect";

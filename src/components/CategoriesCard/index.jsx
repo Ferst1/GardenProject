@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchProductsByCategory } from "../../redux/actions/productsActions";
+import { fetchProductsByCategory } from "../../redux/slices/productsSlice";
 import defaultStyles from "./CategoriesCard.module.css";
 import baseUrl from "../../instance";
 

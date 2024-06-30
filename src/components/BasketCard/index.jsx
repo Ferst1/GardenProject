@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementProductCount, decrementProductCount, removeFromBasket } from '../../redux/basketSlice';
+import { incrementProductCount, decrementProductCount, removeFromBasket } from '../../redux/slices/basketSlice';
 import styles from './BasketCard.module.css';
 import { baseUrl } from '../../instance';
 import { ReactComponent as CloseIcon } from '../../media/icons/x-burgermenu-dark.svg';

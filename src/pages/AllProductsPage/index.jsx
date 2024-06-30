@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/actions/productsActions';
+import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/slices/productsSlice';
 import AllProducts from '../../components/AllProducts';
 import SortFilteredComponents from '../../components/SortFilteredComponents';
 import ButtonSection from '../../components/UI/ButtonSection';
