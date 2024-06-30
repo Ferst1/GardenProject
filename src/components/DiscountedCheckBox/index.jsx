@@ -7,6 +7,7 @@ import uncheckedIcon from '../../media/icons/check box=normal.svg';
 
 const DiscountedCheckBox = ({ styles = defaultStyles, setShowDiscounted, showDiscounted }) => {
   const handleCheckboxClick = () => {
+    console.log("Checkbox clicked. New showDiscounted state:", !showDiscounted);
     setShowDiscounted(!showDiscounted);
   };
 
