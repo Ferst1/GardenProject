@@ -1,11 +1,10 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import baseUrl from '../../instance';
-import { sortProducts } from '../../utils';
 
 const initialState = {
   products: [],
+  filteredAndSortedProducts: [],
   product: null,
   favorites: [],
   loading: false,
@@ -17,6 +16,7 @@ const initialState = {
   sortBy: 'default',
   showDiscounted: false,
 };
+
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
@@ -55,6 +55,7 @@ export const fetchProduct = createAsyncThunk(
   }
 );
 
+
 const productsSlice = createSlice({
   name: 'products',
   initialState,
@@ -75,7 +76,9 @@ const productsSlice = createSlice({
       state.filteredAndSortedProducts = action.payload;
     },
     addToFavorites(state, action) {
-      state.favorites.push(action.payload);
+      if (!state.favorites.some(fav => fav.id === action.payload.id)) {
+        state.favorites.push(action.payload);
+      }
     },
     removeFromFavorites(state, action) {
       state.favorites = state.favorites.filter(fav => fav.id !== action.payload.id);
@@ -105,7 +108,18 @@ const productsSlice = createSlice({
         products = products.filter(product => product.discont_price);
       }
 
-      state.filteredAndSortedProducts = sortProducts(products, state.sortBy);
+      switch (state.sortBy) {
+        case 'price-asc':
+          products.sort((a, b) => (a.discont_price ?? a.price) - (b.discont_price ?? b.price));
+          break;
+        case 'price-desc':
+          products.sort((a, b) => (b.discont_price ?? b.price) - (a.discont_price ?? a.price));
+          break;
+        default:
+          break;
+      }
+
+      state.filteredAndSortedProducts = products;
     },
   },
   extraReducers: (builder) => {
