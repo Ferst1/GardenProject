@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,13 +13,12 @@ import { formatPrice } from '../../utils';
 import { calculateDiscount, calculateTotalPrice } from '../../utils';
 
 const ProductDetail = () => {
+    const darkMode = useSelector((state) => state.theme.darkMode);
     const { productId } = useParams();
     const dispatch = useDispatch();
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
     const [isFavorite, setIsFavorite] = useState(false);
     const [productCount, setProductCount] = useState(1);
-    // eslint-disable-next-line no-unused-vars
-    const [darkMode, setDarkMode] = useState(false);
     const [showFullDescription, setShowFullDescription] = useState(false);
 
     useEffect(() => {
@@ -95,6 +93,7 @@ const ProductDetail = () => {
                             isDarkMode={false}
                             onClick={handleAddToFavorites}
                             isFavorite={isFavorite}
+                            isProductDetail={true}
                         />
                     </div>
                     <div className={styles.product_price}>
@@ -105,7 +104,9 @@ const ProductDetail = () => {
                             </span>
                         )}
                         {discount !== null && (
-                            <div className={styles.discont_tag}>{`-${discount}%`}</div>
+                            <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background : ''}`}>
+                            {`-${discount}%`}
+                          </div>
                         )}
                     </div>
                     <div className={styles.controls_and_cart}>
@@ -115,7 +116,7 @@ const ProductDetail = () => {
                             handleDecrement={handleDecrement}
                         />
                         <ButtonAddToCard
-                            className={styles.button_add}
+                            className={`${styles.button_add}`}
                             product={{ ...product, count: productCount }}
                         />
                     </div>
@@ -137,6 +138,10 @@ const ProductDetail = () => {
             <ModalWindowContainer />
         </>
     );
+    
+    
 };
 
 export default ProductDetail;
+
+

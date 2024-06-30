@@ -1,33 +1,29 @@
-
-.buttonAdd{
+.buttonAdd {
     max-width: 100%;
     display: flex;
     border-radius: 6px;
-padding: 16px 32px;
-min-width: 284px;
-height: 58px;
-background: var(--green);
-color: var(--white);
-transition: background var(--transition);
-justify-content: center;
-align-items: center;
-
+    padding: 16px 32px;
+    min-width: 316px;
+    height: 58px;
+    background: var(--green);
+    color: var(--white);
+    transition: var(--transition);
+    justify-content: center;
+    align-items: center;
 }
+
+.buttonAdd:hover {
+    background: #424436 !important;
+    color: #FFFFFF !important;
+} 
 
 .added {
-    background-color: var(--green);
-    color: var(--white);
+    background-color: #FFFFF1 !important;
+    color: #424436 !important;
+    border: 1px solid #424436 !important;
 }
-
-.buttonAdd.added {
-    color:var(--black);
-    background-color: var(--white);
-    border-color: var(--green);
-  }
-.buttonAdd:hover{
-    background: var(--black);
-    color: var(--white);
-
+.added:hover {
+    background-color: #FFFFF1 !important;
+    color: #424436 !important;
+    border: 1px solid #424436 !important;
 }
-
-
