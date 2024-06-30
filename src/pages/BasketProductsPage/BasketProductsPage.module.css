@@ -79,7 +79,7 @@
 }
 .button_details:hover{
   background-color: #424436;
-  border: none;
+  border: 1px solid #FFFFF1 !important;
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 600;
