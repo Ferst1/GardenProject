@@ -203,9 +203,9 @@ margin-bottom: 16px
     grid-template-rows: auto auto auto auto 1fr;
   }
 
-  .description_wrapper {
-    /* grid-column: span 2; */
-  }
+  /* .description_wrapper {
+        grid-column: span 2;
+  } */
 
   .product_price {
     font-size: 8vw;
