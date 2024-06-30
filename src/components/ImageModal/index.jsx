@@ -95,7 +95,7 @@ const ImageModal = ({ isOpen, handleClose, imageUrl }) => {
   };
 
   if (window.innerWidth <= 1440) {
-    modalImageStyle.width = '900px';
+    modalImageStyle.width = '8900px';
     modalImageStyle.height = '610px';
   }
   if (window.innerWidth <= 999) {
