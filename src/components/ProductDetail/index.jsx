@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -75,9 +76,19 @@ const ProductDetail = () => {
     const discount = calculateDiscount(product.price, product.discont_price);
     const totalPrice = calculateTotalPrice(product.price, product.discont_price, productCount);
 
+
     return (
-        <>
+        <div className='container'>
             <div className={`${styles.product_detail} ${darkMode ? styles.dark : ''}`}>
+                <div className={`${styles.title_favorite_wrapper} ${styles.hidden_on_large}`}>
+                    <h4 className={styles.product_title}>{product.title}</h4>
+                    <Favorite
+                        isDarkMode={false}
+                        onClick={handleAddToFavorites}
+                        isFavorite={isFavorite}
+                        isProductDetail={true}
+                    />
+                </div>
                 <div className={styles.wrapper_img}>
                     <img
                         src={`${baseUrl}${product.image}`}
@@ -87,8 +98,13 @@ const ProductDetail = () => {
                     />
                 </div>
                 <div className={`${styles.product_detail_content} ${darkMode ? styles.dark : ''}`}>
-                    <div className={styles.title_favorite_wrapper}>
-                        <h4>{product.title}</h4>
+                    <div className={`${styles.title_favorite_wrapper} ${styles.visible_on_large}`}>
+                        <div className={styles.title_container}>
+                            <h4 className={styles.product_title}>
+                                {product.title.split(' ').slice(0, 2).join(' ')}
+                            </h4>
+                            <div className={styles.tooltip}>{product.title}</div>
+                        </div>
                         <Favorite
                             isDarkMode={false}
                             onClick={handleAddToFavorites}
@@ -105,8 +121,8 @@ const ProductDetail = () => {
                         )}
                         {discount !== null && (
                             <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background : ''}`}>
-                            {`-${discount}%`}
-                          </div>
+                                {`-${discount}%`}
+                            </div>
                         )}
                     </div>
                     <div className={styles.controls_and_cart}>
@@ -116,7 +132,7 @@ const ProductDetail = () => {
                             handleDecrement={handleDecrement}
                         />
                         <ButtonAddToCard
-                            className={`${styles.button_add}`}
+                            className={styles.button_add}
                             product={{ ...product, count: productCount }}
                         />
                     </div>
@@ -136,12 +152,9 @@ const ProductDetail = () => {
                 </div>
             </div>
             <ModalWindowContainer />
-        </>
+        </div>
     );
     
-    
-};
+ };
 
-export default ProductDetail;
-
-
+ export default ProductDetail;

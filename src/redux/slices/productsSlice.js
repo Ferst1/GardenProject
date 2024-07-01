@@ -17,25 +17,33 @@ const initialState = {
   showDiscounted: false,
 };
 
-
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${baseUrl}/products/all`);
-      return response.data;
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(response.data);
+        }, 1500); 
+      });
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
 
+
 export const fetchProductsByCategory = createAsyncThunk(
   'products/fetchProductsByCategory',
   async (categoryId, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${baseUrl}/categories/${categoryId}`);
-      return response.data.data;
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(response.data.data);
+        }, 1500); 
+      });
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -48,7 +56,11 @@ export const fetchProduct = createAsyncThunk(
     try {
       const response = await axios.get(`${baseUrl}/products/${productId}`);
       const product = Array.isArray(response.data) ? response.data[0] : response.data;
-      return product;
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(product);
+        }, 1500); 
+      });
     } catch (error) {
       return rejectWithValue(error.message);
     }
