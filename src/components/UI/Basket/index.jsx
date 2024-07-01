@@ -6,7 +6,7 @@ import BasLight from '../../../media/icons/basket-white.svg';
 import BasketGreen from '../../../media/icons/basket-green.svg';
 import s from './Basket.module.css';
 
-const Basket = ({ onClick, isInBasket }) => {
+const Basket = ({ product, isInBasket, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -22,7 +22,12 @@ const Basket = ({ onClick, isInBasket }) => {
       e.preventDefault();
       e.stopPropagation();
     }
-    onClick();
+
+    if (product && product.id) { 
+      onClick(e); 
+    } else {
+      console.error('Product is undefined or does not have an id', product);
+    }
   };
 
   const getIcon = () => {
@@ -54,4 +59,3 @@ const Basket = ({ onClick, isInBasket }) => {
 };
 
 export default Basket;
-

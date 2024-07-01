@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './ButtonDiscount.module.css';
 import ButtonSection from '../../UI/ButtonSection';
-import { openModal } from '../../../redux/actions/modalActions';
+import { openModal } from '../../../redux/slices/modalSlice';
 
 const ButtonDiscount = () => {
   const dispatch = useDispatch();

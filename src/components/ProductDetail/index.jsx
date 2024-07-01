@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct, incrementProductCount, decrementProductCount, addToFavorites, removeFromFavorites } from '../../redux/actions/productsActions';
+import { fetchProduct, incrementProductCount, decrementProductCount, addToFavorites, removeFromFavorites } from '../../redux/slices/productsSlice';
 import styles from './ProductDetail.module.css';
 import ButtonAddToCard from '../UI/ButtonAddToCard';
 import { baseUrl } from '../../instance';
 import Favorite from '../UI/Favorite';
 import ButtonCounter from '../UI/ButtonCounter';
-import { openModal } from '../../redux/actions/modalActions';
+import { openModal } from '../../redux/slices/modalSlice';
 import ModalWindowContainer from '../ModalWindowContainer';
 import { formatPrice } from '../../utils';
 import { calculateDiscount, calculateTotalPrice } from '../../utils';
 
 const ProductDetail = () => {
+    const darkMode = useSelector((state) => state.theme.darkMode);
     const { productId } = useParams();
     const dispatch = useDispatch();
     const { product, loading, error, favorites = [] } = useSelector((state) => state.products);
     const [isFavorite, setIsFavorite] = useState(false);
-    const [productCount, setProductCount] = useState(0);
-    const [darkMode, setDarkMode] = useState(false);
+    const [productCount, setProductCount] = useState(1);
     const [showFullDescription, setShowFullDescription] = useState(false);
 
     useEffect(() => {
@@ -93,6 +93,7 @@ const ProductDetail = () => {
                             isDarkMode={false}
                             onClick={handleAddToFavorites}
                             isFavorite={isFavorite}
+                            isProductDetail={true}
                         />
                     </div>
                     <div className={styles.product_price}>
@@ -103,7 +104,9 @@ const ProductDetail = () => {
                             </span>
                         )}
                         {discount !== null && (
-                            <div className={styles.discont_tag}>{`-${discount}%`}</div>
+                            <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background : ''}`}>
+                            {`-${discount}%`}
+                          </div>
                         )}
                     </div>
                     <div className={styles.controls_and_cart}>
@@ -113,7 +116,7 @@ const ProductDetail = () => {
                             handleDecrement={handleDecrement}
                         />
                         <ButtonAddToCard
-                        className={styles.button_add}
+                            className={`${styles.button_add}`}
                             product={{ ...product, count: productCount }}
                         />
                     </div>
@@ -135,6 +138,10 @@ const ProductDetail = () => {
             <ModalWindowContainer />
         </>
     );
+    
+    
 };
 
 export default ProductDetail;
+
+

@@ -6,6 +6,7 @@
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   width: 316px;
+  gap: 32px;
 }
 .product_item.dark-mode {
   background-color: #383A2C;
@@ -39,6 +40,7 @@
   border-bottom: 1px solid #dddddd;
   object-fit: cover;
 }
+
 
 .product_title {
   font-family: Montserrat;
@@ -207,3 +209,9 @@
       font-size: 18px;
   }
 } 
+
+
+
+
+
+

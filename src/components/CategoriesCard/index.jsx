@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchProductsByCategory } from "../../redux/actions/productsActions";
+import { fetchProductsByCategory } from "../../redux/slices/productsSlice";
 import defaultStyles from "./CategoriesCard.module.css";
 import baseUrl from "../../instance";
 
@@ -9,6 +9,7 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const displayCategories = limit ? categories.slice(0, limit) : categories;
+
 
   const handleCategoryClick = (categoryId) => {
     dispatch(fetchProductsByCategory(categoryId))
@@ -36,7 +37,6 @@ const CategoriesCard = ({ categories, limit, styles = defaultStyles }) => {
                   src={`${baseUrl}${category.image}`}
                   alt={category.title}
                 />
-
                 <div className={styles.category_title}>{category.title}</div>
               </div>
             )}

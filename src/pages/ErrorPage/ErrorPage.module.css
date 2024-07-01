@@ -1,5 +1,4 @@
 
-
   .error_page {
     margin: 0 auto;
   }
@@ -8,6 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 760px;
     margin: 0 auto;
     text-align: center;
   }
@@ -17,18 +17,16 @@
     font-weight: 700;
     font-size: 64px;
     color: #282828;
-    padding: 10px 10px 0 16px;
   }
   
   .error_wrapper > p {
+    width: 760px;
     line-height: 10px;
     font-weight: 300;
     font-size: 20px;
     padding-bottom: 16px;
     text-align: center;
-    max-width: auto;
-    padding: 20px 10px 0 16px;
-    color: #8B8B8B;
+
   }
   .dark h1{
     color: #FFFFFF; 
@@ -63,154 +61,49 @@
     width: 100%;
     max-width: 690px;
     margin: 0 auto;
-    padding: 90px 10px 10px 10px;
+    padding-top: 100px;
   }
   
   @media (min-width: 1440px) {
     .error_img {
       max-width: 690px;
     }
-    .error_wrapper > h1 {
-      font-size: 64px;
-      text-align: center;
-      line-height: 70.4px;
-      padding: 16px;
-    }
-
-    .error_wrapper > p {
-      font-size: 20px;
-      line-height: 26px;
-      padding: 0;
-    }
-  
-    .button_return {
-      padding: 12px 52px;
-      font-size: 20px;
-    }
-    
   }
   
   @media (max-width: 1000px) {
     .error_img {
-      max-width: 690px;
-      padding: 80px 10px 20px 10px;
-    }
-    .error_wrapper > h1 {
-      font-size: 64px;
-      text-align: center;
-      line-height: 70.4px;
-      padding: 16px;
-    }
-
-    .error_wrapper > p {
-      font-size: 20px;
-      line-height: 26px;
-      padding: 0;
-    }
-  
-    .button_return {
-      padding: 12px 52px;
-      font-size: 20px;
+      max-width: 80%;
     }
   }
   
   @media (max-width: 768px) {
     .error_img {
       max-width: 648px;
-      padding: 80px 10px 20px 10px;
-    }
-    .error_wrapper > h1 {
-      font-size: 56px;
-      text-align: center;
-      line-height: 61.6px;
-      padding: 12px;
-    }
-
-    .error_wrapper > p {
-      font-size: 20px;
-      line-height: 26px;
-      padding: 0;
-    }
-  
-    .button_return {
-      padding: 12px 52px;
-      font-size: 20px;
     }
   }
   
-  @media (max-width: 500px) and (min-width: 480px) {
+  @media (max-width: 480px) {
     .error_img {
       max-width: 440px;
-      padding: 70px 10px 10px 10px;
-    }
-    
-    .error_wrapper > h1 {
-      font-size: 48px;
-      text-align: center;
-      padding: 12px;
-    }
-    
-    .error_wrapper > p {
-      width: 430px;
-      font-size: 18px;
-      line-height: 23.4px;
-      padding: 0;
-    }
-  
-    .button_return {
-      padding: 12px 52px;
-      font-size: 18px;
     }
   }
-     
-  /* @media (max-width: 480px) {
-    .error_img {
-      max-width: 320px;
-      padding: 70px 10px 10px 10px;
-    }
-    
-    .error_wrapper > h1 {
-      font-size: 48px;
-      text-align: center;
-      padding: 12px;
-    }
-    
-    .error_wrapper > p {
-      width: 310px;
-      font-size: 18px;
-      line-height: 23.4px;
-      padding: 0;
-    }
   
-    .button_return {
-      padding: 12px 52px;
-      font-size: 18px;
-    }
-  } */
-  @media (max-width: 360px) {
+  @media (max-width: 320px) {
     .error_img {
       max-width: 320px;
-      padding: 70px 10px 10px 10px;
+      padding-left: 0;
     }
     
     .error_wrapper > h1 {
       font-size: 40px;
-      width: 310px;
+      line-height: 1.1;
       text-align: center;
-      line-height: 44px;
-      padding: 12px;
     }
     
-    .error_wrapper > p {
-      width: 310px;
-      font-size: 18px;
-      line-height: 23.4px;
-      padding: 0;
-    }
-  
     .button_return {
       padding: 12px 52px;
-      font-size: 18px;
+      width: 191px;
+      height: 47px;
     }
   }
   

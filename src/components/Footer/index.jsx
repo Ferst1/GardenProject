@@ -22,12 +22,12 @@ const Footer = () => {
           <p>Socials</p>
           <div className={s.social_wrapper}>
             <span>
-              <a href="https://www.instagram.com" target="_blank">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
               <img src={darkMode ? instagramLight : instagramDark} alt="instagram icon" />
               </a>
             </span>
             <span>
-              <a href="https://www.whatsapp.com" target="_blank">
+              <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
               <img src={darkMode ? whatsappLight : whatsappDark } alt="whatsapp icon" />
               </a>
             </span>
@@ -52,6 +52,7 @@ const Footer = () => {
           loading="lazy"
           className={s.map}
           referrerPolicy="no-referrer-when-downgrade"
+          title="UniqueTitle"
         ></iframe>
       </div>
     </div>

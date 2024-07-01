@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import BasketCard from '../../components/BasketCard';
 import styles from './BasketProductsPage.module.css';
@@ -8,12 +8,14 @@ import ButtonSection from '../../components/UI/ButtonSection';
 import Button from '../../components/UI/Button';
 import OrderDetailsCard from '../../components/OrderDetailsCard';
 import { persistor } from '../../redux/store';
+import { removeFromBasket } from '../../redux/slices/basketSlice'; 
 
 const BasketProductsPage = () => {
   const basket = useSelector((state) => state.basket.basket);
   const loading = useSelector((state) => state.basket.loading);
   const error = useSelector((state) => state.basket.error);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [rehydrated, setRehydrated] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,6 @@ const BasketProductsPage = () => {
 
     const unsubscribe = persistor.subscribe(handleRehydrate);
 
-    
     if (persistor.getState().bootstrapped) {
       setRehydrated(true);
     }
@@ -42,6 +43,10 @@ const BasketProductsPage = () => {
 
   const handleContinueShopping = () => {
     navigate('/all_products');
+  };
+
+  const handleRemove = (productId) => {
+    dispatch(removeFromBasket(productId));
   };
 
   if (!rehydrated) {
@@ -66,12 +71,14 @@ const BasketProductsPage = () => {
     <div className="container">
       <div className={styles.basket_products_page}>
         <div className={styles.title_wrapper}>
-          <h3>Shopping cart</h3>
-          <ButtonSection
-            to="/all_products"
-            text="Back to the store"
-            className={styles.button_section}
-          />
+          <h2>Shopping cart</h2>
+          <div className={styles.button_with_line}>
+            <ButtonSection
+              to="/all_products"
+              text="Back to the store"
+              className={styles.button_section}
+            />
+          </div>
         </div>
 
         <div className={styles.product_card_wrapper}>
@@ -89,7 +96,7 @@ const BasketProductsPage = () => {
               <ul>
                 {basket.map((item, index) => (
                   <li key={index}>
-                    <BasketCard product={item} />
+                    <BasketCard product={item} onRemove={() => handleRemove(item.id)} />
                   </li>
                 ))}
               </ul>

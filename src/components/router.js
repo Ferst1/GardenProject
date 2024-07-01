@@ -6,6 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import SharedLayout from './SharedLayout';
 import ErrorPage from '../pages/ErrorPage';
 import ProductDetailPage from '../pages/ProductDetailPage';
+import CardSkeleton from './CardSkeleton/CardSkeleton';
 
 const MainPage = lazy(() => import('../pages/MainPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <MainPage />
             </Suspense>
           </SkeletonTheme>
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
       {
         path: 'categories',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <CategoriesPage />
             </Suspense>
           </SkeletonTheme>
@@ -43,8 +44,8 @@ const router = createBrowserRouter([
       {
         path: 'all_products',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <AllProductsPage />
             </Suspense>
           </SkeletonTheme>
@@ -53,8 +54,8 @@ const router = createBrowserRouter([
       {
         path: 'all_sales',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <AllSalesPage />
             </Suspense>
           </SkeletonTheme>
@@ -63,8 +64,8 @@ const router = createBrowserRouter([
       {
         path: 'product/:productId',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <ProductDetailPage />
             </Suspense>
           </SkeletonTheme>
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
       {
         path: 'category/:categoryId',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<div>Loading...</div>}>
               <CategoryProductsPage />
             </Suspense>
@@ -83,8 +84,8 @@ const router = createBrowserRouter([
       {
         path: 'favorites',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
-            <Suspense fallback={<div>Loading...</div>}>
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
+            <Suspense fallback={<CardSkeleton />}>
               <FavoritesPage />
             </Suspense>
           </SkeletonTheme>
@@ -93,7 +94,7 @@ const router = createBrowserRouter([
       {
         path: 'basket',
         element: (
-          <SkeletonTheme baseColor="#dddddd" highlightColor="#e0e0e0">
+          <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
             <Suspense fallback={<div>Loading...</div>}>
               <BasketProductsPage />
             </Suspense>

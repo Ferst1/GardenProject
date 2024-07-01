@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import defaultStyles from './DiscountedCheckBox.module.css';
 import checkedIcon from '../../media/icons/check box=active.svg'; 
@@ -6,6 +7,7 @@ import uncheckedIcon from '../../media/icons/check box=normal.svg';
 
 const DiscountedCheckBox = ({ styles = defaultStyles, setShowDiscounted, showDiscounted }) => {
   const handleCheckboxClick = () => {
+    console.log("Checkbox clicked. New showDiscounted state:", !showDiscounted);
     setShowDiscounted(!showDiscounted);
   };
 
@@ -16,7 +18,7 @@ const DiscountedCheckBox = ({ styles = defaultStyles, setShowDiscounted, showDis
         <img
           src={showDiscounted ? checkedIcon : uncheckedIcon} 
           className={styles.checkbox_image}
-             alt="Discount checkbox"
+          alt="Discount checkbox"
         />
       </div>
     </div>

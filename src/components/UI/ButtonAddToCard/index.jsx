@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './ButtonAddToCard.module.css';
-import { addToBasket } from '../../../redux/basketReducer';
+import { addToBasket } from '../../../redux/slices/basketSlice';
 
 const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
       setIsAdded(true);
       setTimeout(() => {
         setIsAdded(false);
-      }, 500);
+      }, 1500);
     }
   };
 
@@ -41,3 +41,4 @@ const ButtonAddToCard = ({ product, className, onAddToBasket }) => {
 };
 
 export default ButtonAddToCard;
+

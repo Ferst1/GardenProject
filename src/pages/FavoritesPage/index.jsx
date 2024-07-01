@@ -2,12 +2,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchProducts,
   setMinPriceFilter,
   setMaxPriceFilter,
   setSortBy,
-  filterAndSortProducts,
-} from "../../redux/actions/productsActions";
+} from "../../redux/slices/productsSlice";
 import Favorites from "../../components/Favorites";
 import FilterPrice from "../../components/FilterPrice";
 import SorterSelect from "../../components/SorterSelect";
@@ -15,30 +13,37 @@ import filterPriceStyles from "../../components/FilterPrice/FilterPrice.module.c
 import sorterSelectStyles from "../../components/SorterSelect/SorterSelect.module.css";
 import styles from "./FavoritesPage.module.css";
 import ButtonSection from "../../components/UI/ButtonSection";
+import { sortProducts } from "../../utils"; 
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();
-  const { filteredAndSortedProducts, loading, error } = useSelector(
+  const { favorites, filters, sortBy, loading, error } = useSelector(
     (state) => state.products
   );
 
+  const filteredFavorites = favorites.filter(product => {
+    const price = product.discont_price ?? product.price;
+    return price >= filters.minPrice && price <= filters.maxPrice;
+  });
+
+  const sortedFavorites = sortProducts(filteredFavorites, sortBy);
+
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
-  }, [dispatch]);
+    dispatch(setMinPriceFilter(filters.minPrice));
+    dispatch(setMaxPriceFilter(filters.maxPrice));
+    dispatch(setSortBy(sortBy));
+  }, [dispatch, filters.minPrice, filters.maxPrice, sortBy]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
-    dispatch(filterAndSortProducts());
   };
 
   const handleMaxPriceChange = (maxPrice) => {
     dispatch(setMaxPriceFilter(maxPrice));
-    dispatch(filterAndSortProducts());
   };
 
   const handleSortChange = (selectedValue) => {
     dispatch(setSortBy(selectedValue));
-    dispatch(filterAndSortProducts());
   };
 
   if (error) {
@@ -69,7 +74,7 @@ const FavoritesPage = () => {
         <SorterSelect styles={sorterSelectStyles} onChange={handleSortChange} />
       </div>
       <div className={styles.favorites_wrapper}>
-        <Favorites products={filteredAndSortedProducts} loading={loading} />
+        <Favorites products={sortedFavorites} loading={loading} />
       </div>
     </div>
   );

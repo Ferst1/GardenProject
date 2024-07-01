@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SaleCards from '../SaleCards';
 import ButtonSection from '../UI/ButtonSection';
-import { fetchProducts } from '../../redux/actions/productsActions';
+import { fetchProducts } from '../../redux/slices/productsSlice';
 import s from './SaleSection.module.css';
 
 const SaleSection = () => {

@@ -1,7 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/actions/productsActions';
+import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/slices/productsSlice';
 import AllProducts from '../../components/AllProducts';
 import SortFilteredComponents from '../../components/SortFilteredComponents';
 import ButtonSection from '../../components/UI/ButtonSection';
@@ -12,8 +11,12 @@ const AllProductsPage = () => {
   const { filteredAndSortedProducts, loading, error, showDiscounted } = useSelector(state => state.products);
 
   useEffect(() => {
+    console.log("Initial showDiscounted state:", showDiscounted);
+  }, [showDiscounted]);
+
+  useEffect(() => {
     dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
-  }, [dispatch]);
+  }, [dispatch, showDiscounted]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
@@ -43,8 +46,8 @@ const AllProductsPage = () => {
     <div>
       <div className="container">
         <div className={styles.buttons_wrapper}>
-          <ButtonSection text="Main Page" to="/"  className={styles.button_section} />
-          <ButtonSection text="All products" to="/all_products"  className={styles.button_section} />
+          <ButtonSection text="Main Page" to="/" className={styles.button_section} />
+          <ButtonSection text="All products" to="/all_products" className={styles.button_section} />
         </div>
         <h2>All products</h2>
         <div className={styles.sorted_section}>
@@ -63,3 +66,4 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
+
