@@ -9,13 +9,14 @@
     background-color: var(--white);
     border: 1px solid var(--grey-divider);
     height: 180px;
-    width: 100%;
+    width: 780px;
   }
   .product_image {
     width: 200px;
     height: 178px;
     object-fit: cover;
     border-radius: 12px 0 0 12px;
+    border-right: 1px solid var(--grey-divider);
   }
 
 
@@ -25,25 +26,6 @@
 
   .dark.basket_card {
     background-color: #383A2C;
-  }
-  
-  .remove_button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .remove_button:hover svg,
-  .remove_button:focus svg {
-    color: gray;
-  }
-  
-  .remove_button_x {
-    width: 24px;
-    height: 24px;
   }
 
   .product_details {
@@ -84,7 +66,7 @@
     color: var(--grey) !important;
   }
   
-  .discont_tag {
+  /* .discont_tag {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -94,7 +76,7 @@
     font-size: 12px;
     border-radius: 50%;
     
-  }
+  } */
   
   .controls_and_cart {
     display: flex;
@@ -102,16 +84,32 @@
      width: 200px;
      height: 58px;
   }
+
+  .remove_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .remove_button:hover svg,
+  .remove_button:focus svg {
+    color: gray;
+  }
+  
+  .remove_button_x {
+    width: 24px;
+    height: 24px;
+  }
   
   .title_and_close {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    gap: 16px;
     padding: 32px 0 0 32px;
   }
   h5 {
-    max-width: 100%;
+    width: 476px;
     height: 26px; 
     font-family: var(--font-family);
     font-weight: 500;
@@ -119,21 +117,144 @@
     line-height: 1.3;
     color: var(--black);
     margin: 0;
-    margin-bottom: 12px;
-    margin-right: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;
-    transition: all 0.3s ease-in-out; 
     position: relative;
+}
+
+h5:hover {
+    white-space: normal;
+    overflow: visible;
+    max-width: none;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width: 1439px) and (min-width: 1000px) {
+  .basket_card {
+    height: 192px;
+    width: 470px;
+  }
+  .product_image {
+    width: 200px;
+    height: 190px;
+  }
+
+  ul{
+    width: 470px;
   }
   
-  h5:hover {
-    white-space: normal;
-    height: auto;
-    overflow: visible;
+  .count_wrapper {
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 12px;
+   padding: 12px 0 20px 20px;
   }
+  .remove_button_x {
+    width: 24px;
+    height: 24px;
+  }
+
+  .title_and_close {
+    width: 250px;
+    gap: 12px;
+    padding: 20px 0 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  .price_container {
+    gap: 8px;
+    margin-left: 0px;
+  }
+} 
+
+@media (max-width: 999px) and (min-width: 768px) {
+  .basket_card {
+    height: 136px;
+    width: 728px;
+  }
+  .product_image {
+    width: 200px;
+    height: 134px;
+  }
+
+  ul{
+    width: 479px;
+  }
+  
+  .count_wrapper {
+   gap: 12px;
+   padding: 12px 0 20px 20px;
+  }
+  .controls_and_cart {
+    width: 176px;
+  }
+  .remove_button_x {
+    width: 24px;
+    height: 24px;
+  }
+
+  .title_and_close {
+    gap: 12px;
+    padding: 20px 20px 0 20px;
+  }
+} 
+
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .basket_card {
+    height: 175px;
+    width: 440px;
+  }
+  .product_image {
+    width: 210px;
+    height: 173px;
+  }
+
+  ul{
+    width: 210px;
+  }
+  
+  .count_wrapper {
+    flex-direction: column;
+   align-items: flex-start;
+   gap: 12px;
+   padding: 12px 0 20px 20px;
+   width: 210px;
+  }
+  .controls_and_cart {
+    width: 210px;
+  }
+  .remove_button_x {
+    width: 24px;
+    height: 24px;
+  }
+
+  .title_and_close {
+    width: 210px;
+    gap: 12px;
+    padding: 20px 20px 0 20px;
+  }
+} 
+
+
+@media (max-width: 479px) and (min-width: 360px) {
+  
+}
+
+
+
+
+
+
 
   /* h5:hover::after {
     content: attr(title);
@@ -147,6 +268,9 @@
     z-index: 10;
     white-space: nowrap;
   } */
+/*  
+
+
   @media screen and (max-width: 1440px) {
     .basket_card {
       max-width: 780px;
@@ -325,4 +449,4 @@ align-items: flex-start;
    
 
 
-   
+    */
