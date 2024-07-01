@@ -44,8 +44,8 @@
 .tooltip {
   visibility: hidden;
   width: auto;
-  background-color: #fff;
-  color: black;
+  background-color:var(--white);
+  color: var(--black);
   text-align: center;
   border-radius: 6px;
   padding: 5px;
@@ -135,7 +135,7 @@ h5 {
 }
 
 .dark_background {
-  background-color: #92A134;
+  background-color:var(--light-green);
 }
 
 .controls_and_cart {
@@ -316,7 +316,9 @@ h5 {
   }
 
   .visible_on_large {
-    display: none;
+    
+    visibility: hidden;
+    position: absolute;
   }
 
   .hidden_on_large {
@@ -337,9 +339,10 @@ h5 {
   }
 
   .product_title {
-    font-size: 20px;
-    line-height: 1.1;
     letter-spacing: 0.03em;
+    font-weight: 700;
+    font-size: 32px;
+   line-height: 1.1;
   }
 
   .button_add {
@@ -367,6 +370,11 @@ h5 {
     min-width: 210px;
     min-height: 179px;
   }
+  .product_title {  
+    font-size: 28px; 
+    letter-spacing: 0.03em;    
+  }
+
 }
 
 @media (max-width: 361px) {
@@ -443,6 +451,6 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; 
+    width: 100%;
   }
 }
