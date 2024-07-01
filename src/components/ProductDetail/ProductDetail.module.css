@@ -134,8 +134,8 @@ h5 {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark_background {
-  background-color:var(--light-green);
+.dark_background_discont_tag  {
+  background-color: #92A134;
 }
 
 .controls_and_cart {

@@ -29,9 +29,6 @@ const BasketCard = ({ product }) => {
 
   return (
     <div className={`${styles.basket_card} ${darkMode ? styles.dark : ''}`}>
-      <button className={styles.remove_button} onClick={handleRemove} aria-label="Remove item">
-        <CloseIcon className={styles.remove_button_x} />
-      </button>
       <img
         src={`${baseUrl}${image}`}
         alt={title}
@@ -40,6 +37,9 @@ const BasketCard = ({ product }) => {
       <div className={styles.product_details}>
         <div className={styles.title_and_close}>
           <h5 title={title}>{title}</h5>
+          <button className={styles.remove_button} onClick={handleRemove} aria-label="Remove item">
+          <CloseIcon className={styles.remove_button_x} />
+          </button>
         </div>
         <div className={styles.count_wrapper}>
           <div className={styles.controls_and_cart}>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux'; 
 import Hero from '../../components/Hero/Hero';
-import DiscountForm from '../../components/DiscountForm';
+import DiscountForm from '../../components/DiscountAndOrderForm';
 import SaleSection from '../../components/SaleSection';
 import CategoriesSection from '../../components/CategoriesSection';
 import { fetchCategories } from '../../redux/slices/categoriesSlice'; 

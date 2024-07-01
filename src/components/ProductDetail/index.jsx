@@ -120,7 +120,7 @@ const ProductDetail = () => {
                             </span>
                         )}
                         {discount !== null && (
-                            <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background : ''}`}>
+                            <div className={`${styles.discont_tag} ${darkMode ? styles.dark_background_discont_tag : ''}`}>
                                 {`-${discount}%`}
                             </div>
                         )}
