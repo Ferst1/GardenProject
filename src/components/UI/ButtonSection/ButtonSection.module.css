@@ -10,8 +10,6 @@
   color: var(--grey);
   transition: background-color var(--transition);
   cursor: pointer;
-  
- 
 }
 
 .button:hover {

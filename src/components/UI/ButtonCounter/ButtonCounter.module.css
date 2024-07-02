@@ -78,7 +78,7 @@
 
 @media (max-width: 767px) and (min-width: 480px) {
   .count_controls span {
-    width: 86px;
+    width: 80px;
     height: 47px;
   }
   .decrement_button,
