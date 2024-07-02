@@ -72,8 +72,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
+
+
+## About GardenProject project:
+
+The GardenProject was created for people who love gardening and also value their time. Our website offers a variety of gardening products tailored to meet the needs of gardening enthusiasts. Additionally, we provide a range of items suitable for other family members, making it a one-stop shop for all your household needs.
+
+## <a id="backend">Backend</a>
 Backend [https://github.com/tel-ran-de/telran_backend_garden_shop]
  [https://telran-backend.onrender.com/products/all]
+
+
+## <a id="contributors">Contributors</a>
+
+-Olena Kaspruk - Team Lead / Developer
+  -[GitHub](https://github.com/Ferst1)
+  -[LinkedIn](https://www.linkedin.com/in/coding777/)
+
+- Elvira Gibner - Scrum Master / Developer  
+   -[GitHub](https://github.com/ghibnerelvira)
+   -[LinkedIn](https://www.linkedin.com/in/)
+
+
+
+
 
 Brackpoints[1440px,1000px,768px,480px,360px]
 
