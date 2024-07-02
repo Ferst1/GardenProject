@@ -4,6 +4,10 @@
     align-items: center;
     padding: 0;
     margin: 0;
+    background-color: #FFFFFF;
+  }
+  .count_controls.dark {
+    background-color: transparent;
   }
   
   .decrement_button,
@@ -14,12 +18,15 @@
     height: 58px;
     cursor: pointer;
     color: var(--grey);
-    background-color: transparent;
+    background-color: #FFFFFF;
     margin: -1px; 
     padding: 0;
     box-sizing: border-box;
   }
-  
+  .decrement_button.dark,
+  .increment_button.dark {
+    background-color: transparent;
+  }
   .icon {
     height: 56px;
   }
@@ -37,8 +44,12 @@
     margin: -3px; 
     padding: 0;
     box-sizing: border-box;
+    color: #424436;
   }
 
+  .count.dark {
+    color: #FFFFFF;
+  }
 
 
 
