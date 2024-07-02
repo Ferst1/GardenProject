@@ -12,6 +12,9 @@ import { openModal } from '../../redux/slices/modalSlice';
 import ModalWindowContainer from '../ModalWindowContainer';
 import { formatPrice } from '../../utils';
 import { calculateDiscount, calculateTotalPrice } from '../../utils';
+import CardDetailsSceleton from '../CardDetailsSceleton/CardDetailsSceleton';
+
+
 
 const ProductDetail = () => {
     const darkMode = useSelector((state) => state.theme.darkMode);
@@ -62,7 +65,7 @@ const ProductDetail = () => {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <CardDetailsSceleton />;
     }
 
     if (error) {
