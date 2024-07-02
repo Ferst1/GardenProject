@@ -378,7 +378,7 @@ h5 {
 
 }
 
-@media (max-width: 361px) {
+@media (max-width: 479px) {
   .product_detail {
     grid-template-columns: 1fr;
     grid-template-areas:
