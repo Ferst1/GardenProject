@@ -5,6 +5,7 @@ import ButtonDiscount from '../ButtonDiscount';
 
 const Navigation = ({ darkMode }) => {
   return (
+    <div className='container'>
     <div className={`${s.navigation} ${darkMode ? s.darkMode : ''}`}>
       <div className={s.buttonDiscount}>
         <ButtonDiscount />
@@ -42,6 +43,7 @@ const Navigation = ({ darkMode }) => {
           </NavLink>
         </nav>
       </div>
+    </div>
     </div>
   );
 };
