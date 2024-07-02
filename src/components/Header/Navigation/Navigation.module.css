@@ -53,6 +53,9 @@
 .navLink:focus{
   color: #92A134; 
 }
+.navLink:active{
+  color: #92A134; 
+}
 
   
   @media (max-width: 1000px) and (min-width: 889px) {
