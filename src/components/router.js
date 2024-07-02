@@ -7,6 +7,7 @@ import SharedLayout from './SharedLayout';
 import ErrorPage from '../pages/ErrorPage';
 import ProductDetailPage from '../pages/ProductDetailPage';
 import CardSkeleton from './CardSkeleton/CardSkeleton';
+import CardDetailsSceleton from './CardDetailsSceleton/CardDetailsSceleton';
 
 const MainPage = lazy(() => import('../pages/MainPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
         path: 'product/:productId',
         element: (
           <SkeletonTheme baseColor="#f2f6d3" highlightColor="#e0e0e0">
-            <Suspense fallback={<CardSkeleton />}>
+            <Suspense fallback={<CardDetailsSceleton />}>
               <ProductDetailPage />
             </Suspense>
           </SkeletonTheme>
