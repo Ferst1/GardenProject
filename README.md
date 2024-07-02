@@ -215,6 +215,11 @@ The GardenProject utilizes a variety of libraries to provide a rich and interact
 - **React Lazy**: Lazy loading for components to improve performance by splitting code into manageable chunks.
 
 
+
+### Build and Compile
+- **@babel/plugin-proposal-private-property-in-object**: Babel plugin for parsing private properties in objects.
+- **@svgr/webpack**: Transform SVGs into React components.
+
 These libraries work together to create a seamless, efficient, and user-friendly gardening e-commerce platform.
 
 
