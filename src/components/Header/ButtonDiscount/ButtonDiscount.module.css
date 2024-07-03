@@ -5,12 +5,19 @@
   border-radius: 6px;
   padding: 6px 16px;
   max-width: 151px;
-  border: none !important;
   background: var(--green);
+  color:var(--white)!important;
+  transition: all var(--transition);
   
   }
   
-  
+  .button_discount:hover,
+  .button_discount:focus{
+    border-color: var(--green)!important;
+    background: var(--light-grey)!important;
+    color: var(--grey)!important;
+  }
+
   
   
   @media (max-width: 480px) and (min-width: 360px) {

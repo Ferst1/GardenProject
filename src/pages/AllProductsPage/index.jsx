@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/slices/productsSlice';
@@ -11,12 +12,12 @@ const AllProductsPage = () => {
   const { filteredAndSortedProducts, loading, error, showDiscounted } = useSelector(state => state.products);
 
   useEffect(() => {
-    console.log("Initial showDiscounted state:", showDiscounted);
-  }, [showDiscounted]);
+    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
+  }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
-  }, [dispatch, showDiscounted]);
+    dispatch(filterAndSortProducts());
+  }, [showDiscounted, dispatch]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
@@ -66,4 +67,3 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
-

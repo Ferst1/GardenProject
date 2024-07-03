@@ -18,7 +18,7 @@ import ButtonSection from "../../components/UI/ButtonSection";
 
 const AllSalesPage = () => {
   const dispatch = useDispatch();
-  const { filteredAndSortedProducts, loading, error } = useSelector(
+  const { filteredAndSortedProducts, loading, error,showDiscounted  } = useSelector(
     (state) => state.products
   );
 
@@ -28,6 +28,11 @@ const AllSalesPage = () => {
       dispatch(filterAndSortProducts());
     });
   }, [dispatch]);
+
+
+  useEffect(() => {
+    dispatch(filterAndSortProducts());
+  }, [showDiscounted, dispatch]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
