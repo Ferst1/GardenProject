@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SorterSelect from '../SorterSelect';
 import DiscountedCheckBox from '../DiscountedCheckBox';

@@ -81,7 +81,7 @@ const ProductDetail = () => {
 
 
     return (
-        <div className='container'>
+        <>
             <div className={`${styles.product_detail} ${darkMode ? styles.dark : ''}`}>
                 <div className={`${styles.title_favorite_wrapper} ${styles.hidden_on_large}`}>
                     <h4 className={styles.product_title}>{product.title}</h4>
@@ -155,7 +155,7 @@ const ProductDetail = () => {
                 </div>
             </div>
             <ModalWindowContainer />
-        </div>
+        </>
     );
     
  };

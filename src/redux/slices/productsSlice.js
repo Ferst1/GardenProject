@@ -153,8 +153,8 @@ const productsSlice = createSlice({
         state.loading = false;
         state.products = action.payload;
         state.filteredAndSortedProducts = action.payload;
-        state.filters = initialState.filters; // reset filters
-        state.sortBy = initialState.sortBy; // reset sortBy
+        state.filters = initialState.filters; 
+        state.sortBy = initialState.sortBy; 
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
