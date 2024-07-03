@@ -1,71 +1,128 @@
-.count_controls {
-    display: flex;
+  .count_controls {
+    position: relative;
+    display: inline-flex; 
     align-items: center;
-    padding-left: 0;
-
-
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+  }
+  .count_controls.dark {
+    background-color: transparent;
   }
   
-  .count_controls button {
+  .decrement_button,
+  .increment_button {
     border: 1px solid var(--grey-divider);
     border-radius: 6px;
     width: 58px;
     height: 58px;
-    font-size: 24px;
     cursor: pointer;
     color: var(--grey);
+    background-color: #FFFFFF;
+    margin: -1px; 
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .decrement_button.dark,
+  .increment_button.dark {
     background-color: transparent;
-
+  }
+  .icon {
+    height: 56px;
   }
   
-  .count_controls span {
+  .count {
     border-bottom: 1px solid var(--grey-divider);
     border-top: 1px solid var(--grey-divider);
-    width: 96px;
+    width: 98px;
     height: 58px;
     font-size: 20px;
+    font-weight: 600;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-   
+    margin: -3px; 
+    padding: 0;
+    box-sizing: border-box;
+    color: #424436;
   }
-  
-  @media screen and (max-width: 1000px) {
 
-    .count_controls span {
+  .count.dark {
+    color: #FFFFFF;
+  }
 
-width: 58px;
 
-    }}
-  
-  @media screen and (max-width: 768px) {
 
-    .count_controls span {
+@media (max-width: 1439px) and (min-width: 1000px) {
+  .count_controls span {
+    width: 68px; 
+  }
+  .decrement_button,
+  .increment_button {
+    width: 58px;
+    height: 58px;
+  }
 
-width: 58px;
+  .count {
+    width: 96px;
+    height: 58px;
+  }
+} 
 
-    }}
-  
-  @media screen and (max-width: 480px) {
 
-.count_controls{
+@media (max-width: 999px) and (min-width: 768px) {
+  .count_controls span {
+    width: 68px; 
+  }
+  .decrement_button,
+  .increment_button {
+    width: 58px;
+    height: 58px;
+  }
+
+  .count {
+    width: 96px;
+    height: 58px;
+  }
+} 
+
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .count_controls span {
+    width: 80px;
+    height: 47px;
+  }
+  .decrement_button,
+  .increment_button {
+    width: 47px;
+    height: 47px;
+  }
+
+  .icon {
+    height: 47px;
+  }
+  .count {
+    font-size: 18px;
+  }
+} 
+
+
+@media (max-width: 479px) and (min-width: 360px) {
+  .count_controls span {
+    width: 80px;
+    height: 47px;
+  }
+  .decrement_button,
+  .increment_button {
+    width: 47px;
+    height: 47px;
+  }
+
+  .icon {
+    height: 47px;
+  }
+  .count {
+    font-size: 18px;
+  }
 
 }
-
-
-    .count_controls button{
-      width: 47px;
-       height: 47px;
-    }
-    .count_controls span {
-      width: 52px;
-      height: 47px;
-
-    }}
-  @media screen and (max-width: 360px) {
-
-    .count_controls span {
-
-width: 58px;
-
-    }}
