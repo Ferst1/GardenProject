@@ -32,6 +32,7 @@
     justify-content: space-between;
     align-items: center;
     grid-area: title_favorite_wrapper;
+    
   }
   
   .hidden_on_large {
