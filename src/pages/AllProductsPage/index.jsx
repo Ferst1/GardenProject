@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, setMinPriceFilter, setMaxPriceFilter, setSortBy, setShowDiscounted, filterAndSortProducts } from '../../redux/slices/productsSlice';
@@ -67,3 +66,4 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
+
