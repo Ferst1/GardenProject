@@ -4,14 +4,13 @@
   border: 1px solid #dddddd;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
   width: 316px;
-  gap: 32px;
+  min-height: 420px; 
 }
 .product_item.dark-mode {
   background-color: #383A2C;
 }
-
 
 .product_item:hover {
   transform: translateY(-5px);
@@ -41,7 +40,6 @@
   object-fit: cover;
 }
 
-
 .product_title {
   font-family: Montserrat;
   font-size: 20px;
@@ -49,7 +47,6 @@
   line-height: 26px;
   text-align: left;
   width: 252px;
-  height: auto;
   margin: 20px 32px 16px 32px;
   white-space: nowrap;
   overflow: hidden;
@@ -57,6 +54,7 @@
   color: #424436;
   text-decoration: none;
   display: block;
+  transition: all 0.3s ease-in-out;
 }
 .product_title.dark-mode {
   color: #FFFFFF;
@@ -66,7 +64,6 @@
   white-space: normal;
   overflow: visible;
 }
-
 
 .product_price {
   font-family: Montserrat;
@@ -114,104 +111,115 @@
   color: var(--txt-white);
 }
 
-@media (max-width: 1437px) and (min-width: 1000px) {
 
+.product_item:hover .product_title:hover {
+  height: auto;
+  white-space: normal;
+}
+
+.product_item:hover .product_title:hover ~ .product_price {
+  display: block;
+}
+
+.product_item:hover .product_title:hover ~ .discont_price {
+  display: block;
+}
+
+
+
+@media (max-width: 1437px) and (min-width: 1000px) {
   .product_item {
-      width: 220px;
+    width: 220px;
   }
   .category_img {
-      width: 220px;
-      height: 230px;
+    width: 220px;
+    height: 230px;
   }
   .product_title {
-      width: 185px;
-      height: 52px;
-      margin: 20px 0px 0px 20px;
+    width: 185px;
+    height: 52px;
+    margin: 20px 0px 0px 20px;
   }
   .product_price {
-      padding: 0 20px 20px 20px;
+    padding: 0 20px 20px 20px;
+  }
+  .product_title:hover {
+    margin-bottom: 20px;
   }
 }
 
-@media  (max-width: 999px) and (min-width: 768px)  {
-
+@media (max-width: 999px) and (min-width: 768px) {
   .product_item {
-      width: 343px;
+    width: 343px;
   }
   .category_img {
-      width: 343px;
-      height: 290px;
+    width: 343px;
+    height: 290px;
   }
   .product_title {
-      width: 314px;
-      height: 26px;
-      margin: 20px 20px 10px 20px;
+    width: 314px;
+    height: 26px;
+    margin: 20px 20px 10px 20px;
   }
   .product_price {
-      padding: 0 20px 20px 20px;
+    padding: 0 20px 20px 20px;
   }
 }
 
 @media (max-width: 767px) and (min-width: 480px) {
-
   .product_item {
-      width: 210px;
+    width: 210px;
   }
   .category_img {
-      width: 210px;
-      height: 200px;
+    width: 210px;
+    height: 200px;
   }
   .product_title {
-      font-size: 18px;
-      width: 170px;
-      height: 23px;
-      margin: 20px 20px 10px 20px;
+    font-size: 18px;
+    width: 170px;
+    height: 23px;
+    margin: 20px 20px 10px 20px;
   }
   .product_price {
-      font-size: 36px;
-      padding: 20px 20px 20px 20px;
+    font-size: 36px;
+    padding: 20px 20px 20px 20px;
   }
   .discont_price {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
-@media (max-width: 479px) and (min-width: 360px)  {
-
+@media (max-width: 479px) and (min-width: 360px) {
   .product_item {
-      width: 320px;
+    width: 320px;
   }
   .category_img {
-      width: 320px;
-      height: 280px;
+    width: 320px;
+    height: 280px;
   }
   .product_title {
-      font-size: 18px;
-      width: 170px;
-      height: 23px;
-      margin: 20px 20px 10px 20px;
-      width: 280px;
-      overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
-    transition: width 0.3s; 
+    font-size: 18px;
+    width: 170px;
+    height: 23px;
+    margin: 20px 20px 10px 20px;
+    width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: width 0.3s;
   }
   .product_title:hover {
-    width: auto; 
-    white-space: normal; 
-    overflow: visible; 
-}
+    width: auto;
+    white-space: normal;
+    overflow: visible;
+  }
   .product_price {
-      font-size: 36px;
-      padding: 5px 20px 20px 20px;
+    font-size: 36px;
+    padding: 5px 20px 20px 20px;
   }
   .discont_price {
-      font-size: 18px;
+    font-size: 18px;
   }
-} 
-
-
-
-
+}
 
 

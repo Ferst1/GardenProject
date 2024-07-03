@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { incrementProductCount, decrementProductCount, removeFromBasket } from '../../redux/slices/basketSlice';
 import styles from './BasketCard.module.css';
@@ -36,7 +37,9 @@ const BasketCard = ({ product }) => {
       />
       <div className={styles.product_details}>
         <div className={styles.title_and_close}>
+        <Link to={`/product/${product.id}`}>
           <h5 title={title}>{title}</h5>
+        </Link>
           <button className={styles.remove_button} onClick={handleRemove} aria-label="Remove item">
           <CloseIcon className={styles.remove_button_x} />
           </button>

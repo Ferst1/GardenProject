@@ -39,7 +39,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6,
 p {
   margin-top: 0;
@@ -78,6 +77,10 @@ font-size: 64px;
 line-height: 1.1;
 padding:40px 0  40px;
 
+}
+
+h5{
+	color: #424436;
 }
 
 
@@ -139,7 +142,7 @@ color: var(--black);
   
   @media (max-width: 1000px) {
 	.container {
-	  padding: 0 30px 0px 30px;
+	  padding: 0 20px 0px 20px;
 	}
 
 	h1{

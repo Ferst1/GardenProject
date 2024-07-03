@@ -47,7 +47,7 @@ transition: color var(--transition);
 }
 
 .navLink:hover {
-color: #92A134;;
+color: #92A134;
 }
 
 .navLink:focus{
