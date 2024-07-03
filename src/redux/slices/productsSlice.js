@@ -121,6 +121,15 @@ const productsSlice = createSlice({
       }
 
       switch (state.sortBy) {
+        case 'newest':
+          products.sort((a, b) => b.id - a.id);
+          break;
+        case 'price-high-low':
+          products.sort((a, b) => (b.discont_price ?? b.price) - (a.discont_price ?? a.price));
+          break;
+        case 'price-low-high':
+          products.sort((a, b) => (a.discont_price ?? a.price) - (b.discont_price ?? b.price));
+          break;
         case 'price-asc':
           products.sort((a, b) => (a.discont_price ?? a.price) - (b.discont_price ?? b.price));
           break;
@@ -144,6 +153,8 @@ const productsSlice = createSlice({
         state.loading = false;
         state.products = action.payload;
         state.filteredAndSortedProducts = action.payload;
+        state.filters = initialState.filters; // reset filters
+        state.sortBy = initialState.sortBy; // reset sortBy
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
