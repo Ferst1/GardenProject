@@ -34,7 +34,14 @@
     grid-area: title_favorite_wrapper;
     
   }
-  
+
+  .title_container{
+    margin-top: 15px;
+   margin-bottom: 32px;
+  }
+  .product_price{
+    margin-bottom: 32px;
+  }
   .hidden_on_large {
     display: none;
   }
@@ -43,6 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
   }
   
   .description_wrapper {
