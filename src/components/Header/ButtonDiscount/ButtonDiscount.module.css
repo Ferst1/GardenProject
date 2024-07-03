@@ -1,16 +1,25 @@
-.button_discount{
+  .button_discount{
   font-family: var(--font-family);
   line-height: 1.26;
   text-align: center;
   border-radius: 6px;
   padding: 6px 16px;
   max-width: 151px;
-  border: none !important;
   background: var(--green);
-  
+  color:var(--white)!important;
+  transition: all var(--transition);
+  border: none !important;
   }
-  
-  
+
+  .dark.button_discount:hover{
+    background-color: #f2f6d3 !important;
+    color: #92a134 !important;
+  }
+
+  .button_discount:hover{
+    background: #424436 !important;
+    color: #FFFFF1 !important;
+  }
   
   
   @media (max-width: 480px) and (min-width: 360px) {

@@ -1,6 +1,4 @@
 
-
-import React from 'react';
 import defaultStyles from './DiscountedCheckBox.module.css';
 import checkedIcon from '../../media/icons/check box=active.svg'; 
 import uncheckedIcon from '../../media/icons/check box=normal.svg';

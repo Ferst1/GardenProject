@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -76,7 +75,7 @@ const BasketProductsPage = () => {
             <ButtonSection
               to="/all_products"
               text="Back to the store"
-              className={styles.button_section}
+              className={styles.button_with_line_back}
             />
           </div>
         </div>
@@ -112,9 +111,17 @@ const BasketProductsPage = () => {
             </div>
           )}
         </div>
+        <div className={styles.button_back_store}>
+            <ButtonSection
+              to="/all_products"
+              text="Back to the store"
+              className={styles.button_back}
+            />
+          </div>
       </div>
     </div>
   );
 };
 
 export default BasketProductsPage;
+

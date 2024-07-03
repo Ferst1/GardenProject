@@ -142,6 +142,7 @@ ul {
 
 .basket_card:hover .product_image {
   height: auto;
+  transform: scale(1.1);
 }
 
 

@@ -11,12 +11,12 @@ const AllProductsPage = () => {
   const { filteredAndSortedProducts, loading, error, showDiscounted } = useSelector(state => state.products);
 
   useEffect(() => {
-    console.log("Initial showDiscounted state:", showDiscounted);
-  }, [showDiscounted]);
+    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
+  }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchProducts()).then(() => dispatch(filterAndSortProducts()));
-  }, [dispatch, showDiscounted]);
+    dispatch(filterAndSortProducts());
+  }, [showDiscounted, dispatch]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));

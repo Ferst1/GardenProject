@@ -1,125 +1,125 @@
-     .modal {
-      position: relative;
-      padding: 32px;
-      max-width: 548px;
-      height: auto;
-      background-color: var(--green);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-      justify-content: center;
-      margin: 180px auto;
-    }
+.modal {
+  position: relative;
+  padding: 32px;
+  max-width: 548px;
+  height: auto;
+  background-color: var(--green);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  justify-content: center;
+  margin: 180px auto;
+}
 
-    .modal div p{
-      width: auto;
-      margin-right: 32px;
-    }
+.modal div p{
+  width: auto;
+  margin-right: 32px;
+}
 
-    .modal_container {
-      margin: 18px;
-    }
+.modal_container {
+  margin: 18px;
+}
 
-    .modalOpen {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      cursor: pointer;  
-      stroke: var(--white);
-      margin: 10px;
-    }
-    
-    .discountHeader {
-      text-align: flex-start;
-      color: var(--white);
-      font-family: var(--font-family);
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 1.1;
-      max-width: 460px;
-    }
-    
-    .cardContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 16px;
-      border: none;
-      margin-top: 16px;
-    }
-    
-    .buttonContainer {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .buttonAddModal {
-      width: 100%;
-      margin-top: 16px;
-      padding: 10px 20px;
-      background-color: #FFFFF1 !important;
-      color: #424436 !important;
-      border: 1px solid var(--green);
-      cursor: pointer;
-      transition: all var(--transition);
-      font-family: Montserrat;
-      font-size: 20px;
-      font-weight: 600;
-    }
-    
-    .buttonAddModal:hover {
-      background-color: var(--black);
-      color: var(--white);
-    }
-    
-    .buttonAddModal.added {
-      background-color: #FFFFF1 !important;
-      color: #424436 !important;
-      border: 1px solid #424436 !important;
-      
-    }
+.modalOpen {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;  
+  stroke: var(--white);
+  margin: 10px;
+}
 
-    @media (max-width: 1440px){
-      .modal {
-        padding: 30px;
-      }
-    }
+.discountHeader {
+  text-align: flex-start;
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.1;
+  max-width: 460px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+  margin-top: 16px;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonAddModal {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #FFFFF1 !important;
+  color: #424436 !important;
+  border: 1px solid var(--green);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.buttonAddModal:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.buttonAddModal.added {
+  background-color: #FFFFF1 !important;
+  color: #424436 !important;
+  border: 1px solid #424436 !important;
   
-    @media (max-width: 480px){
-      .modal {
-        padding: 20px;
-      }
+}
 
-      .discountHeader  {
-        font-size: 36px;
-        width: 250px;
-      }
-      .close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-      }
-    }
 
-    @media (max-width: 360px){
-      .modal {
-        padding: 20px;
-      }
-      .discountHeader  {
-        font-size: 28px;
-        width: 280px;
-        margin-top: 50px;
-      }
-    }
+@media (max-width: 1440px){
+  .modal {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px){
+  .modal {
+    padding: 20px;
+  }
+
+  .discountHeader  {
+    font-size: 36px;
+    width: 250px;
+  }
+  .close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 360px){
+  .modal {
+    padding: 20px;
+  }
+  .discountHeader  {
+    font-size: 28px;
+    width: 280px;
+    margin-top: 50px;
+  }
+}

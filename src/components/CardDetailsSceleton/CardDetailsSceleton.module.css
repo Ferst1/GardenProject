@@ -7,7 +7,7 @@
     grid-template-areas:
       "wrapper_img product_detail_content"
       "description_wrapper description_wrapper";
-    padding: 20px;
+      margin-top: 40px;
     align-items: start;
   }
   
@@ -32,8 +32,16 @@
     justify-content: space-between;
     align-items: center;
     grid-area: title_favorite_wrapper;
+    
   }
-  
+
+  .title_container{
+    margin-top: 15px;
+   margin-bottom: 32px;
+  }
+  .product_price{
+    margin-bottom: 32px;
+  }
   .hidden_on_large {
     display: none;
   }
@@ -42,6 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
   }
   
   .description_wrapper {

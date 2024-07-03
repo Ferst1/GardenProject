@@ -12,7 +12,6 @@ const ModalWindow = ({ isOpen, handleClose, content }) => {
 
   useEffect(() => {
     if (content && content.product) {
-      // eslint-disable-next-line no-unused-vars
       const isProductInBasket = basket.some(item => item.id === content.product.id);
     }
   }, [basket, content]);
