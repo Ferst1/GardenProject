@@ -1,11 +1,12 @@
 .product_detail {
+  margin-top: 40px;
   display: grid;
   column-gap: 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "wrapper_img product_detail_content"
     "description_wrapper description_wrapper";
-  padding: 20px;
+ 
   align-items: start;
 }
 
@@ -15,6 +16,12 @@
   flex-direction: column;
 }
 
+
+.category_img{
+  border: 1px solid var(--grey-divider);
+  border-radius: 12px;
+
+}
 .product_title {
   grid-area: product_title;
   font-weight: 700;
