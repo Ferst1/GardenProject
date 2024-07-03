@@ -7,7 +7,7 @@
     grid-template-areas:
       "wrapper_img product_detail_content"
       "description_wrapper description_wrapper";
-    padding: 20px;
+      margin-top: 40px;
     align-items: start;
   }
   
