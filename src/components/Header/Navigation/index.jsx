@@ -1,9 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import s from '../Navigation/Navigation.module.css';
 import ButtonDiscount from '../ButtonDiscount';
 
 const Navigation = ({ darkMode }) => {
+  const location = useLocation();
+
+  const getLinkClass = (path) => {
+    return location.pathname === path ? `${s.navLink} ${s.active}` : s.navLink;
+  };
+
   return (
     <div className={`${s.navigation} ${darkMode ? s.darkMode : ''}`}>
       <div className={s.buttonDiscount}>
@@ -11,35 +17,30 @@ const Navigation = ({ darkMode }) => {
       </div>
       <div className={s.nav_wrapper}>
         <nav className={s.mainNavLink}>
-          <NavLink
-            exact
+          <Link
             to="/"
-            className={s.navLink}
-            activeClassName={s.active}
+            className={getLinkClass('/')}
           >
             Main Page
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/categories"
-            className={s.navLink}
-            activeClassName={s.active}
+            className={getLinkClass('/categories')}
           >
             Categories
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/all_products"
-            className={s.navLink}
-            activeClassName={s.active}
+            className={getLinkClass('/all_products')}
           >
             All Products
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/all_sales"
-            className={s.navLink}
-            activeClassName={s.active}
+            className={getLinkClass('/all_sales')}
           >
             All Sales
-          </NavLink>
+          </Link>
         </nav>
       </div>
     </div>

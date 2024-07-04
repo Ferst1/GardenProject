@@ -1,5 +1,6 @@
 
- .navigation {
+
+.navigation {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +12,6 @@
   padding-bottom: 20px;
   text-align: center;
   border-radius: 6px;
-
 }
 
 .nav_wrapper {
@@ -40,23 +40,20 @@
   transition: color var(--transition);
 }
 
-
 .darkMode .navLink {
-color: #FFFFFF;
-transition: color var(--transition);
+  color: var(--white);
+  transition: color var(--transition);
 }
 
-.navLink:hover {
-color: #92A134;
+.navLink:hover
+  {
+    color:var(--green)
 }
 
-.navLink:focus{
-color: #92A134; 
-}
-active{
-  color: #92A134; 
-}
 
+.active {
+  color:var(--green) !important;
+}
 
 @media (max-width: 1000px) and (min-width: 889px) {
   .mainNavLink {
@@ -84,10 +81,9 @@ active{
   .navLink {
     font-size: 16px;
   }
-  .navigation{
+  .navigation {
     display: none;
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -116,7 +112,7 @@ active{
     right: 10px;
     top: 10px;
   }
-  .navigation{
+  .navigation {
     display: none;
   }
 }
