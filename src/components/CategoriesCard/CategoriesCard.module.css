@@ -4,13 +4,14 @@
         max-width: 316px;
         height: 300px;
         object-fit: cover;
-        cursor: pointer;
+       
       }
       
       .categories_items {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 32px;
+        cursor: pointer;
       }
       
       .category_content {

@@ -33,12 +33,20 @@
   max-width: 248px;
   height: 350px;
   object-fit: cover;
+  cursor: pointer;
+  box-shadow: 14px 8px 20px rgba(152, 223, 124, 0.1);
+  transition: all var(--transition);
 }
 
 .categories_items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
+  cursor: pointer;
+}
+.category_img:hover{
+  transform: translateY(-5px);
+  box-shadow: 10px 18px 30px rgba(139, 237, 73, 0.3); 
 }
 
 .category_content {
