@@ -8,6 +8,7 @@ import { openModal } from '../../../redux/slices/modalSlice';
 const ButtonDiscount = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   const handleOpen = () => {
     if (products.length > 0) {
@@ -22,7 +23,7 @@ const ButtonDiscount = () => {
       <ButtonSection
         text="1 day discount"
         border='none'
-        className={s.button_discount}
+        className={`${s.button_discount} ${darkMode ? s.dark : ''}`}
         onClick={handleOpen}
       />
     </div>

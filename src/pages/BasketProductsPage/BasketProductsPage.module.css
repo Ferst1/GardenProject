@@ -4,21 +4,17 @@
   position: relative;
 }
 
-.title_wrapper h3 {
-  margin-right: 10px;
-  white-space: nowrap;
+.title_wrapper h2{
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 .basket_products_page {
   display: grid;
   grid-template-columns: 1fr;
-}
-
-.button_with_line {
-  display: flex;
-  align-items: center;
-  position: relative;
-  flex-grow: 1;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 
@@ -49,6 +45,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
+
 
 .basket_items {
   display: flex;
@@ -89,6 +86,11 @@
   color: white !important;
 }
 
+.button_back,
+.button_back_store{
+  display: none;
+}
+
 .order_details {
   display: flex;
   flex-direction: column;
@@ -104,9 +106,14 @@
   .button_with_line::before {
     margin-left: 16px; 
   }
-  .title_wrapper h2 {
-    font-size: 48px;
+  .title_wrapper h2{
+    font-size: 64px;
   }
+  .button_back,
+  .button_back_store{
+    display: none;
+  }
+
 } 
 
 @media (max-width: 999px) and (min-width: 768px) {
@@ -117,12 +124,15 @@
     margin-left: 16px; 
   }
   .title_wrapper h2 {
-    font-size: 48px;
+    font-size: 56px;
+  }
+  .button_back,
+  .button_back_store{
+    display: none;
   }
 } 
 
-
-@media (max-width: 767px) and (min-width: 480px) {
+@media (max-width: 767px) and (min-width: 500px) {
   .product_card_wrapper {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -132,6 +142,44 @@
   }
   .title_wrapper h2 {
     font-size: 48px;
+    width: 270px;
+  }
+  
+  .button_back,
+  .button_back_store{
+    display: none;
+  }
+} 
+
+@media (max-width: 499px) and (min-width: 480px) {
+  .product_card_wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .button_with_line::before {
+    margin-left: 16px; 
+    display: none;
+  }
+  .button_with_line_back{
+    font-size: 14px;
+    padding: 8px 16px 8px 16px;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .title_wrapper {
+    align-items: flex-start;
+  }
+  .title_wrapper h2 {
+    font-size: 48px;
+    width: 270px;
+  }
+  .basket_items p {
+    font-size: 18px; 
+  }
+  
+  .button_back,
+  .button_back_store{
+    display: none;
   }
 } 
 
@@ -145,6 +193,27 @@
   .button_with_line,
   .button_with_line::before {
     display: none;
+  }
+
+  .button_back_store{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .button_back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 24px 12px 24px;
+  }
+  .button_back:hover,
+  .button_back:active {
+    background-color: var(--black);
+  }
+  .basket_items p {
+    font-size: 18px; 
   }
   .title_wrapper h2 {
     font-size: 40px;

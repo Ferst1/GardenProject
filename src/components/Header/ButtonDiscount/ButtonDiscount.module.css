@@ -1,4 +1,4 @@
-.button_discount{
+  .button_discount{
   font-family: var(--font-family);
   line-height: 1.26;
   text-align: center;
@@ -8,16 +8,18 @@
   background: var(--green);
   color:var(--white)!important;
   transition: all var(--transition);
-  
-  }
-  
-  .button_discount:hover,
-  .button_discount:focus{
-    border-color: var(--green)!important;
-    background: var(--light-grey)!important;
-    color: var(--grey)!important;
+  border: none !important;
   }
 
+  .dark.button_discount:hover{
+    background-color: #f2f6d3 !important;
+    color: #92a134 !important;
+  }
+
+  .button_discount:hover{
+    background: #424436 !important;
+    color: #FFFFF1 !important;
+  }
   
   
   @media (max-width: 480px) and (min-width: 360px) {

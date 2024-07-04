@@ -1,6 +1,5 @@
 .modal_content{
     background-color: var(--green);  
-     
 }
 
 .modal_content h3{
@@ -14,4 +13,38 @@ color: var(--txt-white);
 
 .modal_content p{
     color: var(--white);
+    margin-top: 16px;
+    font-size: 20px;
+    width: 424px;
+}
+
+
+@media (max-width: 767px) and (min-width: 480px) {
+    .modal_content p{
+        margin-top: 12px;
+        font-size: 18px;
+    }
+    .modal_content{
+        width: 390px;
+    }
+    .modal_content h3{
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 479px) and (min-width: 360px){
+    .modal_content p{
+        font-size: 18px;
+        margin-top: 0;
+        width: 200px;
+    }
+    .modal_content{
+        width: 300px;
+        margin-bottom: 40px;
+    }
+    .modal_content h3{
+        margin-top: 50px;
+        margin-bottom: 24px;
+        font-size: 28px;
+    }
 }
