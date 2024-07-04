@@ -48,6 +48,9 @@ const basketSlice = createSlice({
     removeFromBasket(state, action) {
       state.basket = state.basket.filter(item => item.id !== action.payload);
     },
+    clearBasket(state) {
+      state.basket = [];
+    },
   },
 });
 
@@ -59,6 +62,7 @@ export const {
   incrementProductCount,
   decrementProductCount,
   removeFromBasket,
+  clearBasket,
 } = basketSlice.actions;
 
 export default basketSlice.reducer;

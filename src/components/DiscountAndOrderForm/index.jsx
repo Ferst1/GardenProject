@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import s from './DiscountForm.module.css';
@@ -6,12 +7,13 @@ import Button from '../UI/Button/index';
 import Input from '../UI/Input/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal } from '../../redux/slices/modalSlice';
-import { addToBasket } from '../../redux/slices/basketSlice';
+import { sendOrder } from '../../redux/slices/orderSlice';
 
 export default function DiscountForm(props) {
   const darkMode = useSelector((state) => state.theme.darkMode);
   const basket = useSelector((state) => state.basket.basket); 
   const dispatch = useDispatch();
+  const { serverResponse, status: orderStatus, error: orderError } = useSelector((state) => state.order);
 
   const {
     title = '5% off on the first order',
@@ -26,7 +28,6 @@ export default function DiscountForm(props) {
   const [currentErrorIndex, setCurrentErrorIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [buttonText, setButtonText] = useState(buttons.submit);
-  const [serverResponse, setServerResponse] = useState(null);
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const decrementTime = useCallback(() => {
@@ -54,14 +55,6 @@ export default function DiscountForm(props) {
     setCurrentErrorIndex(0);
   }, [errorMessages]);
 
-  const handleAddToBasket = (formData) => {
-    const product = {
-      id: Date.now(),
-      ...formData,
-    };
-    dispatch(addToBasket(product));
-  };
-
   const onSubmit = async (formData) => {
     setIsSubmitted(true);
     setButtonText('Request Submitted');
@@ -77,49 +70,30 @@ export default function DiscountForm(props) {
       };
     }
 
-    localStorage.setItem('formData', JSON.stringify(combinedData))
+    localStorage.setItem('formData', JSON.stringify(combinedData));
   
-    try {
-      console.log('Sending data:', JSON.stringify(combinedData));
-  
-      const response = await fetch('https://telran-backend.onrender.com/order/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(combinedData),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+    dispatch(sendOrder(combinedData)).then((result) => {
+      if (sendOrder.fulfilled.match(result)) {
+        console.log('Server response:', result.payload);
+      } else {
+        console.error('Error sending request:', result.payload);
       }
-  
-      const result = await response.json();
-      console.log('Server response:', result);
-      setServerResponse(result);
-  
-    } catch (error) {
-      console.error('Error sending request:', error);
-      setServerResponse({ status: 'error', message: 'Failed to send request' });
-    }
-  
+    });
+
     reset();
     setTimeout(() => {
       setIsSubmitted(false);
       setButtonText(buttons.submit);
-      setServerResponse(null);
     }, 5000);
   
     if (isAlternativeStyle) {
       dispatch(openModal({ type: 'CONFIRMATION' }));
     }
   };
-  
+
   const displayNextError = () => {
     setCurrentErrorIndex((prevIndex) => (prevIndex + 1) % errorMessages.length);
   };
-
-  const [svgSize, setSvgSize] = useState({ width: '20px', height: '20px' });
 
   return (
     <div className={`${s.form_section} ${isAlternativeStyle ? s.alternative_form_section : ''} ${darkMode ? s.dark_mode : ''}`}>
@@ -154,7 +128,7 @@ export default function DiscountForm(props) {
                   <svg
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ width: svgSize.width, height: svgSize.height, marginRight: '5px' }}
+                    style={{ width: '20px', height: '20px', marginRight: '5px' }}
                     viewBox="0 0 20 20"
                   >
                     <path
@@ -182,8 +156,11 @@ export default function DiscountForm(props) {
               </div>
             </div>
           )}
-          {isSubmitted && (
+          {isSubmitted && orderStatus === 'succeeded' && (
             <p className={`${s.success_text} ${isAlternativeStyle ? s.success_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_success_text : ''}`}>{serverResponse ? serverResponse.message : 'The discount has been successfully sent by email'}</p>
+          )}
+          {isSubmitted && orderStatus === 'failed' && (
+            <p className={`${s.error_text} ${isAlternativeStyle ? s.error_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_error_text : ''}`}>{orderError}</p>
           )}
           <Button
             text={isAlternativeStyle ? 'Order' : buttonText}
@@ -197,3 +174,4 @@ export default function DiscountForm(props) {
     </div>
   );
 }
+
