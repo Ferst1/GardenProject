@@ -109,67 +109,66 @@ Backend [https://github.com/tel-ran-de/telran_backend_garden_shop]
 
 ## Tree our project
 
-├───public
-└───src
-    ├───components
-    │   ├───AllProducts
-    │   ├───BasketCard
-    │   ├───CardDetailsSceleton
-    │   ├───CardSkeleton
-    │   ├───CategoriesCard
-    │   ├───CategoriesSection
-    │   ├───CategoryProductsCard
-    │   ├───DiscountAndOrderForm
-    │   ├───DiscountedCheckBox
-    │   ├───Favorites
-    │   ├───FilterPrice
-    │   ├───Footer
-    │   ├───Header
-    │   │   ├───BurgerMenu
-    │   │   ├───ButtonDiscount
-    │   │   ├───Logo
-    │   │   ├───Navigation
-    │   │   └───Switcher
-    │   ├───Hero
-    │   ├───ImageModal
-    │   ├───MobileMenu
-    │   ├───ModalWindow
-    │   ├───ModalWindowContainer
-    │   ├───ModalWindowContent
-    │   ├───OrderDetailsCard
-    │   ├───ProductDetail
-    │   ├───ProductsCard
-    │   ├───SaleCards
-    │   ├───SaleModal
-    │   ├───SaleSection
-    │   ├───SharedLayout
-    │   ├───SorterSelect
-    │   ├───SortFilteredComponents
-    │   └───UI
-    │       ├───Basket
-    │       ├───BasketHeader
-    │       ├───Button
-    │       ├───ButtonAddToCard
-    │       ├───ButtonCounter
-    │       ├───ButtonSection
-    │       ├───Favorite
-    │       ├───FavoriteHeader
-    │       └───Input
-    ├───media
-    │   ├───icons
-    │   └───images
-    ├───pages
-    │   ├───AllProductsPage
-    │   ├───AllSalesPage
-    │   ├───BasketProductsPage
-    │   ├───CategoriesPage
-    │   ├───CategoryProductsPage
-    │   ├───ErrorPage
-    │   ├───FavoritesPage
-    │   ├───MainPage
-    │   └───ProductDetailPage
-    └───redux
-        └───slices
+├───components
+│   ├───AllProducts
+│   ├───BasketCard
+│   ├───CardDetailsSceleton
+│   ├───CardSkeleton
+│   ├───CategoriesCard
+│   ├───CategoriesSection
+│   ├───CategoryProductsCard
+│   ├───DiscountAndOrderForm
+│   ├───DiscountedCheckBox
+│   ├───Favorites
+│   ├───FilterPrice
+│   ├───Footer
+│   ├───Header
+│   │   ├───BurgerMenu
+│   │   ├───ButtonDiscount
+│   │   ├───Logo
+│   │   ├───Navigation
+│   │   └───Switcher
+│   ├───Hero
+│   ├───ImageModal
+│   ├───MobileMenu
+│   ├───ModalWindow
+│   ├───ModalWindowContainer
+│   ├───ModalWindowContent
+│   ├───OrderDetailsCard
+│   ├───ProductDetail
+│   ├───ProductsCard
+│   ├───SaleCards
+│   ├───SaleModal
+│   ├───SaleSection
+│   ├───SharedLayout
+│   ├───SorterSelect
+│   ├───SortFilteredComponents
+│   └───UI
+│       ├───Basket
+│       ├───BasketHeader
+│       ├───Button
+│       ├───ButtonAddToCard
+│       ├───ButtonCounter
+│       ├───ButtonSection
+│       ├───Favorite
+│       ├───FavoriteHeader
+│       ├───Input
+│       └───ScrollToTopButton
+├───media
+│   ├───icons
+│   └───images
+├───pages
+│   ├───AllProductsPage
+│   ├───AllSalesPage
+│   ├───BasketProductsPage
+│   ├───CategoriesPage
+│   ├───CategoryProductsPage
+│   ├───ErrorPage
+│   ├───FavoritesPage
+│   ├───MainPage
+│   └───ProductDetailPage
+└───redux
+    └───slices
 
 
 Brackpoints[1440px,1000px,768px,480px,360px]
