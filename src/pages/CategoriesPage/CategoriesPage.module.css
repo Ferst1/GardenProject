@@ -1,65 +1,68 @@
+.wrapper_container {
+  margin-top: 40px;
+}
+
+.title_wrapper {
+  text-align: center;
+}
+
+.buttons_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.buttons_wrapper button {
+  position: relative;
+}
+
+.buttons_wrapper button:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 16px;
+  height: 1px;
+  background-color: var(--grey-divider);
+  transform: translateY(-50%);
+}
 
 
-   .wrapper_container {
-    margin-top: 40px;
-  }
-  
-  .title_wrapper {
-    text-align: center;
-  }
-  
-  .buttons_wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .buttons_wrapper button {
-    position: relative;
-  }
-  
-  .buttons_wrapper button:not(:first-child)::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -16px;
-    width: 16px;
-    height: 1px;
-    background-color: var(--grey-divider);
-    transform: translateY(-50%);
-  }
-  
-  .categories_items {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-  }
-  
+.category_img {
+  border-radius: 12px;
+  max-width: 248px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.categories_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.category_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.category_title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+    
+@media (max-width: 1000px) {
   .category_img {
-    border-radius: 12px;
-    width: 248px;
-    height: 350px;
+    max-width: 306px;
+    height: 250px;
     object-fit: cover;
   }
-  .category_title {
-    text-align: center; 
-    font-size: 20px;
-    margin: 10px 0 10px 0;
-    font-weight: 400;
+  .categories_items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
   }
-  
-  
-  @media (max-width: 1000px) {
-
-    .wrapper_container {
-      margin-top: 40px;
-    }
-
-    .categories_items {
-      grid-template-columns: repeat(3, 300px);
-      gap: 20px;
-    }
   
     .category_img {
       width: 300px;

@@ -1,6 +1,4 @@
 
-
-
 import React from 'react';
 import defaultStyles from './FilterPrice.module.css';
 
@@ -20,14 +18,14 @@ const FilterPrice = ({ styles = defaultStyles, onMinPriceChange, onMaxPriceChang
       <h3>Price</h3>
       <div className={styles.inputWrapper}>
         <input 
-          type="text"
+          type="number"
           placeholder="from"
           name="from"
           onChange={handleMinPriceChange}
         />
         
         <input
-          type="text"
+          type="number"
           placeholder="to"
           name="to"
           onChange={handleMaxPriceChange}

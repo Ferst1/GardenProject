@@ -36,10 +36,6 @@ const BasketProductsPage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("Basket state:", basket);
-  }, [basket]);
-
   const handleContinueShopping = () => {
     navigate('/all_products');
   };

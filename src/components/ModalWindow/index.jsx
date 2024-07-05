@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import MuiModal from '@mui/material/Modal';
 import s from './ModalWindow.module.css';
@@ -13,6 +14,8 @@ const ModalWindow = ({ isOpen, handleClose, content }) => {
   useEffect(() => {
     if (content && content.product) {
       const isProductInBasket = basket.some(item => item.id === content.product.id);
+      console.log('Is product in basket:', isProductInBasket);
+
     }
   }, [basket, content]);
 
