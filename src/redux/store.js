@@ -18,6 +18,7 @@ import basketReducer from './slices/basketSlice';
 import modalReducer from './slices/modalSlice';
 import themeReducer from './slices/themeSlice';
 import orderReducer from './slices/orderSlice'
+import salesReducer from './slices/saleSlice';
 
 const persistConfig = {
   key: 'root',
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   modal: modalReducer,
   theme: themeReducer,
   order: orderReducer,
+  sale: salesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
