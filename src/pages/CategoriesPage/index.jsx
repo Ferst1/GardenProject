@@ -11,6 +11,7 @@ import CategoriesCard from '../../components/CategoriesCard';
 const CategoriesPage = () => {
   const dispatch = useDispatch();
   const { categories, loading, error } = useSelector(state => state.categories);
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   useEffect(() => {
     dispatch(fetchCategories());
