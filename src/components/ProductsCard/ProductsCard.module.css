@@ -6,8 +6,9 @@
   overflow: hidden;
   transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
   width: 316px;
-  min-height: 420px;
+  min-height: 420px; 
 }
+
 .product_item.dark-mode {
   background-color: #383A2C;
 }

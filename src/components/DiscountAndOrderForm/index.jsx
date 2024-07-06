@@ -14,8 +14,8 @@ export default function DiscountAndOrderForm(props) {
   const darkMode = useSelector((state) => state.theme.darkMode);
   const basket = useSelector((state) => state.basket.basket);
   const dispatch = useDispatch();
-  const { serverResponse, status: orderStatus, error: orderError } = useSelector((state) => state.order);
-  const { serverRes, status: saleStatus, error: saleError } = useSelector((state) => state.sale);
+  const { serverResponse, status: orderStatus} = useSelector((state) => state.order);
+  const { status: saleStatus } = useSelector((state) => state.sale);
 
   const {
     title = '5% off on the first order',
@@ -30,7 +30,7 @@ export default function DiscountAndOrderForm(props) {
   const [currentErrorIndex, setCurrentErrorIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [buttonText, setButtonText] = useState(buttons.submit);
-  const [discountValue, setDiscountValue] = useState(5); // 5%
+  const [discountValue] = useState(5); // 5%
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 

@@ -25,6 +25,10 @@
 :global(.dark-mode) .button.active{
 	color: #ffffff;
 }
+:global(.dark-mode) .button.active:hover{
+	color: #424436;
+}
+
 
 .button + .button::before {
   content: '';
