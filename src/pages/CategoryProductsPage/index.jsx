@@ -1,8 +1,15 @@
 
 import React, { useEffect } from "react";
-import { useNavigate,Link, useParams } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsByCategory, setMinPriceFilter, setMaxPriceFilter, setShowDiscounted, setSortBy, filterAndSortProducts } from "../../redux/slices/productsSlice";
+import {
+  fetchProductsByCategory,
+  setMinPriceFilter,
+  setMaxPriceFilter,
+  setShowDiscounted,
+  setSortBy,
+  filterAndSortProducts,
+} from "../../redux/slices/productsSlice";
 import styles from "./CategoryProductsPage.module.css";
 import SortFilteredComponents from "../../components/SortFilteredComponents";
 import ButtonSection from "../../components/UI/ButtonSection";
@@ -18,12 +25,12 @@ const CategoryProductsPage = () => {
   );
 
   useEffect(() => {
-    console.log("Initial showDiscounted state:", showDiscounted);
-  }, [showDiscounted]);
+    dispatch(fetchProductsByCategory(categoryId));
+  }, [dispatch, categoryId]);
 
   useEffect(() => {
-    dispatch(fetchProductsByCategory(categoryId));
-  }, [dispatch, categoryId, showDiscounted]);
+    dispatch(filterAndSortProducts());
+  }, [dispatch, showDiscounted, categoryId]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
@@ -45,18 +52,17 @@ const CategoryProductsPage = () => {
     dispatch(filterAndSortProducts());
   };
 
-
   const handleGoBack = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   return (
     <div className="container">
       <div>
         <div className={styles.buttons_wrapper}>
-          <ButtonSection text="Main Page" to="/"  />
+          <ButtonSection text="Main Page" to="/" />
           <ButtonSection text="Categories" to="/categories" />
-          <ButtonSection text="Tools and equipment" onClick={handleGoBack}/>
+          <ButtonSection text="Tools and equipment" onClick={handleGoBack} />
         </div>
         <h2>Tools and equipment</h2>
         <div className={styles.sorted_section}>
