@@ -104,7 +104,7 @@ Backend [https://github.com/tel-ran-de/telran_backend_garden_shop]
 
 - Elvira Gibner - Scrum Master / Developer  
    -[GitHub](https://github.com/ghibnerelvira)
-   -[LinkedIn](https://www.linkedin.com/in/)
+   -[LinkedIn](https://www.linkedin.com/in/elvira-ghibner/)
 
 
 ## Tree our project

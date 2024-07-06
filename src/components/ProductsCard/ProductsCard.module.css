@@ -7,7 +7,7 @@
   transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
   width: 316px;
   min-height: 420px; 
-  box-shadow: 14px 8px 20px rgba(152, 223, 124, 0.1);
+
 }
 .product_item.dark-mode {
   background-color: #383A2C;

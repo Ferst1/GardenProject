@@ -19,7 +19,7 @@
   flex-direction: column;
   position: relative;
   transition: all 0.3s ease-in-out;
-  box-shadow: 14px 8px 20px rgba(152, 223, 124, 0.1);
+
 }
 
 .category_img {
