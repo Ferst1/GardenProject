@@ -13,7 +13,7 @@ The GardenProject was created for people who love gardening and also value their
 
 - **Quality Products:** We offer products from trusted brands to ensure durability and efficiency.
 - **Convenience:** Save time by finding all your gardening and family needs in one place.
-
+  
 
 ## <a id="backend">Backend</a>
 Backend [https://github.com/tel-ran-de/telran_backend_garden_shop]
