@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,11 +38,11 @@ const BasketCard = ({ product }) => {
       />
       <div className={styles.product_details}>
         <div className={styles.title_and_close}>
-        <Link to={`/product/${product.id}`}>
-          <h5 title={title}>{title}</h5>
-        </Link>
+          <Link to={`/product/${product.id}`}>
+            <h5 title={title}>{title}</h5>
+          </Link>
           <button className={styles.remove_button} onClick={handleRemove} aria-label="Remove item">
-          <CloseIcon className={styles.remove_button_x} />
+            <CloseIcon className={styles.remove_button_x} />
           </button>
         </div>
         <div className={styles.count_wrapper}>
@@ -56,7 +57,7 @@ const BasketCard = ({ product }) => {
             {discont_price ? (
               <>
                 <div className={styles.product_price}>
-                  ${formatPrice(discont_price)}
+                  ${formatPrice(totalPrice)}
                 </div>
                 <div className={styles.original_price}>
                   ${formatPrice(price)}
