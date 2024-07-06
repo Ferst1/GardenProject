@@ -7,15 +7,20 @@
   transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
   width: 316px;
   min-height: 420px; 
-
 }
+
 .product_item.dark-mode {
   background-color: #383A2C;
 }
 
+.dark-mode.product_item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 6px #f2f6d3;
+}
+
 .product_item:hover {
   transform: translateY(-5px);
-  box-shadow: 10px 18px 30px rgba(163, 237, 73, 0.3); 
+  box-shadow: 0px 5px 6px #a1a392;
 }
 
 .category_content {

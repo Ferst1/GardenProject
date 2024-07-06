@@ -1,19 +1,21 @@
-
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-import s from './DiscountForm.module.css';
+import s from './DiscountAndOrderForm.module.css';
 import HandsImage from '../../media/images/image-order.png';
 import Button from '../UI/Button/index';
 import Input from '../UI/Input/index';
+import WarningIcon from '../../media/icons/WarningIcon';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal } from '../../redux/slices/modalSlice';
 import { sendOrder } from '../../redux/slices/orderSlice';
+import { sendSale } from '../../redux/slices/saleSlice';
 
-export default function DiscountForm(props) {
+export default function DiscountAndOrderForm(props) {
   const darkMode = useSelector((state) => state.theme.darkMode);
-  const basket = useSelector((state) => state.basket.basket); 
+  const basket = useSelector((state) => state.basket.basket);
   const dispatch = useDispatch();
-  const { serverResponse, status: orderStatus, error: orderError } = useSelector((state) => state.order);
+  const { serverResponse, status: orderStatus} = useSelector((state) => state.order);
+  const { status: saleStatus } = useSelector((state) => state.sale);
 
   const {
     title = '5% off on the first order',
@@ -28,6 +30,8 @@ export default function DiscountForm(props) {
   const [currentErrorIndex, setCurrentErrorIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [buttonText, setButtonText] = useState(buttons.submit);
+  const [discountValue] = useState(5); // 5%
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const decrementTime = useCallback(() => {
@@ -58,28 +62,41 @@ export default function DiscountForm(props) {
   const onSubmit = async (formData) => {
     setIsSubmitted(true);
     setButtonText('Request Submitted');
-    
-    let combinedData = {
-      ...formData, 
-    };
+  
+    if (!isAlternativeStyle) {
+      let saleData = JSON.parse(localStorage.getItem('saleData')) || {};
+      saleData = {
+        ...saleData,
+        ...formData,
+        discount: discountValue
+      };
+      localStorage.setItem('saleData', JSON.stringify(saleData));
+  
+      const saleResult = await dispatch(sendSale(saleData));
+      if (sendSale.fulfilled.match(saleResult)) {
+        console.log('Sale response:', saleResult.payload);
+      } else {
+        console.error('Error sending sale request:', saleResult.payload);
+      }
+    }
   
     if (isAlternativeStyle) {
-      combinedData = {
-        ...combinedData,
-        basket: basket 
+      let orderData = JSON.parse(localStorage.getItem('orderData')) || {};
+      orderData = {
+        ...orderData,
+        ...formData,
+        basket: basket
       };
-    }
-
-    localStorage.setItem('formData', JSON.stringify(combinedData));
+      localStorage.setItem('orderData', JSON.stringify(orderData));
   
-    dispatch(sendOrder(combinedData)).then((result) => {
-      if (sendOrder.fulfilled.match(result)) {
-        console.log('Server response:', result.payload);
+      const orderResult = await dispatch(sendOrder(orderData));
+      if (sendOrder.fulfilled.match(orderResult)) {
+        console.log('Order response:', orderResult.payload);
       } else {
-        console.error('Error sending request:', result.payload);
+        console.error('Error sending order request:', orderResult.payload);
       }
-    });
-
+    }
+  
     reset();
     setTimeout(() => {
       setIsSubmitted(false);
@@ -89,7 +106,7 @@ export default function DiscountForm(props) {
     if (isAlternativeStyle) {
       dispatch(openModal({ type: 'CONFIRMATION' }));
     }
-  };
+  }; 
 
   const displayNextError = () => {
     setCurrentErrorIndex((prevIndex) => (prevIndex + 1) % errorMessages.length);
@@ -125,42 +142,19 @@ export default function DiscountForm(props) {
             <div>
               <div className={s.error_message}>
                 <p className={`${s.warning_text} ${isAlternativeStyle ? s.warning_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_warning_text : ''}`}>
-                  <svg
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ width: '20px', height: '20px', marginRight: '5px' }}
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M6.5502 1.66699H13.4502L18.3335 6.55032V13.4503L13.4502 18.3337H6.5502L1.66687 13.4503V6.55032L6.5502 1.66699Z"
-                      fill="#CB0505"
-                      stroke="#FFFFF1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M13.0001 7L7.00012 13"
-                      stroke="#FFFFF1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M7.00012 7L13.0001 13"
-                      stroke="#FFFFF1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <WarningIcon/>
                   {errorMessages[currentErrorIndex]}
                 </p>
               </div>
             </div>
           )}
-          {isSubmitted && orderStatus === 'succeeded' && (
-            <p className={`${s.success_text} ${isAlternativeStyle ? s.success_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_success_text : ''}`}>{serverResponse ? serverResponse.message : 'The discount has been successfully sent by email'}</p>
-          )}
-          {isSubmitted && orderStatus === 'failed' && (
-            <p className={`${s.error_text} ${isAlternativeStyle ? s.error_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_error_text : ''}`}>{orderError}</p>
+          {isSubmitted && (
+            <p className={`${s.success_text} ${isAlternativeStyle ? s.success_text_alternative : ''} ${darkMode && isAlternativeStyle ? s.dark_mode_success_text : ''}`}>
+              {isAlternativeStyle ? 'The discount has been successfully sent by email' : 
+                orderStatus === 'succeeded' ? serverResponse.message :
+                  saleStatus === 'succeeded' ? `You have received a ${discountValue}% discount!` : 
+                    'The discount has been successfully sent by email'}
+            </p>
           )}
           <Button
             text={isAlternativeStyle ? 'Order' : buttonText}
