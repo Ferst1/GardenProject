@@ -29,8 +29,8 @@ const CategoryProductsPage = () => {
   }, [dispatch, categoryId]);
 
   useEffect(() => {
-    dispatch(filterAndSortProducts());
-  }, [dispatch, showDiscounted, categoryId]);
+    dispatch(fetchProductsByCategory(categoryId));
+  }, [dispatch, categoryId, showDiscounted]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
@@ -49,7 +49,6 @@ const CategoryProductsPage = () => {
 
   const handleDiscountChange = (isDiscounted) => {
     dispatch(setShowDiscounted(isDiscounted));
-    dispatch(filterAndSortProducts());
   };
 
   const handleGoBack = () => {
