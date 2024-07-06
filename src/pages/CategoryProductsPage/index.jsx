@@ -1,15 +1,8 @@
 
 import React, { useEffect } from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate,Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProductsByCategory,
-  setMinPriceFilter,
-  setMaxPriceFilter,
-  setShowDiscounted,
-  setSortBy,
-  filterAndSortProducts,
-} from "../../redux/slices/productsSlice";
+import { fetchProductsByCategory, setMinPriceFilter, setMaxPriceFilter, setShowDiscounted, setSortBy, filterAndSortProducts } from "../../redux/slices/productsSlice";
 import styles from "./CategoryProductsPage.module.css";
 import SortFilteredComponents from "../../components/SortFilteredComponents";
 import ButtonSection from "../../components/UI/ButtonSection";
@@ -29,8 +22,8 @@ const CategoryProductsPage = () => {
   }, [dispatch, categoryId]);
 
   useEffect(() => {
-    dispatch(fetchProductsByCategory(categoryId));
-  }, [dispatch, categoryId, showDiscounted]);
+    dispatch(filterAndSortProducts());
+  }, [dispatch, showDiscounted]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
