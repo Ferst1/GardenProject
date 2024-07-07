@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import s from './OrderDetailsCard.module.css';
 import { formatPriceWithComma } from '../../utils';
-import DiscountForm from '../DiscountAndOrderForm';
+import DiscountAndOrderForm from '../DiscountAndOrderForm';
 
 const OrderDetailsCard = ({ totalItems, totalPrice }) => {
   const isDarkMode = useSelector((state) => state.theme.darkMode); 
@@ -19,7 +19,7 @@ const OrderDetailsCard = ({ totalItems, totalPrice }) => {
         <p>Total</p>
         <p className={s.total_price}>${formatPriceWithComma(totalPrice)}</p>
       </div>
-      <DiscountForm
+      <DiscountAndOrderForm
         isAlternativeStyle={true}  
       />
     </div>
