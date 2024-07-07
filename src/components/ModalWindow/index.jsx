@@ -6,20 +6,22 @@ import { ReactComponent as CloseIcon } from '../../media/icons/close.svg';
 import ProductsCard from '../../components/ProductsCard';
 import ButtonAddToCard from '../UI/ButtonAddToCard';
 import ModalWindowContent from '../ModalWindowContent';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToBasket } from '../../redux/slices/basketSlice';
 
 const ModalWindow = ({ isOpen, handleClose, content }) => {
   const basket = useSelector((state) => state.basket.basket);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (content && content.product) {
       const isProductInBasket = basket.some(item => item.id === content.product.id);
       console.log('Is product in basket:', isProductInBasket);
-
     }
   }, [basket, content]);
 
   const handleAddToBasket = (product) => {
+    dispatch(addToBasket(product));
     handleClose();
   };
 

@@ -5,7 +5,6 @@ import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SharedLayout from './SharedLayout';
 import ErrorPage from '../pages/ErrorPage';
-import ProductDetailPage from '../pages/ProductDetailPage';
 import CardSkeleton from './CardSkeleton/CardSkeleton';
 import CardDetailsSceleton from './CardDetailsSceleton/CardDetailsSceleton';
 
@@ -14,6 +13,8 @@ const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 const AllProductsPage = lazy(() => import('../pages/AllProductsPage'));
 const AllSalesPage = lazy(() => import('../pages/AllSalesPage'));
 const CategoryProductsPage = lazy(() => import('../pages/CategoryProductsPage'));
+const ProductDetailPage = lazy(() => import('../pages/ProductDetailPage'));
+
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
 const BasketProductsPage = lazy(() => import('../pages/BasketProductsPage'));
 
