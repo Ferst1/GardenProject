@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import baseUrl from '../../instance';
 
+
+
 const initialState = {
   products: [],
   filteredAndSortedProducts: [],
@@ -25,7 +27,7 @@ export const fetchProducts = createAsyncThunk(
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve(response.data);
-        }, 1500); 
+        }, 1000); 
       });
     } catch (error) {
       return rejectWithValue(error.message);
@@ -42,7 +44,7 @@ export const fetchProductsByCategory = createAsyncThunk(
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve(response.data.data);
-        }, 1500); 
+        }, 1000); 
       });
     } catch (error) {
       return rejectWithValue(error.message);
@@ -59,7 +61,7 @@ export const fetchProduct = createAsyncThunk(
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve(product);
-        }, 1500); 
+        }, 1000); 
       });
     } catch (error) {
       return rejectWithValue(error.message);
@@ -90,10 +92,14 @@ const productsSlice = createSlice({
     addToFavorites(state, action) {
       if (!state.favorites.some(fav => fav.id === action.payload.id)) {
         state.favorites.push(action.payload);
+        console.log('Added to favorites:', action.payload);
       }
     },
     removeFromFavorites(state, action) {
       state.favorites = state.favorites.filter(fav => fav.id !== action.payload.id);
+      console.log('Removed from favorites:', action.payload);
+      console.log('Current favorites:', state.favorites);
+      
     },
     incrementProductCount(state, action) {
       if (state.product && state.product.id === action.payload) {
@@ -155,6 +161,7 @@ const productsSlice = createSlice({
         state.filteredAndSortedProducts = action.payload;
         state.filters = initialState.filters; 
         state.sortBy = initialState.sortBy; 
+        console.log('Loaded favorites from localStorage:', state.favorites);
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;

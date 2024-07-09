@@ -7,6 +7,8 @@ import CardSkeleton from '../CardSkeleton/CardSkeleton';
 import styles from './Favorites.module.css';
 
 const Favorites = ({ products, loading }) => {
+  console.log("Favorites component products:", products);
+
   if (loading) {
     return (
       <div className={styles.favorites}>
