@@ -1,4 +1,5 @@
 
+
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,7 +14,7 @@ import filterPriceStyles from "../../components/FilterPrice/FilterPrice.module.c
 import sorterSelectStyles from "../../components/SorterSelect/SorterSelect.module.css";
 import styles from "./FavoritesPage.module.css";
 import ButtonSection from "../../components/UI/ButtonSection";
-import { sortProducts } from "../../utils"; 
+import { sortProducts } from "../../utils";
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();
@@ -21,18 +22,26 @@ const FavoritesPage = () => {
     (state) => state.products
   );
 
+  useEffect(() => {
+    console.log("Favorites on load:", favorites);
+    console.log("Filters on load:", filters);
+    console.log("Sort by on load:", sortBy);
+
+    // Initialize filters if they are null or undefined
+    if (filters.minPrice === null || filters.minPrice === undefined) {
+      dispatch(setMinPriceFilter(0));
+    }
+    if (filters.maxPrice === null || filters.maxPrice === undefined) {
+      dispatch(setMaxPriceFilter(Infinity));
+    }
+  }, [dispatch, favorites, filters, sortBy]);
+
   const filteredFavorites = favorites.filter(product => {
     const price = product.discont_price ?? product.price;
-    return price >= filters.minPrice && price <= filters.maxPrice;
+    return price >= (filters.minPrice ?? 0) && price <= (filters.maxPrice ?? Infinity);
   });
 
   const sortedFavorites = sortProducts(filteredFavorites, sortBy);
-
-  useEffect(() => {
-    dispatch(setMinPriceFilter(filters.minPrice));
-    dispatch(setMaxPriceFilter(filters.maxPrice));
-    dispatch(setSortBy(sortBy));
-  }, [dispatch, filters.minPrice, filters.maxPrice, sortBy]);
 
   const handleMinPriceChange = (minPrice) => {
     dispatch(setMinPriceFilter(minPrice));
